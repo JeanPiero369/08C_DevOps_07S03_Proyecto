@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.git
+.gitignore
+.env
+.env.*
+*.md
+MS-Quiz-bruno/
+scripts/
+Dockerfile
+.dockerignore
