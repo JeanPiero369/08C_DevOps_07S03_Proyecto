@@ -341,13 +341,8 @@ export const fetchStudentListQuiz = async (classroomId: string,studentId: string
 
 
 export const createQuiz = async (payload: NewQuizPayload,classroom_id: number): Promise<Quiz> => {
-  console.log(payload);
-  console.log("API: Creating quiz with payload:", JSON.stringify(payload, null, 2));
-  try{
-    return await api.post(`teacher/classroom/${classroom_id}/quiz/create`,payload).then((res) => res.data)
-  }catch(e){
-
-  }
+  const res = await api.post(`teacher/classroom/${classroom_id}/quiz/create`,payload);
+  return res.data;
 };
 
 export const generateQuizFromDocument = async (payload: GenerateQuizFromDocumentPayload, file: File): Promise<Partial<Quiz>> => {  

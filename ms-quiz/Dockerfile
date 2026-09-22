@@ -1,8 +1,13 @@
-FROM python:3.11-slim-buster
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt app.py api config core db schemas ./
+COPY requirements.txt app.py ./
+COPY api ./api
+COPY config ./config
+COPY core ./core
+COPY db ./db
+COPY schemas ./schemas
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \

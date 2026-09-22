@@ -3,7 +3,8 @@ FROM maven:3.9.4-eclipse-temurin-17 AS builder
 WORKDIR /app
 
 # Copiar código fuente y empaquetar el jar
-COPY pom.xml src ./
+COPY pom.xml ./
+COPY src ./src
 RUN mvn dependency:go-offline -B && mvn clean package -DskipTests -B
 
 # Etapa 2: ejecutar el .jar en una imagen liviana (solo JRE)

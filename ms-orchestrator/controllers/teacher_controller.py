@@ -104,13 +104,12 @@ async def associate_competence(classroom_id: int, competencesId: CompetenceIdsRe
 async def createQuiz(classroom_id: int, quiz_create: DtoQuizCreate,request: Request):
     async with httpx.AsyncClient() as client:
         try:
-            print(quiz_create.model_dump_json())
             quiz_response = await client.post(f"{quices_url}/quiz/create",content=quiz_create.model_dump_json(),headers={"Content-Type": "application/json"})
             quiz_response.raise_for_status()
-            quiz_response.json()
-            response = await client.patch(f"{classrooms_url}/classrooms/{classroom_id}/quizzes-competences",json=quiz_response.json())
+            quiz_data = quiz_response.json()
+            response = await client.patch(f"{classrooms_url}/classrooms/{classroom_id}/quizzes-competences",json=quiz_data)
             response.raise_for_status()
-            response.json()
+            return quiz_data
 
         except httpx.HTTPStatusError as e:
             raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
