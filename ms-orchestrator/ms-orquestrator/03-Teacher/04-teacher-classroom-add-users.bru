@@ -1,0 +1,25 @@
+meta {
+  name: 04-teacher-classroom-add-users
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8000/teacher/classroom/1/add-users
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+<<<<<<< HEAD
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5ODA4NTIzLCJpYXQiOjE3NDk3MjIxMjN9.3ci2pK2Aem224f6IA1tPeHx9wQHBdRrhJYp5GWADmsY
+=======
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5NzQ5OTc3LCJpYXQiOjE3NDk2NjM1Nzd9.aY8rODuxBopiAMAsR6-uKKQ0H07wf9_yoBXwTmkNRDM
+>>>>>>> 19f65bcba5daad40283547b7473dad1a5af0a7e0
+}
+
+body:json {
+  {
+    "emails": ["1@gmail.com","2@gmail.com"]
+  }
+}
