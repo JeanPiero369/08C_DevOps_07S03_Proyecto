@@ -1,0 +1,60 @@
+meta {
+  name: 08-teacher-classroom-quiz-create
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8000/teacher/classroom/1/quiz/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+<<<<<<< HEAD
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2NlbnRlQGtpd2kuY29tIiwicm9sZSI6IlRFQUNIRVIiLCJleHAiOjE3NTAyMzI4MjUsImlhdCI6MTc1MDE0NjQyNX0.JtbmWJvnqONVErxN9Pw2YFrG3Nm-K6GMvteHQAQJvG4
+=======
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5Njg1MzUwLCJpYXQiOjE3NDk1OTg5NTB9.XY37XiCT5FWZ2XYH8G5IsOHEweaHTga6_hFKj8VuDMA
+>>>>>>> 19f65bcba5daad40283547b7473dad1a5af0a7e0
+}
+
+body:json {
+  {
+      "classroom_id": 1,
+      "title": "titulo 1",
+      "instruction": "Esta es la instruccion",
+      "start_time": "2025-06-09T15:30:00Z",
+      "end_time": "2025-06-09T16:30:00Z",
+      "questions": [
+          {
+              "statement": "enunciado de la pregunta 1",
+              "answer_correct": "esta es la respuesta correcta",
+              "points": 10,
+              "answer_base": {
+                  "type": "base_text"
+              },
+              "competences_id": [
+                  1,
+                  2
+              ]
+          },
+          {
+              "statement": "enunciado de la pregunta 2",
+              "answer_correct": "1810",
+              "points": 10,
+              "answer_base": {
+                  "type": "base_multiple_option",
+                  "options": [
+                      "1810",
+                      "1821",
+                      "1910",
+                      "1857"
+                  ]
+              },
+              "competences_id": [
+                  
+              ]
+          }
+      ]
+  }
+}

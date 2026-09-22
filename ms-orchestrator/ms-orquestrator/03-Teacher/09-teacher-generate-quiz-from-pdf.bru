@@ -1,0 +1,88 @@
+meta {
+  name: 09-teacher-generate-quiz-from-pdf
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8000/teacher/quiz/generate-from-pdf
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+<<<<<<< HEAD
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2NlbnRlQGtpd2kuY29tIiwicm9sZSI6IlRFQUNIRVIiLCJleHAiOjE3NTAxODkyNTcsImlhdCI6MTc1MDEwMjg1N30.YyX9ZyU4Oi_7q1-O5xSZ0Eda3Dz0xWSfSvZmT6DylcM
+=======
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5NzQ5OTc3LCJpYXQiOjE3NDk2NjM1Nzd9.aY8rODuxBopiAMAsR6-uKKQ0H07wf9_yoBXwTmkNRDM
+>>>>>>> 19f65bcba5daad40283547b7473dad1a5af0a7e0
+}
+
+body:json {
+  {
+      "classroom_id": 1,
+      "title": "titulo 1",
+      "instruction": "Esta es la instruccion",
+      "start_time": "2025-06-09T15:30:00Z",
+      "end_time": "2025-06-09T16:30:00Z",
+      "questions": [
+          {
+              "statement": "enunciado de la pregunta 1",
+              "answer_correct": "esta es la respuesta correcta",
+              "points": 10,
+              "answer_base": {
+                  "type": "base_text"
+              },
+              "competences_id": [
+                  1,
+                  2
+              ]
+          },
+          {
+              "statement": "enunciado de la pregunta 2",
+              "answer_correct": "1810",
+              "points": 10,
+              "answer_base": {
+                  "type": "base_multiple_option",
+                  "options": [
+                      "1810",
+                      "1821",
+                      "1910",
+                      "1857"
+                  ]
+              },
+              "competences_id": [
+                  1
+              ]
+          }
+      ]
+  }
+}
+
+body:multipart-form {
+  input_data_json: '''
+    {
+        "classroom_id": 1,
+        "num_question": 5,
+        "point_max": 20,
+        "competences": [
+            {
+                "id": 1,
+                "name": "Escritura en español",
+                "description": "Esta competencia aborda sobre escribir español"
+            },
+            {
+                "id": 2,
+                "name": "Uso de articulos",
+                "description": "Esta competencia aborda sobre usa articulos en gramatica"
+            }
+        ],
+        "type_question":{
+            "textuales": false,
+            "inferenciales": true,
+            "críticas": false
+        }
+    }
+  '''
+  pdf_file: @file(E:\04C_Arqui_13S02_PC2.pdf)
+}

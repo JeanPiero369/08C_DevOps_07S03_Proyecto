@@ -1,0 +1,39 @@
+meta {
+  name: 03-student-submit-quiz
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/student/classroom/1/quiz-submit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzQGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiZXhwIjoxNzQ5NzU5NzQ2LCJpYXQiOjE3NDk2NzMzNDZ9.QiFGzjDi4gYenLaYHsEE3HNaJrch2dc_rAfT819gsM8
+}
+
+body:json {
+  {
+      "quiz_id": 10,
+      "student_id": 3,
+      "is_present": true,
+      "questions": [
+          {
+              "question_id": 13,
+              "answer_submitted": {
+                  "type": "submitted_text",
+                  "answer_written": "mi respuesta"
+              }
+          },
+          {
+              "question_id": 14,
+              "answer_submitted": {
+                  "type": "submitted_multiple_option",
+                  "option_select": "1810"
+              }
+          }
+      ]
+  }
+}

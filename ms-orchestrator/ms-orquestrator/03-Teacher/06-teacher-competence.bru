@@ -1,0 +1,15 @@
+meta {
+  name: 06-teacher-competence
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8000/teacher/1/competences
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5NzIxNzg1LCJpYXQiOjE3NDk2MzUzODV9.TRdtVksGgWAt7lU7KV6mBHm7A6MfYyl0Bdok8JYF19w
+}

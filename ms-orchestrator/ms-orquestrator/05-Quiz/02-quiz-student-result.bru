@@ -1,0 +1,15 @@
+meta {
+  name: 02-quiz-student-result
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8000/quiz/1/student/5000/result
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzQGdtYWlsLmNvbSIsInJvbGUiOiJTVFVERU5UIiwiZXhwIjoxNzQ5NzU5NzQ2LCJpYXQiOjE3NDk2NzMzNDZ9.QiFGzjDi4gYenLaYHsEE3HNaJrch2dc_rAfT819gsM8
+}

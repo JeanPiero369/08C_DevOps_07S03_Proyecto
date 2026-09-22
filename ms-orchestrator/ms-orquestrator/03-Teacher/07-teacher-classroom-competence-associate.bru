@@ -1,0 +1,21 @@
+meta {
+  name: 07-teacher-classroom-competence-associate
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8000/teacher/classroom/1/competences-associate
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxQGdtYWlsLmNvbSIsInJvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzQ5Njg1MzUwLCJpYXQiOjE3NDk1OTg5NTB9.XY37XiCT5FWZ2XYH8G5IsOHEweaHTga6_hFKj8VuDMA
+}
+
+body:json {
+  {
+    "competences_id": [1, 2]
+  }
+}
