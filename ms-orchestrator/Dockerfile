@@ -2,7 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt main.py router.py schemas.py __init__.py controllers utils ./
+COPY requirements.txt main.py router.py schemas.py __init__.py ./
+COPY controllers ./controllers
+COPY utils ./utils
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
