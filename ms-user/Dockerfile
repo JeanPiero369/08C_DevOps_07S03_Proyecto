@@ -2,21 +2,23 @@
 FROM maven:3.9.4-eclipse-temurin-17 AS builder
 WORKDIR /app
 
-# Copiar código fuente y empaquetar el jar
+# pom.xml primero: las dependencias se cachean y no se vuelven a descargar
+# cada vez que cambia el código fuente
 COPY pom.xml ./
-COPY src ./src
-RUN mvn dependency:go-offline -B && mvn clean package -DskipTests -B
+RUN mvn -B dependency:go-offline
 
-# Etapa 2: ejecutar el .jar en una imagen liviana (solo JRE)
-FROM eclipse-temurin:17-jre-alpine
+COPY src ./src
+RUN mvn -B clean package -DskipTests
+
+# Etapa 2: solo el JRE para ejecutar el .jar
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
-# Ejecutar como usuario no root
-RUN addgroup -S spring && adduser -S spring -G spring
+RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
 
 COPY --from=builder --chown=spring:spring /app/target/*.jar app.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
 
+ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75", "-jar", "app.jar"]
