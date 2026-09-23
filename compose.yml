@@ -1,0 +1,134 @@
+# Kiwi — stack completo
+# Credenciales: se leen de .env (interpolación) y de secrets/db_password.txt.
+# Las credenciales no se versionan: ver README y .gitignore.
+
+services:
+  # ---------------- Base de datos ----------------
+  db:
+    image: postgres:13-alpine
+    container_name: shared_postgres_db_kiwi
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    volumes:
+      - shared_db_data:/var/lib/postgresql/data
+    networks:
+      - data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # Sin "ports": la DB solo es alcanzable desde la red interna "data"
+
+  # ---------------- Microservicios ----------------
+  users:
+    build:
+      context: ./ms-user
+      dockerfile: Dockerfile
+    image: microservice-users
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DATABASE: ${POSTGRES_DB}
+      JWT_SECRET: ${JWT_SECRET}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    networks:
+      - backend   # habla con el orchestrator y sale a internet (SMTP Gmail)
+      - data      # habla con la DB
+    depends_on:
+      db:
+        condition: service_healthy
+
+  classrooms:
+    build:
+      context: ./ms-classroom
+      dockerfile: Dockerfile
+    image: microservice-classroom
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${DB_PASSWORD}@db:5432/${POSTGRES_DB}?schema=classroom
+      PORT: "3000"
+    networks:
+      - backend
+      - data
+    depends_on:
+      db:
+        condition: service_healthy
+
+  quices:
+    build:
+      context: ./ms-quiz
+      dockerfile: Dockerfile
+    image: microservice-quiz
+    restart: unless-stopped
+    environment:
+      APP_NAME: kiwi-quiz-service
+      DEBUG: "False"
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${DB_PASSWORD}@db:5432/${POSTGRES_DB}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      GEMINI_MODEL: ${GEMINI_MODEL}
+    networks:
+      - backend   # necesita salida a internet para la API de Gemini
+      - data
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ---------------- API Gateway ----------------
+  orchestrator:
+    build:
+      context: ./ms-orchestrator
+      dockerfile: Dockerfile
+    image: orchestrator
+    restart: unless-stopped
+    ports:
+      - "8000:8000"   # el navegador llama aquí (NEXT_PUBLIC_API_URL)
+    environment:
+      USERS_URL: http://users:8080
+      CLASSROOMS_URL: http://classrooms:3000
+      QUICES_URL: http://quices:8001/api/v1
+    networks:
+      - web
+      - backend
+    depends_on:
+      - users
+      - classrooms
+      - quices
+
+  # ---------------- Frontend ----------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    image: frontend
+    restart: unless-stopped
+    ports:
+      - "5174:3000"
+    networks:
+      - web
+    depends_on:
+      - orchestrator
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+
+volumes:
+  shared_db_data:
+
+networks:
+  web:          # frontend <-> orchestrator (expuesto al host)
+  backend:      # orchestrator <-> microservicios (con salida a internet)
+  data:         # microservicios <-> postgres (aislada)
+    internal: true
