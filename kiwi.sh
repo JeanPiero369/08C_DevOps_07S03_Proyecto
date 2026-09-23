@@ -3,7 +3,7 @@
 # Uso: ./kiwi.sh {clone|setup|test|up|down|logs|status}
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/CAMBIAR/08C_DevOps_07S03_Proyecto.git}"
+REPO_URL="${REPO_URL:-https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto.git}"
 REPO_DIR="${REPO_DIR:-08C_DevOps_07S03_Proyecto}"
 
 clone() {
