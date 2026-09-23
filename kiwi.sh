@@ -19,8 +19,9 @@ clone() {
 
 setup() {
   if [ ! -f .env ]; then
-    cp .env.example .env
-    echo ">> .env creado desde .env.example — complétalo antes de levantar."
+    echo ">> No existe .env."
+    echo ">> Crea el archivo .env con las variables necesarias antes de levantar el proyecto."
+    exit 1
   fi
   mkdir -p secrets
   if [ ! -f secrets/db_password.txt ]; then

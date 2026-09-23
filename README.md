@@ -24,11 +24,11 @@ Redes: `web` (frontend ↔ orchestrator), `backend` (orchestrator ↔ microservi
 ## Configuración
 
 ```bash
-cp .env.example .env        # completar credenciales
-./kiwi.sh setup             # crea secrets/db_password.txt desde DB_PASSWORD
+# Crear manualmente el archivo .env con las variables requeridas
+./kiwi.sh setupD
 ```
 
-`.env` y `secrets/` están en `.gitignore`: las credenciales nunca se versionan.
+`Los archivos `.env`, `.env.example` y el directorio `secrets/` están excluidos mediante `.gitignore`, por lo que las credenciales no se versionan.
 
 ## Levantar la aplicación
 

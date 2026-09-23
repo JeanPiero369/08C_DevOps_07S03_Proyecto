@@ -1,6 +1,6 @@
 # Kiwi — stack completo
 # Credenciales: se leen de .env (interpolación) y de secrets/db_password.txt.
-# Ninguno de los dos se versiona: ver .env.example y README.
+# Las credenciales no se versionan: ver README y .gitignore.
 
 services:
   # ---------------- Base de datos ----------------
