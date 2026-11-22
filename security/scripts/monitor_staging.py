@@ -1,17 +1,28 @@
 #!/usr/bin/env python3
 """Comprueba las sondas reales de Prometheus y conserva evidencia de staging."""
 import argparse
+import http.client
 import json
 import time
 import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 def query(base, expression):
-    url = base.rstrip('/') + '/api/v1/query?' + urllib.parse.urlencode({'query': expression})
-    with urllib.request.urlopen(url, timeout=10) as response:
+    target = urllib.parse.urlsplit(base)
+    if target.scheme not in ('http', 'https') or not target.hostname or target.username or target.password:
+        raise ValueError('La URL de Prometheus debe usar HTTP o HTTPS sin credenciales')
+    connection_type = http.client.HTTPSConnection if target.scheme == 'https' else http.client.HTTPConnection
+    connection = connection_type(target.hostname, target.port, timeout=10)
+    path = target.path.rstrip('/') + '/api/v1/query?' + urllib.parse.urlencode({'query': expression})
+    try:
+        connection.request('GET', path)
+        response = connection.getresponse()
+        if response.status != 200:
+            raise ValueError(f'Prometheus devolvió HTTP {response.status}')
         data = json.load(response)
+    finally:
+        connection.close()
     if data.get('status') != 'success':
         raise ValueError('Prometheus no devolvió success')
     return data['data']['result']
