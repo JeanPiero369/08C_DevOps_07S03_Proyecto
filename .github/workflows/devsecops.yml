@@ -243,7 +243,7 @@ jobs:
         run: |
           pass="Ci$(openssl rand -hex 5)"
           token=$(curl -s -X POST http://localhost:8000/auth/register -H 'Content-Type: application/json' \
-            -d "{\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}" | jq -r '.token // empty')
+            -d "{\"name\":\"ZAP\",\"last_name\":\"CI\",\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}" | jq -r '.token // empty')
           if [ -n "$token" ]; then
             echo "::add-mask::$token"
             echo "ZAP_AUTH_HEADER_VALUE=Bearer $token" >> "$GITHUB_ENV"
