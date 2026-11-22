@@ -1,4 +1,5 @@
-FROM node:18-alpine
+# node:22-alpine: Node 18 está fuera de soporte (T-02)
+FROM node:22-alpine
 
 ENV NODE_ENV=production
 
@@ -22,5 +23,9 @@ RUN chown -R node:node /app
 USER node
 
 EXPOSE 3000
+
+# LOW-001: cualquier respuesta HTTP indica que Express está vivo (no hay /health y las rutas usan la BD)
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://127.0.0.1:3000/',()=>process.exit(0)).on('error',()=>process.exit(1))"
 
 CMD ["node", "index.js"]
