@@ -30,7 +30,10 @@ public class TeacherService {
 
     public Teacher patchTeacher(Principal principal,Teacher new_teacher){
         Teacher teacher=teacherRepository.findByEmail(principal.getName()).orElseThrow(() -> new NotFoundException("Student not found"));
-        modelMapper.map(new_teacher,teacher);
+        // Solo datos de perfil: nunca rol, id, email, password ni monedas
+        if (new_teacher.getName() != null) teacher.setName(new_teacher.getName());
+        if (new_teacher.getLast_name() != null) teacher.setLast_name(new_teacher.getLast_name());
+        if (new_teacher.getCel_phone() != null) teacher.setCel_phone(new_teacher.getCel_phone());
 
         teacherRepository.save(teacher);
         return teacher;

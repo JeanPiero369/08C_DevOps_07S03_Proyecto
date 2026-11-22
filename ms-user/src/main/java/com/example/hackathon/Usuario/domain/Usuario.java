@@ -1,5 +1,6 @@
 package com.example.hackathon.Usuario.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,7 @@ public class Usuario implements UserDetails {
     @Email
     private String email;
     @Column(name = "contrasena", nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Column
@@ -54,6 +56,7 @@ public class Usuario implements UserDetails {
     }
 
     @Override
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     public String getPassword() {
         return password;
     }
