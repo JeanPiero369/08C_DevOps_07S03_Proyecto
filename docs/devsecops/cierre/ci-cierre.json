@@ -1,0 +1,40 @@
+{
+  "run_id": 45060902475,
+  "commit": "5543e31e88fc93043c80edd36ec626e6f3159b5a",
+  "conclusion": "failure",
+  "gate": "CRITICAL",
+  "gate_blocking": 2,
+  "total": 663,
+  "by_severity": {
+    "MEDIUM": 287,
+    "LOW": 194,
+    "HIGH": 158,
+    "INFO": 22,
+    "CRITICAL": 2
+  },
+  "by_tool": {
+    "Bandit": {
+      "MEDIUM": 2,
+      "LOW": 10
+    },
+    "Gitleaks": {
+      "HIGH": 46
+    },
+    "OWASP ZAP": {
+      "LOW": 6,
+      "INFO": 7,
+      "MEDIUM": 3
+    },
+    "Semgrep": {
+      "INFO": 1
+    },
+    "Trivy": {
+      "MEDIUM": 282,
+      "HIGH": 112,
+      "LOW": 178,
+      "INFO": 14,
+      "CRITICAL": 2
+    }
+  },
+  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45060902475"
+}

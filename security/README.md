@@ -22,8 +22,10 @@ sast (Semgrep + Bandit) · sonarcloud (opcional) · sca (Trivy fs + pip-audit) �
 | Contenedores | Trivy image (5 imágenes) | `trivy-image-*.json` | Trivy Scan |
 | DAST | OWASP ZAP API scan (OpenAPI del orchestrator, autenticado) + baseline (frontend) | `zap-*.xml/json/html` | ZAP Scan |
 
-Los escáneres **no fallan el job**: el único punto de bloqueo es `security-gate`, que consolida todo con
-`security/scripts/security_summary.py` y publica la tabla en el resumen del run.
+Los hallazgos de los escáneres no fallan sus jobs por severidad: ese umbral lo aplica
+`security-gate`, que consolida con `security/scripts/security_summary.py`. La ausencia de reportes y el fallo de autenticación de ZAP sí bloquean
+la validación. `verify_reports.py` exige los 15 JSON previstos antes de consolidar.
+El valor predeterminado del gate es CRITICAL y el release espera pruebas y escaneos.
 
 ## Configuración en GitHub (Settings → Secrets and variables → Actions)
 
@@ -33,7 +35,7 @@ Los escáneres **no fallan el job**: el único punto de bloqueo es `security-gat
 | `DEFECTDOJO_TOKEN` | Secret | API v2 key del usuario de DefectDojo (opcional) |
 | `SONAR_TOKEN` | Secret | Token de SonarCloud (opcional) |
 | `SONAR_ORGANIZATION`, `SONAR_PROJECT_KEY` | Variables | Proyecto en SonarCloud (opcional) |
-| `SECURITY_GATE_SEVERITY` | Variable | Vacío = modo línea base (no bloquea). `CRITICAL` o `HIGH` = bloquea el release |
+| `SECURITY_GATE_SEVERITY` | Variable | Sin definir = CRITICAL. Puede fijarse a HIGH para endurecer el umbral. |
 
 ## DefectDojo local
 

@@ -1,0 +1,5 @@
+ID,Alcance,Estado,Condicion revisada,Responsable propuesto,Revision propuesta
+R-01,Spring CVE-2026-47884,Aceptacion propuesta,No se encontraron XsltView ni mapeos de vistas implicados,Aaron backend,2026-12-22
+R-02,Spring CVE-2026-47890,Aceptacion propuesta,No se encontraron fragmentos enviados por SSE,Aaron backend,2026-12-22
+R-03,Bandit B104,Aceptacion propuesta,Bind requerido dentro de contenedores con puertos restringidos,Jean Piero DevOps,2026-12-22
+R-04,JWT historicos,Pendiente,Confirmar rotacion en cada entorno y custodio de la clave,Equipo completo,Antes de despliegue

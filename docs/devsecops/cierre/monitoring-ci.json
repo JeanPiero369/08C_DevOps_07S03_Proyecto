@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-11-22T19:33:42.338549+00:00",
+  "healthy": true,
+  "probe_success": [
+    {
+      "metric": {
+        "__name__": "probe_success",
+        "instance": "http://frontend:3000/",
+        "job": "kiwi-http"
+      },
+      "value": [
+        1795376022.337,
+        "1"
+      ]
+    },
+    {
+      "metric": {
+        "__name__": "probe_success",
+        "instance": "http://orchestrator:8000/openapi.json",
+        "job": "kiwi-http"
+      },
+      "value": [
+        1795376022.337,
+        "1"
+      ]
+    }
+  ]
+}

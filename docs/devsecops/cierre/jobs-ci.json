@@ -1,0 +1,57 @@
+{
+  "conclusion": "failure",
+  "createdAt": "2026-11-22T19:28:01Z",
+  "headSha": "5543e31e88fc93043c80edd36ec626e6f3159b5a",
+  "status": "completed",
+  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45060902475",
+  "jobs": [
+    {
+      "name": "security-secret \u00b7 Gitleaks",
+      "conclusion": "success"
+    },
+    {
+      "name": "test \u00b7 JUnit (ms-user, Java 17)",
+      "conclusion": "success"
+    },
+    {
+      "name": "test \u00b7 pytest (ms-orchestrator)",
+      "conclusion": "success"
+    },
+    {
+      "name": "security-iac \u00b7 Trivy config + Checkov",
+      "conclusion": "success"
+    },
+    {
+      "name": "security-sast \u00b7 SonarCloud (opcional)",
+      "conclusion": "success"
+    },
+    {
+      "name": "security-dependency \u00b7 Trivy fs + pip-audit",
+      "conclusion": "success"
+    },
+    {
+      "name": "security-sast \u00b7 Semgrep + Bandit",
+      "conclusion": "success"
+    },
+    {
+      "name": "build \u00b7 Docker images + Trivy image",
+      "conclusion": "success"
+    },
+    {
+      "name": "deploy:staging \u00b7 OWASP ZAP (DAST)",
+      "conclusion": "success"
+    },
+    {
+      "name": "security \u00b7 DefectDojo import",
+      "conclusion": "success"
+    },
+    {
+      "name": "security \u00b7 summary + gate",
+      "conclusion": "failure"
+    },
+    {
+      "name": "deploy \u00b7 publicar im\u00e1genes en GHCR",
+      "conclusion": "skipped"
+    }
+  ]
+}

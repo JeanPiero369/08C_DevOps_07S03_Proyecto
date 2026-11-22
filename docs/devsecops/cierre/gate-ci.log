@@ -1,0 +1,4 @@
+security · summary + gate	Consolidar hallazgos	2026-11-22T19:35:55.4668859Z   GATE: CRITICAL
+security · summary + gate	Consolidar hallazgos	2026-11-22T19:35:55.5135862Z Reportes requeridos: 15. Errores: 0.
+security · summary + gate	Consolidar hallazgos	2026-11-22T19:35:55.5629002Z [GATE] 2 hallazgos con severidad >= CRITICAL
+security · summary + gate	Consolidar hallazgos	2026-11-22T19:35:55.5707976Z ##[error]Process completed with exit code 1.

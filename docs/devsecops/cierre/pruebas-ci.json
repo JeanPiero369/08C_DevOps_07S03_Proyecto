@@ -1,0 +1,27 @@
+{
+  "run_id": 45060902475,
+  "suites": [
+    {
+      "file": "TEST-com.example.hackathon.Auth.domain.AuthServiceSecurityTest.xml",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "file": "junit-orchestrator.xml",
+      "tests": "31",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "file": "junit-quiz.xml",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "report_validation_tests": 3
+}

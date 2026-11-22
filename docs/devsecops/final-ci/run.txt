@@ -1,1 +1,2 @@
-run 44972251652 · rama fix/security-mitigations · commit 8e8f5a0 · 2026-11-22
+run 45060902475 · rama fix/project-closure · commit 5543e31e88fc93043c80edd36ec626e6f3159b5a · 2026-11-22
+Gate CRITICAL bloquea por 2 hallazgos. Pruebas, build, escaneos, DAST y monitoreo correctos.

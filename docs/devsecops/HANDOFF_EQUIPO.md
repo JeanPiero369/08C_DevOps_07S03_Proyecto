@@ -1,5 +1,11 @@
 # Traspaso al equipo · Proyecto final DevSecOps «Kiwi» (IS4024 · UTEC)
 
+Estado histórico al **22/11/2026**, previo a la continuación de Aarón.
+
+> Continuación publicada en PR #13: ver [cierre/VALIDACION.md](cierre/VALIDACION.md). Incluye la
+> rúbrica original a–m, Tomcat 10.1.62, monitoreo, Excel actualizado y gate CRITICAL
+> por defecto. Los resultados históricos siguientes no son el nuevo CI de esos cambios.
+
 Estado al **22/11/2026**. Este documento es autosuficiente: todo lo necesario
 para continuar está en el repositorio (no depende de la laptop de nadie).
 
@@ -10,7 +16,7 @@ para continuar está en el repositorio (no depende de la laptop de nadie).
 | Rama de trabajo actual | **`fix/security-mitigations`** (contiene todo; partir desde aquí) |
 | PR 1 · pipeline + STRIDE + línea base | [#11](https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/pull/11) `feat/devsecops-pipeline` → `main` (sin merge) |
 | PR 2 · mitigaciones | [#12](https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/pull/12) `fix/security-mitigations` → `feat/devsecops-pipeline` (apilado, sin merge) |
-| Pipeline | `.github/workflows/devsecops.yml` (10 jobs) |
+| Pipeline | `.github/workflows/devsecops.yml` (11 jobs) |
 | Scripts | `security/scripts/` (resumen/gate, carga a DefectDojo, comparación antes/después) |
 | Guía de seguridad y variables nuevas | `security/README.md` |
 | Modelo STRIDE | `docs/devsecops/stride/` (`kiwi_stride.drawio`, `.png`, `.xlsx`) |
@@ -49,7 +55,7 @@ Las capturas están en `docs/devsecops/evidencias/`.
 
 ## 3. Lo que ya está hecho
 
-**Fase 1 · Pipeline (puntos d, e, i):** 10 jobs en GitHub Actions — Gitleaks,
+**Fase 1 · Pipeline (puntos d, e, i):** 11 jobs en GitHub Actions — Gitleaks,
 pytest, Semgrep + Bandit, SonarCloud (opcional), Trivy fs + pip-audit, Trivy
 config + Checkov, build + Trivy image, DAST con ZAP **autenticado** sobre un
 staging efímero, carga a DefectDojo (opcional) y gate + release a GHCR. Todos en verde.
@@ -111,7 +117,7 @@ con bloques local / CI / DefectDojo. Diagrama con I-03 y E-04 agregados.
     (lo hace el dueño del repo). Tras el merge a `main` corre el job `release` (GHCR).
 
 ### Fase 6 · Diagrama CI/CD (punto i)
-11. Diagrama de los 10 jobs con sus `needs`, herramientas y artefactos, más
+11. Diagrama de los 11 jobs con sus `needs`, herramientas y artefactos, más
     DefectDojo y GHCR (draw.io o Mermaid → PNG). Captura del grafo real de un run
     en GitHub Actions (pestaña Summary del run).
 
