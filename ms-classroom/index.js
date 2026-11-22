@@ -9,7 +9,7 @@ async function runPrismaMigrations() {
   console.log("Iniciando migraciones de Prisma para Classroom...");
   try {
 
-    const { stdout, stderr } = await execPromise('npx prisma migrate deploy');
+    const { stdout, stderr } = await execPromise('./node_modules/.bin/prisma migrate deploy');
     console.log("Migraciones de Prisma ejecutadas exitosamente.");
     if (stdout) console.log("stdout (Prisma Migrate):", stdout);
     if (stderr) console.warn("stderr (Prisma Migrate):", stderr); 

@@ -24,8 +24,12 @@ WORKDIR /app
 ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1
 
-# Parches de seguridad del sistema base disponibles al construir
-RUN apk upgrade --no-cache
+# Parches de seguridad del sistema base y sin gestores de paquetes en runtime:
+# npm, yarn y corepack de la imagen base no se usan para ejecutar y traían CVE propias
+RUN apk upgrade --no-cache \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/corepack \
+           /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
+           /opt/yarn-* /usr/local/bin/yarn /usr/local/bin/yarnpkg
 
 RUN addgroup -S nextjs && adduser -S nextjs -G nextjs
 USER nextjs
@@ -40,4 +44,4 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD wget -q --spider http://127.0.0.1:3000/login || exit 1
 
-CMD ["npm", "run", "start"]
+CMD ["node", "node_modules/next/dist/bin/next", "start"]
