@@ -12,6 +12,8 @@ MAIL_PASSWORD=unused
 GOOGLE_API_KEY=unused
 GEMINI_MODEL=gemini-2.0-flash
 BACKEND_URL=http://localhost:8000
+TEACHER_INVITE_CODE=$(openssl rand -hex 12)
+ALLOWED_ORIGINS=http://localhost:5174
 ENV
 mkdir -p secrets
 grep '^DB_PASSWORD=' .env | cut -d= -f2- | tr -d '\n' > secrets/db_password.txt

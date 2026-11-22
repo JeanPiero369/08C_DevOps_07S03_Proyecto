@@ -242,7 +242,10 @@ jobs:
       - name: Usuario de prueba para escaneo autenticado
         run: |
           pass="Ci$(openssl rand -hex 5)"
-          body="{\"name\":\"ZAP\",\"last_name\":\"CI\",\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}"
+          # E-02: el rol TEACHER exige el código de invitación (generado por ci_env.sh)
+          invite=$(grep '^TEACHER_INVITE_CODE=' .env | cut -d= -f2-)
+          echo "::add-mask::$invite"
+          body="{\"name\":\"ZAP\",\"last_name\":\"CI\",\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\",\"invite_code\":\"$invite\"}"
           token=""
           # ms-user (Spring Boot) arranca después del gateway: reintentar hasta ~3 min
           for i in $(seq 1 36); do
