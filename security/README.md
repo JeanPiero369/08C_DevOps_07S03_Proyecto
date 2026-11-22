@@ -68,3 +68,38 @@ python security/scripts/security_summary.py docs/devsecops/baseline --markdown /
 ```
 
 La línea base local (main @ `0ef43c8`) y el modelado STRIDE están en `docs/devsecops/`.
+
+## Secretos expuestos en el historial (S-01 / HIGH-001)
+
+Las colecciones Bruno tenían 24 JWT reales (46 ocurrencias) versionados en
+`ms-orchestrator/ms-orquestrator/**` y `ms-user/api-endpoints/**`
+(commits `7327962`, `f279c23`).
+
+- **Estado del árbol de trabajo:** los tokens se reemplazaron por `{{jwt}}`, una
+  *secret variable* del entorno de Bruno (`environments/kiwi.bru`, bloque
+  `vars:secret`). Bruno guarda su valor fuera del repositorio; pega tu token en
+  la interfaz de Bruno y no se versiona.
+- **Vigencia:** los 24 tokens son HS256 y expiraron entre el 31/05/2025 y el
+  18/06/2025 (`exp`), por lo que no sirven para iniciar sesión. Sin embargo,
+  siguen permitiendo un ataque de fuerza bruta offline contra la clave HMAC.
+- **Acción obligatoria — rotar `JWT_SECRET`** en cada entorno:
+  ```bash
+  # genera un secreto nuevo de 256 bits y reemplázalo en .env
+  openssl rand -hex 32
+  ```
+  Tras la rotación, todos los tokens firmados con la clave anterior dejan de
+  validar (los usuarios vuelven a iniciar sesión).
+- **Historial:** Gitleaks seguirá reportando los commits antiguos mientras no se
+  purgue el historial (`git filter-repo`), algo que reescribe `main` y requiere
+  la aprobación del equipo. La alternativa sin reescritura es un
+  `.gitleaksignore` con los *fingerprints* de esos 24 tokens, **solo después** de
+  confirmar la rotación, justificado como "tokens expirados e invalidados por la
+  rotación de la clave".
+
+## Variables de entorno nuevas
+
+| Variable | Servicio | Propósito |
+|---|---|---|
+| `TEACHER_INVITE_CODE` | ms-user | Código para registrarse como docente (E-02). Vacío = registro docente deshabilitado. |
+| `ALLOWED_ORIGINS` | gateway, ms-quiz | Orígenes permitidos por CORS, separados por coma (I-01). Por defecto `http://localhost:5174`. |
+| `MAX_PDF_SIZE_MB` / `MAX_PDF_PAGES` | ms-quiz | Límites del PDF para generar quizzes (D-01). Por defecto 5 MB y 30 páginas. |
