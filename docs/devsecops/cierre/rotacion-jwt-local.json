@@ -1,0 +1,9 @@
+{
+  "environment": "computadora local de Aarón",
+  "timestamp": "2026-11-22T20:40:26.161140+00:00",
+  "previous_token_status": 401,
+  "login_after_rotation_status": 200,
+  "new_token_profile_status": 200,
+  "other_team_computers": "pendiente de confirmación individual",
+  "secret_or_tokens_included": false
+}

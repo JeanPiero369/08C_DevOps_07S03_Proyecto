@@ -86,11 +86,19 @@ Las colecciones Bruno tenían 24 JWT reales (46 ocurrencias) versionados en
   siguen permitiendo un ataque de fuerza bruta offline contra la clave HMAC.
 - **Acción obligatoria — rotar `JWT_SECRET`** en cada entorno:
   ```bash
-  # genera un secreto nuevo de 256 bits y reemplázalo en .env
-  openssl rand -hex 32
+  # Desde la raíz del repositorio, en cada computadora del equipo:
+  python3 security/scripts/rotate_jwt_secret.py --apply
+  docker compose up -d --no-deps users
   ```
+  La herramienta genera 256 bits aleatorios sin mostrar el secreto, conserva
+  las demás variables y restringe `.env` al propietario. No crea copias con
+  la clave anterior. Cada integrante debe ejecutarla en su propia computadora;
+  no se comparte una clave común por chat. Antes debe traer la versión de
+  código acordada y construirla con `docker compose build users`.
   Tras la rotación, todos los tokens firmados con la clave anterior dejan de
-  validar (los usuarios vuelven a iniciar sesión).
+  validar después de recrear el servicio. Cerrar la sesión del navegador e
+  iniciar sesión otra vez. Confirmar al equipo únicamente computadora,
+  fecha y resultado, sin enviar el secreto ni tokens.
 - **Historial:** Gitleaks seguirá reportando los commits antiguos mientras no se
   purgue el historial (`git filter-repo`), algo que reescribe `main` y requiere
   la aprobación del equipo. La alternativa sin reescritura es un
