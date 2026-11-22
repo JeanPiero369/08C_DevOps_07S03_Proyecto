@@ -12,7 +12,7 @@ ENV NEXT_TELEMETRY_DISABLED=1
 COPY package.json package-lock.json ./
 RUN npm ci
 
-COPY next.config.ts tsconfig.json tailwind.config.ts postcss.config.mjs components.json ./
+COPY next.config.mjs tsconfig.json tailwind.config.ts postcss.config.mjs components.json ./
 COPY src ./src
 
 RUN npm run build && npm prune --omit=dev
@@ -32,7 +32,7 @@ USER nextjs
 
 COPY --from=builder --chown=nextjs:nextjs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nextjs /app/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.ts ./
+COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.mjs ./
 
 EXPOSE 3000
 

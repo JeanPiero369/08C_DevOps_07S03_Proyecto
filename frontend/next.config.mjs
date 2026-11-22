@@ -1,4 +1,5 @@
-import type {NextConfig} from 'next';
+// .mjs (no .ts): así `next start` no necesita TypeScript en la imagen de producción;
+// con .ts, Next intentaba instalarlo con yarn desde internet en cada arranque.
 
 // MED-004 / S-02: cabeceras de seguridad para todas las rutas.
 // connect-src debe incluir el gateway (NEXT_PUBLIC_API_URL) al que llama el navegador.
@@ -38,7 +39,8 @@ const securityHeaders = [
   { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
 ];
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   /* config options here */
   transpilePackages: ['three'], // importante segun documentacion oficial de  https://r3f.docs.pmnd.rs/getting-started/installation
   poweredByHeader: false, // ZAP 10037: no anunciar X-Powered-By
