@@ -5,7 +5,8 @@ las figuras, la tabla de mitigaciones, las fuentes y el YAML completo.
 
 - `Kiwi_Informe_Final.docx`: informe editable.
 - `Kiwi_Informe_Final.pdf`: versión para lectura y entrega.
-- `Kiwi_Presentacion_Final.pptx`: presentación editable de 12 diapositivas.
+- `Kiwi_Presentacion_Final.pdf`: presentación final para exponer, proporcionada por el equipo.
+- `Kiwi_Presentacion_Final.pptx`: versión editable de 12 diapositivas.
 - `latex/main.tex`: fuente completa del PDF, con portada e índice basados en la referencia académica proporcionada. El contenido corresponde a Kiwi.
 - `../stride/kiwi_stride.xlsx`: STRIDE, mitigaciones y cifras conciliadas.
 - `../stride/kiwi_stride.drawio`: modelo de amenazas editable.
@@ -13,11 +14,11 @@ las figuras, la tabla de mitigaciones, las fuentes y el YAML completo.
 - `../cierre/VALIDACION.md`: verificaciones, alcance y decisiones pendientes.
 - `../cierre/RESIDUALES.md` y `triage-propuesto.csv`: clasificación de lo que queda.
 
-La exposición de 12 diapositivas está disponible como archivo PowerPoint
-editable. Sus notas incluyen fuentes; el equipo debe confirmar el reparto
+La presentación para exponer es `Kiwi_Presentacion_Final.pdf`. También se
+conserva la versión PowerPoint editable de 12 diapositivas. Sus notas incluyen fuentes; el equipo debe confirmar el reparto
 para el ensayo. Conserva el corte de código del informe y sus límites.
 
-El PDF se compila en LaTeX; Word conserva su cuerpo editable y su propia
+El PDF del informe se compila en LaTeX; Word conserva su cuerpo editable y su propia
 paginación. Ambos índices incluyen los apartados a–m, el anexo y las referencias.
 Para recompilar el PDF, seguir `latex/README.md`.
 
