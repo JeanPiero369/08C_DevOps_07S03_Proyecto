@@ -2,6 +2,7 @@ package com.example.hackathon.config;
 
 import com.example.hackathon.Exceptions.NotFoundException;
 import com.example.hackathon.Exceptions.BadRequestException;
+import com.example.hackathon.Exceptions.ForbiddenException;
 import com.example.hackathon.Exceptions.NotAuthorizedResource;
 import com.example.hackathon.Exceptions.UniqueConstraintException;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NotAuthorizedResource.class)
     public ResponseEntity<String> handleNotAuthorizedException(NotAuthorizedResource e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<String> handleForbiddenException(ForbiddenException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(BadRequestException.class)
