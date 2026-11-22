@@ -1,0 +1,373 @@
+name: DevSecOps Pipeline
+
+on:
+  push:
+    branches: [main, "feat/**", "fix/**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: devsecops-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GITLEAKS_VERSION: "8.30.1"
+  TRIVY_VERSION: "0.70.0"
+  SEMGREP_VERSION: "1.185.0"
+  BANDIT_VERSION: "1.9.4"
+  CHECKOV_VERSION: "3.4.5"
+  PIP_AUDIT_VERSION: "2.10.1"
+  ZAP_IMAGE: "ghcr.io/zaproxy/zaproxy:stable"
+  IMAGES: "microservice-users microservice-classroom microservice-quiz orchestrator frontend"
+
+jobs:
+  # ───────────────────────────── 1. Secret scanning ─────────────────────────────
+  secret-scan:
+    name: "security-secret · Gitleaks"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Instalar Gitleaks (checksum verificado)
+        run: |
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          curl -sSfL -o gitleaks.tgz "$base/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -sSfL "$base/gitleaks_${GITLEAKS_VERSION}_checksums.txt" | grep linux_x64.tar.gz | awk '{print $1"  gitleaks.tgz"}' | sha256sum -c -
+          tar xzf gitleaks.tgz gitleaks && sudo mv gitleaks /usr/local/bin/
+      - name: Escanear historial completo
+        run: |
+          mkdir -p reports
+          gitleaks git . --redact --report-format json --report-path reports/gitleaks.json --exit-code 0
+          echo "Secretos detectados: $(jq length reports/gitleaks.json)"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: report-secret-scan
+          path: reports/
+          retention-days: 30
+
+  # ───────────────────────────── 2. Pruebas unitarias ─────────────────────────────
+  unit-tests:
+    name: "test · pytest (ms-orchestrator)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ms-orchestrator/requirements*.txt
+      - name: Ejecutar pytest
+        working-directory: ms-orchestrator
+        run: |
+          pip install -r requirements-dev.txt
+          pytest -v --junitxml=../reports/junit-orchestrator.xml
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: test-results
+          path: reports/
+          retention-days: 30
+
+  # ───────────────────────────── 3. SAST ─────────────────────────────
+  sast:
+    name: "security-sast · Semgrep + Bandit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Instalar herramientas
+        run: pip install "semgrep==${SEMGREP_VERSION}" "bandit==${BANDIT_VERSION}"
+      - name: Semgrep (Python, JS/TS, Java, Dockerfile, OWASP Top 10)
+        run: |
+          mkdir -p reports
+          semgrep scan --metrics=off \
+            --config p/default --config p/owasp-top-ten --config p/secrets \
+            --exclude node_modules --exclude docs/devsecops \
+            --json --output reports/semgrep.json || true
+          jq '.results | group_by(.extra.severity) | map({(.[0].extra.severity): length}) | add' reports/semgrep.json
+      - name: Bandit (servicios Python)
+        run: |
+          bandit -r ms-orchestrator ms-quiz -x '*/tests/*' -f json -o reports/bandit.json --exit-zero
+          jq '.metrics._totals | {HIGH: ."SEVERITY.HIGH", MEDIUM: ."SEVERITY.MEDIUM", LOW: ."SEVERITY.LOW"}' reports/bandit.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: report-sast
+          path: reports/
+          retention-days: 30
+
+  sonarcloud:
+    name: "security-sast · SonarCloud (opcional)"
+    runs-on: ubuntu-latest
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Omitir si no hay SONAR_TOKEN
+        if: env.SONAR_TOKEN == ''
+        run: echo "::notice::SONAR_TOKEN no configurado; SonarCloud se omite."
+      - uses: SonarSource/sonarqube-scan-action@59202af334b4ba7b5db01b701b8e79f8b3bef0f4 # v8.5.0
+        if: env.SONAR_TOKEN != ''
+        with:
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            -Dsonar.sources=.
+            -Dsonar.exclusions=**/node_modules/**,**/*.bru,**/*.pdf
+            -Dsonar.java.binaries=.
+        env:
+          SONAR_HOST_URL: https://sonarcloud.io
+
+  # ───────────────────────────── 4. SCA (dependencias) ─────────────────────────────
+  sca:
+    name: "security-dependency · Trivy fs + pip-audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Instalar Trivy (checksum verificado)
+        run: security/scripts/install_trivy.sh
+      - name: Trivy fs (npm, Maven, pip)
+        run: |
+          mkdir -p reports
+          trivy fs . --scanners vuln --format json --output reports/trivy-fs.json --exit-code 0
+          trivy convert --format table reports/trivy-fs.json | tail -n 40
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.11"
+      - name: pip-audit (resuelve requirements sin versión fija)
+        run: |
+          pip install "pip-audit==${PIP_AUDIT_VERSION}"
+          for svc in ms-orchestrator ms-quiz; do
+            pip-audit -r "$svc/requirements.txt" -f json -o "reports/pip-audit-$svc.json" --progress-spinner off || true
+          done
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: report-sca
+          path: reports/
+          retention-days: 30
+
+  # ───────────────────────────── 5. IaC ─────────────────────────────
+  iac-scan:
+    name: "security-iac · Trivy config + Checkov"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Instalar Trivy (checksum verificado)
+        run: security/scripts/install_trivy.sh
+      - name: Trivy config (Dockerfiles)
+        run: |
+          mkdir -p reports
+          trivy config . --format json --output reports/trivy-config.json --exit-code 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Checkov (Dockerfiles + GitHub Actions)
+        run: |
+          pip install "checkov==${CHECKOV_VERSION}"
+          checkov -d . --framework dockerfile github_actions --skip-path node_modules --skip-path docs \
+            -o json --soft-fail --quiet > reports/checkov.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: report-iac
+          path: reports/
+          retention-days: 30
+
+  # ───────────────────────────── 6. Build + escaneo de contenedores ─────────────────────────────
+  build:
+    name: "build · Docker images + Trivy image"
+    runs-on: ubuntu-latest
+    needs: [unit-tests, secret-scan]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Variables efímeras de CI (no son credenciales reales)
+        run: security/scripts/ci_env.sh
+      - name: Construir imágenes
+        run: docker compose build
+      - name: Instalar Trivy (checksum verificado)
+        run: security/scripts/install_trivy.sh
+      - name: Trivy image por servicio
+        run: |
+          mkdir -p reports
+          for img in $IMAGES; do
+            trivy image "$img" --scanners vuln --format json --output "reports/trivy-image-$img.json" --exit-code 0
+            summary=$(jq -c '[.Results[]?.Vulnerabilities[]?] | group_by(.Severity) | map({(.[0].Severity): length}) | add' "reports/trivy-image-$img.json")
+            echo "$img: $summary"
+          done
+      - name: Exportar imágenes para staging
+        run: |
+          read -ra images <<< "$IMAGES"
+          docker save "${images[@]}" | gzip -1 > images.tar.gz
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: report-container
+          path: reports/
+          retention-days: 30
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: docker-images
+          path: images.tar.gz
+          retention-days: 1
+          compression-level: 0
+
+  # ───────────────────────────── 7. Deploy staging efímero + DAST ─────────────────────────────
+  dast:
+    name: "deploy:staging · OWASP ZAP (DAST)"
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: docker-images
+      - name: Variables efímeras de CI (no son credenciales reales)
+        run: security/scripts/ci_env.sh
+      - name: Desplegar stack en staging efímero
+        run: |
+          gunzip -c images.tar.gz | docker load
+          docker compose up -d --no-build
+          for _ in $(seq 1 60); do
+            curl -sf http://localhost:8000/openapi.json > /dev/null && curl -sf http://localhost:5174 > /dev/null && break
+            sleep 5
+          done
+          docker compose ps
+          curl -sf http://localhost:8000/openapi.json > /dev/null
+      - name: Usuario de prueba para escaneo autenticado
+        run: |
+          pass="Ci$(openssl rand -hex 5)"
+          token=$(curl -s -X POST http://localhost:8000/auth/register -H 'Content-Type: application/json' \
+            -d "{\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}" | jq -r '.token // empty')
+          if [ -n "$token" ]; then
+            echo "::add-mask::$token"
+            echo "ZAP_AUTH_HEADER_VALUE=Bearer $token" >> "$GITHUB_ENV"
+            echo "Token de prueba obtenido: el escaneo de la API será autenticado"
+          else
+            echo "::warning::No se obtuvo token; el escaneo de la API será no autenticado"
+          fi
+      - name: ZAP API scan (orchestrator / OpenAPI)
+        run: |
+          mkdir -p reports && chmod 777 reports
+          docker run --rm --network host -v "$PWD/reports:/zap/wrk:rw" \
+            -e ZAP_AUTH_HEADER=Authorization -e ZAP_AUTH_HEADER_VALUE -e ZAP_AUTH_HEADER_SITE=localhost \
+            "$ZAP_IMAGE" zap-api-scan.py -t http://localhost:8000/openapi.json -f openapi \
+            -J zap-api.json -x zap-api.xml -r zap-api.html -I \
+            || echo "::warning::ZAP API scan terminó con código $?"
+      - name: ZAP baseline (frontend)
+        run: |
+          docker run --rm --network host -v "$PWD/reports:/zap/wrk:rw" \
+            "$ZAP_IMAGE" zap-baseline.py -t http://localhost:5174 \
+            -J zap-frontend.json -x zap-frontend.xml -r zap-frontend.html -I \
+            || echo "::warning::ZAP baseline terminó con código $?"
+      - name: Logs del staging
+        if: always()
+        run: |
+          docker compose logs --no-color > reports/staging-logs.txt 2>&1 || true
+          docker compose down -v
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: report-dast
+          path: reports/
+          retention-days: 30
+
+  # ───────────────────────────── 8. Centralización en DefectDojo ─────────────────────────────
+  defectdojo:
+    name: "security · DefectDojo import"
+    runs-on: ubuntu-latest
+    needs: [secret-scan, sast, sca, iac-scan, build, dast]
+    if: always() && github.event_name != 'pull_request'
+    env:
+      DEFECTDOJO_URL: ${{ secrets.DEFECTDOJO_URL }}
+      DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
+      DD_BRANCH: ${{ github.ref_name }}
+      DD_COMMIT: ${{ github.sha }}
+      DD_BUILD_ID: ${{ github.run_id }}
+      DD_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: report-*
+          path: reports
+          merge-multiple: true
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Importar reportes
+        run: |
+          pip install requests
+          python security/scripts/defectdojo_upload.py reports --dry-run
+          if [ -z "$DEFECTDOJO_URL" ]; then
+            echo "::notice::DEFECTDOJO_URL no configurado; importa los artefactos con el mismo script desde tu máquina."
+          else
+            python security/scripts/defectdojo_upload.py reports
+          fi
+
+  # ───────────────────────────── 9. Resumen + security gate ─────────────────────────────
+  security-gate:
+    name: "security · summary + gate"
+    runs-on: ubuntu-latest
+    needs: [secret-scan, sast, sca, iac-scan, build, dast]
+    if: always()
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: report-*
+          path: reports
+          merge-multiple: true
+      - name: Consolidar hallazgos
+        env:
+          GATE: ${{ vars.SECURITY_GATE_SEVERITY }}
+        run: |
+          args=(reports --csv findings.csv --markdown summary.md)
+          [ -n "$GATE" ] && args+=(--fail-on "$GATE")
+          set +e
+          python3 security/scripts/security_summary.py "${args[@]}" > /dev/null
+          rc=$?
+          set -e
+          cat summary.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$GATE" ]; then
+            echo "::notice::Modo línea base: SECURITY_GATE_SEVERITY no definido, el gate no bloquea."
+          fi
+          exit $rc
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: security-summary
+          path: |
+            findings.csv
+            summary.md
+          retention-days: 90
+
+  # ───────────────────────────── 10. Release (solo main y gate en verde) ─────────────────────────────
+  release:
+    name: "deploy · publicar imágenes en GHCR"
+    runs-on: ubuntu-latest
+    needs: [security-gate, dast]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: docker-images
+      - name: Etiquetar y publicar
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gunzip -c images.tar.gz | docker load
+          echo "$GH_TOKEN" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          owner=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          for img in $IMAGES; do
+            docker tag "$img" "ghcr.io/$owner/kiwi-$img:${GITHUB_SHA::7}"
+            docker push "ghcr.io/$owner/kiwi-$img:${GITHUB_SHA::7}"
+          done

@@ -78,3 +78,7 @@ pytest -v
 
 - Ramas: `main` (estable) y `feature/<descripcion>` de corta duración, integradas vía Pull Request.
 - Mensajes con [Conventional Commits](https://www.conventionalcommits.org/): `feat`, `fix`, `docs`, `test`, `chore`, `ci`, `refactor`.
+
+## DevSecOps
+
+Cada push y Pull Request ejecuta `.github/workflows/devsecops.yml`: secret scanning (Gitleaks), SAST (Semgrep, Bandit, SonarCloud opcional), SCA (Trivy, pip-audit), IaC (Trivy, Checkov), escaneo de imágenes (Trivy), DAST sobre un staging efímero (OWASP ZAP), carga en DefectDojo y un security gate antes de publicar imágenes en GHCR. Detalle y configuración en [`security/README.md`](security/README.md); modelado STRIDE y línea base en [`docs/devsecops/`](docs/devsecops/).
