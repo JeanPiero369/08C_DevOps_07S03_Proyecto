@@ -242,8 +242,17 @@ jobs:
       - name: Usuario de prueba para escaneo autenticado
         run: |
           pass="Ci$(openssl rand -hex 5)"
-          token=$(curl -s -X POST http://localhost:8000/auth/register -H 'Content-Type: application/json' \
-            -d "{\"name\":\"ZAP\",\"last_name\":\"CI\",\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}" | jq -r '.token // empty')
+          body="{\"name\":\"ZAP\",\"last_name\":\"CI\",\"email\":\"zap-ci@example.com\",\"password\":\"$pass\",\"role\":\"TEACHER\"}"
+          token=""
+          # ms-user (Spring Boot) arranca después del gateway: reintentar hasta ~3 min
+          for i in $(seq 1 36); do
+            code=$(curl -s -o resp.json -w '%{http_code}' -X POST http://localhost:8000/auth/register \
+              -H 'Content-Type: application/json' -d "$body" || true)
+            if [ "$code" = "200" ]; then token=$(jq -r '.token // empty' resp.json); break; fi
+            echo "Intento $i: HTTP $code"
+            sleep 5
+          done
+          rm -f resp.json
           if [ -n "$token" ]; then
             echo "::add-mask::$token"
             echo "ZAP_AUTH_HEADER_VALUE=Bearer $token" >> "$GITHUB_ENV"
