@@ -1,16 +1,16 @@
 {
-  "run_id": 45060902475,
-  "commit": "5543e31e88fc93043c80edd36ec626e6f3159b5a",
-  "conclusion": "failure",
+  "run_id": 45067822680,
+  "commit": "41aaa6190b044a079add02ff058e5e2bda3dfd6c",
+  "conclusion": "success",
   "gate": "CRITICAL",
-  "gate_blocking": 2,
-  "total": 663,
+  "gate_blocking": 0,
+  "total": 672,
   "by_severity": {
-    "MEDIUM": 287,
+    "MEDIUM": 286,
     "LOW": 194,
-    "HIGH": 158,
-    "INFO": 22,
-    "CRITICAL": 2
+    "HIGH": 156,
+    "INFO": 36,
+    "CRITICAL": 0
   },
   "by_tool": {
     "Bandit": {
@@ -29,12 +29,11 @@
       "INFO": 1
     },
     "Trivy": {
-      "MEDIUM": 282,
-      "HIGH": 112,
+      "MEDIUM": 281,
+      "HIGH": 110,
       "LOW": 178,
-      "INFO": 14,
-      "CRITICAL": 2
+      "INFO": 28
     }
   },
-  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45060902475"
+  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45067822680"
 }

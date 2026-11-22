@@ -1,0 +1,664 @@
+tool,category,severity,rule,title,location,detail
+Bandit,SAST,MEDIUM,B104,Possible binding to all interfaces.,ms-orchestrator/main.py:54,confidence MEDIUM
+Bandit,SAST,MEDIUM,B104,Possible binding to all interfaces.,ms-quiz/app.py:43,confidence MEDIUM
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:82,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:157,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:166,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:176,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:193,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:256,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:265,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:280,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:459,confidence HIGH
+Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:477,confidence HIGH
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/06-classroom-competence-ranking.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/06-classroom-ranking.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/02-quiz-student-result.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/04-student-quiz-list.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/01-student-me.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/03-student-submit-quiz.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/10-teacher-generate-quiz-from-text.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/05-teacher-competence.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/07-teacher-classroom-competence-associate.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/01-teacher-me.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/01-teacher-me.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/02-student-modify.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:19,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:21,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/03-classroom-by-user-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/03-classroom-by-user-id.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/01-quiz-by-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/05-classroom-competences.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/05-classroom-competences.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/20-quiz-create-full.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/Create New Quiz.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/02-teacher-modify.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/06-teacher-competence.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/03-quiz-list.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/01-Auth/03-auth-validate-token.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/01-Auth/04-auth-validate-token-role.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/01-student-me.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/02-student-by-id.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/03-student-ids-by-email.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/05-student-buy-character.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/04-student-add-coins.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/01-teacher-me.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/03-teacher-ids-by-email.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/02-teacher-by-id.bru:14,commit f279c23
+Semgrep,SAST,INFO,express-check-csurf-middleware-usage,A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are p,ms-classroom/src/app.js:5,
+Trivy,SCA,MEDIUM,CVE-2026-118773,glob 10.5.0: glob: glob: Denial of Service (DoS) via incomplete traversal cancellation,frontend/package-lock.json,fixed: 14.0.2
+Trivy,SCA,MEDIUM,CVE-2026-118764,minimatch 9.0.9: minimatch: minimatch: Denial of Service via crafted glob pattern expansion,frontend/package-lock.json,fixed: 11.0.1
+Trivy,SCA,HIGH,CVE-2026-45623,postcss 8.4.31: postcss: PostCSS: Information disclosure and denial of service via crafted CSS input,frontend/package-lock.json,fixed: 8.5.12
+Trivy,SCA,HIGH,CVE-2026-73646,postcss 8.4.31: postcss: PostCSS: Information disclosure via path traversal in source map auto-loading,frontend/package-lock.json,fixed: 8.5.18
+Trivy,SCA,MEDIUM,CVE-2026-41305,postcss 8.4.31: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags,frontend/package-lock.json,fixed: 8.5.10
+Trivy,SCA,MEDIUM,CVE-2026-69153,postcss 8.4.31: postcss: PostCSS: Information disclosure via crafted sourceMappingURL,frontend/package-lock.json,fixed: 8.5.23
+Trivy,SCA,HIGH,CVE-2026-54291,org.postgresql:postgresql 42.7.11: org.postgresql/postgresql: com.ongres.scram/scram-client: pgjdbc: Man-in-the-middle protection bypass via SCRAM-SHA-256-PLUS ,ms-user/pom.xml,fixed: 42.7.12
+Trivy,Container scan,MEDIUM,CVE-2026-118773,glob 10.5.0: glob: glob: Denial of Service (DoS) via incomplete traversal cancellation,Node.js,fixed: 14.0.2
+Trivy,Container scan,MEDIUM,CVE-2026-118764,minimatch 9.0.9: minimatch: minimatch: Denial of Service via crafted glob pattern expansion,Node.js,fixed: 11.0.1
+Trivy,Container scan,HIGH,CVE-2026-45623,postcss 8.4.31: postcss: PostCSS: Information disclosure and denial of service via crafted CSS input,Node.js,fixed: 8.5.12
+Trivy,Container scan,HIGH,CVE-2026-73646,postcss 8.4.31: postcss: PostCSS: Information disclosure via path traversal in source map auto-loading,Node.js,fixed: 8.5.18
+Trivy,Container scan,MEDIUM,CVE-2026-41305,postcss 8.4.31: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags,Node.js,fixed: 8.5.10
+Trivy,Container scan,MEDIUM,CVE-2026-69153,postcss 8.4.31: postcss: PostCSS: Information disclosure via crafted sourceMappingURL,Node.js,fixed: 8.5.23
+Trivy,Container scan,LOW,CVE-2011-3374,"apt 3.0.4: It was found that apt-key in apt, all versions, do not correctly valid ...",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0841856-B18BAF,bash 5.2.37-2+b10: [Privilege escalation possible to other user than root],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,bsdutils 1:2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2017-18018,coreutils 9.7-3: coreutils: race condition vulnerability in chown and chgrp,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-5278,coreutils 9.7-3: coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-56391,coreutils 9.7-3: coreutils: GNU coreutils uniq: Denial of Service and information disclosure via out-of-bounds read with multibyte input,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-56392,coreutils 9.7-3: coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-102473,dash 0.5.12-12: dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-102474,dash 0.5.12-12: dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-53910,diffutils 1:3.10-4: diffutils: heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-91094,dpkg 1.22.22: A directory traversal bug was discovered when unpacking 3.0 (quilt) so ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,gcc-14-base 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,gcc-14-base 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,gcc-14-base 14.2.0-19: gcc: Integer wrap in `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,gcc-14-base 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,gcc-14-base 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,gcc-14-base 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,gcc-14-base 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-54369,libacl1 2.3.2-2+b1: acl: Symlink traversal privilege escalation via libacl functions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54370,libacl1 2.3.2-2+b1: acl: TOCTOU Symlink Traversal via getfacl/setfacl,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2011-3374,"libapt-pkg7.0 3.0.4: It was found that apt-key in apt, all versions, do not correctly valid ...",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54371,libattr1 1:2.5.2-3: attr: attr: Symlink Traversal Privilege Escalation via getfattr and setfattr,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libblkid1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-42250,libbz2-1.0 1.0.8-6: bzip2: bzip2: Denial of Service in bzip2recover via a specially crafted file,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115819,libc-bin 2.41-12+deb13u4: glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18374,libc-bin 2.41-12+deb13u4: glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19499,libc-bin 2.41-12+deb13u4: glibc: Buffer Overflow in strfmon right-justification padding,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19542,libc-bin 2.41-12+deb13u4: glibc: Fix out-of-bounds array write in tdelete,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-5435,libc-bin 2.41-12+deb13u4: glibc: glibc: Out-of-bounds write via TSIG record processing,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6238,libc-bin 2.41-12+deb13u4: glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6368,libc-bin 2.41-12+deb13u4: glibc: glibc: Process abort due to invalid memory in wordexp,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6791,libc-bin 2.41-12+deb13u4: glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-77117,libc-bin 2.41-12+deb13u4: glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-80489,libc-bin 2.41-12+deb13u4: glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-84243,libc-bin 2.41-12+deb13u4: glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-8674,libc-bin 2.41-12+deb13u4: glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-86805,libc-bin 2.41-12+deb13u4: glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-89092,libc-bin 2.41-12+deb13u4: glibc: nscd stack overflow leads to degraded DNS resolution,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-95818,libc-bin 2.41-12+deb13u4: glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,LOW,CVE-2010-4756,libc-bin 2.41-12+deb13u4: glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2018-20796,libc-bin 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010022,libc-bin 2.41-12+deb13u4: glibc: stack guard protection bypass,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010023,libc-bin 2.41-12+deb13u4: glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010024,libc-bin 2.41-12+deb13u4: glibc: ASLR bypass using cache of thread stack and heap,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010025,libc-bin 2.41-12+deb13u4: glibc: information disclosure of heap addresses of pthread_created thread,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-9192,libc-bin 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-100290,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-126765,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via double free in glob functions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-97399,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,INFO,CVE-2026-121757,libc-bin 2.41-12+deb13u4: Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-121758,"libc-bin 2.41-12+deb13u4: Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-124024,libc-bin 2.41-12+deb13u4: Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115819,libc6 2.41-12+deb13u4: glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18374,libc6 2.41-12+deb13u4: glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19499,libc6 2.41-12+deb13u4: glibc: Buffer Overflow in strfmon right-justification padding,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19542,libc6 2.41-12+deb13u4: glibc: Fix out-of-bounds array write in tdelete,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-5435,libc6 2.41-12+deb13u4: glibc: glibc: Out-of-bounds write via TSIG record processing,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6238,libc6 2.41-12+deb13u4: glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6368,libc6 2.41-12+deb13u4: glibc: glibc: Process abort due to invalid memory in wordexp,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6791,libc6 2.41-12+deb13u4: glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-77117,libc6 2.41-12+deb13u4: glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-80489,libc6 2.41-12+deb13u4: glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-84243,libc6 2.41-12+deb13u4: glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-8674,libc6 2.41-12+deb13u4: glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-86805,libc6 2.41-12+deb13u4: glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-89092,libc6 2.41-12+deb13u4: glibc: nscd stack overflow leads to degraded DNS resolution,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-95818,libc6 2.41-12+deb13u4: glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,LOW,CVE-2010-4756,libc6 2.41-12+deb13u4: glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2018-20796,libc6 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010022,libc6 2.41-12+deb13u4: glibc: stack guard protection bypass,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010023,libc6 2.41-12+deb13u4: glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010024,libc6 2.41-12+deb13u4: glibc: ASLR bypass using cache of thread stack and heap,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010025,libc6 2.41-12+deb13u4: glibc: information disclosure of heap addresses of pthread_created thread,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-9192,libc6 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-100290,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-126765,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via double free in glob functions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-97399,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,microservice-quiz (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,INFO,CVE-2026-121757,libc6 2.41-12+deb13u4: Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-121758,"libc6 2.41-12+deb13u4: Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-124024,libc6 2.41-12+deb13u4: Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,libgcc-s1 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,libgcc-s1 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,libgcc-s1 14.2.0-19: gcc: Integer wrap in `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,libgcc-s1 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,libgcc-s1 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,libgcc-s1 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,libgcc-s1 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,liblastlog2-2 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libmount1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libmount1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,libncursesw6 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,libncursesw6 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules-bin 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-runtime 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam0g 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libsmartcols1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119373,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of service via heap-based buffer overflow in FTS5,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119374,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Arbitrary code execution via corrupted FTS5 index,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119379,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Arbitrary code execution via crafted session changesets,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119371,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion from deeply nested Common Table Expressions,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119372,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via use-after-free in full-text search,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119375,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Information disclosure via undersized WAL page size,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119376,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion from chained COLLATE operators,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119378,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via use-after-free in R-Tree extension,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119591,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion in countOfViewOptimization(),microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-50812,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Denial of Service via malformed changeset in Session Extension,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-50813,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Information disclosure via Session Extension changeset merge path,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2021-45346,libsqlite3-0 3.46.1-7+deb13u2: sqlite: crafted SQL query allows a malicious user to obtain sensitive information,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-70873,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Information Disclosure via Crafted ZIP File,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-119377,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Authorization bypass via USING clause in JOIN queries,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,libstdc++6 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,libstdc++6 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,libstdc++6 14.2.0-19: gcc: Integer wrap in `std,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,libstdc++6 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,libstdc++6 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,libstdc++6 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,libstdc++6 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-16742,libsystemd0 257.13-1~deb13u1: systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15059,libsystemd0 257.13-1~deb13u1: systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2013-4392,libsystemd0 257.13-1~deb13u1: systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31437,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify a seale ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31438,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can truncate a sea ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31439,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify the con ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libsystemd0 257.13-1~deb13u1: systemd: systemd-journald: Unintended output to user terminals via logger command,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,libtinfo6 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,libtinfo6 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-16742,libudev1 257.13-1~deb13u1: systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15059,libudev1 257.13-1~deb13u1: systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2013-4392,libudev1 257.13-1~deb13u1: systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31437,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify a seale ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31438,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can truncate a sea ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31439,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify the con ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libudev1 257.13-1~deb13u1: systemd: systemd-journald: Unintended output to user terminals via logger command,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libuuid1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2007-5686,login.defs 1:4.17.4-2: initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,login.defs 1:4.17.4-2: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0628843-DBAD28,login.defs 1:4.17.4-2: [more related to CVE-2005-4890],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,mount 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,mount 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,mount 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"mount 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,mount 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,mount 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,ncurses-base 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,ncurses-base 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,ncurses-bin 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,ncurses-bin 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,openssl 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,openssl 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2007-5686,passwd 1:4.17.4-2: initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,passwd 1:4.17.4-2: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0628843-DBAD28,passwd 1:4.17.4-2: [more related to CVE-2005-4890],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-9538,perl-base 5.40.1-6+deb13u1: perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15534,perl-base 5.40.1-6+deb13u1: perl: Perl: Arbitrary code execution via out-of-bounds memory access in regular expression engine.,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-82560,perl-base 5.40.1-6+deb13u1: Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2011-4116,perl-base 5.40.1-6+deb13u1: perl: File:: Temp insecure temporary file handling,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0517018-A83CE6,sysvinit-utils 3.14-4: [sysvinit: no-root option in expert installer exposes locally exploitable security flaw],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18477,tar 1.35+dfsg-3.1: tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18508,tar 1.35+dfsg-3.1: tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-5704,tar 1.35+dfsg-3.1: tar: tar: Hidden file injection via crafted archives,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2005-2541,tar 1.35+dfsg-3.1: tar: does not properly warn the user when extracting setuid or setgid files,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0290435-0B57B5,tar 1.35+dfsg-3.1: [tar's rmt command may have undesired side effects],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"util-linux 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,util-linux 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-85091,zlib1g 1:1.3.dfsg+really1.3.1-1+b1: zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution,microservice-quiz (debian 13.7),fixed: 1:1.3.dfsg+really1.3.1-1+deb13u1
+Trivy,Container scan,MEDIUM,CVE-2026-27171,zlib1g 1:1.3.dfsg+really1.3.1-1+b1: zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions,microservice-quiz (debian 13.7),fixed: 1:1.3.dfsg+really1.3.1-1+deb13u1
+Trivy,Container scan,HIGH,CVE-2026-23949,jaraco.context 5.3.0: jaraco.context: jaraco.context: Path traversal via malicious tar archives,Python,fixed: 6.1.0
+Trivy,Container scan,MEDIUM,CVE-2025-8869,pip 24.0: pip: pip missing checks on symbolic link extraction,Python,fixed: 25.3
+Trivy,Container scan,MEDIUM,CVE-2026-13346,pip 24.0: pip: pip: Arbitrary file installation via malicious package indexes,Python,fixed: 26.2.0
+Trivy,Container scan,MEDIUM,CVE-2026-3219,pip 24.0: pip: pip: Incorrect file installation due to improper archive handling,Python,fixed: 26.1
+Trivy,Container scan,MEDIUM,CVE-2026-6357,pip 24.0: pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation,Python,fixed: 26.1
+Trivy,Container scan,MEDIUM,CVE-2026-8643,pip 24.0: python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite,Python,fixed: 26.1.2
+Trivy,Container scan,LOW,CVE-2026-1703,pip 24.0: pip: pip: Information disclosure via path traversal when installing crafted wheel archives,Python,fixed: 26.0
+Trivy,Container scan,MEDIUM,CVE-2026-59890,setuptools 79.0.1: setuptools: setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD),Python,fixed: 83.0.0
+Trivy,Container scan,LOW,GHSA-xmj3-9gf7-h52w,setuptools 79.0.1: setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description,Python,fixed: 84.1.0
+Trivy,Container scan,HIGH,CVE-2026-24049,wheel 0.45.1: wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking,Python,fixed: 0.46.2
+Trivy,Container scan,MEDIUM,CVE-2026-76642,bsdutils 1:2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,bsdutils 1:2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"bsdutils 1:2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102473,dash 0.5.12-12ubuntu3: dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102474,dash 0.5.12-12ubuntu3: dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,dirmngr 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gnupg 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gpg 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gpg-agent 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gpgconf 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gpgsm 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-105712,gpgv 2.4.8-4ubuntu3.1: gnupg2: gnupg: Arbitrary file overwrite via symlink traversal in gpgtar,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,libblkid1 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,libblkid1 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"libblkid1 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2025-66382,libexpat1 2.7.4-1ubuntu0.2: libexpat: libexpat: Denial of service via crafted file processing,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102633,libexpat1 2.7.4-1ubuntu0.2: expat: expat: Denial of Service via integer overflow in expat_realloc,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-77214,libexpat1 2.7.4-1ubuntu0.2: expat: expat: Information disclosure via heap buffer over-read in XML_ParseBuffer,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-93990,libexpat1 2.7.4-1ubuntu0.2: expat: Expat: XML Injection via Malformed UTF-16 Input,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-67693,libgnutls30t64 3.8.12-2ubuntu1.1: gnutls: gnutls: Information disclosure via contradictory Key Usage and Extended Key Usage extensions,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-88647,libgnutls30t64 3.8.12-2ubuntu1.1: gnutls: gnutls: Information disclosure via hostname verification bypass,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-88648,libgnutls30t64 3.8.12-2ubuntu1.1: gnutls: gnutls: Cross-domain certificate restriction bypass via incomplete X.509 validation,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95184,libgnutls30t64 3.8.12-2ubuntu1.1: gnutls: gnutls: legitimate user certificates incorrectly rejected causing denial of service,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95210,libgnutls30t64 3.8.12-2ubuntu1.1: gnutls: gnutls: certificates with invalid extensions incorrectly accepted,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107708,libgssapi-krb5-2 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107778,libgssapi-krb5-2 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via crafted forwarded credentials,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107708,libk5crypto3 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107778,libk5crypto3 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via crafted forwarded credentials,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107708,libkrb5-3 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107778,libkrb5-3 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via crafted forwarded credentials,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107708,libkrb5support0 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy requests,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107778,libkrb5support0 1.22.1-2ubuntu4.1: krb5: krb5: Denial of Service via crafted forwarded credentials,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,libmount1 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,libmount1 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"libmount1 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-13757,libp11-kit0 0.26.2-2: p11-kit: Stack exhaustion via unbounded recursion in RPC attribute parsing,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107161,libsasl2-2 2.1.28+dfsg1-9ubuntu3: cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGEST-MD5 cl,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107161,libsasl2-modules-db 2.1.28+dfsg1-9ubuntu3: cyrus-sasl: Heap buffer overflow in cyrus-sasl add_to_challenge() allows malicious server to crash or compromise DIGE,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,libsmartcols1 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,libsmartcols1 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"libsmartcols1 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121876,libsystemd0 259.9-0ubuntu0.1: sandboxed-containers: kernel: systemd-gpt-auto-generator: Guest Data Leakage in Confidential Computing (Sandboxed Containers),microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libsystemd0 259.9-0ubuntu0.1: systemd: systemd-journald: Unintended output to user terminals via logger command,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121876,libudev1 259.9-0ubuntu0.1: sandboxed-containers: kernel: systemd-gpt-auto-generator: Guest Data Leakage in Confidential Computing (Sandboxed Containers),microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libudev1 259.9-0ubuntu0.1: systemd: systemd-journald: Unintended output to user terminals via logger command,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,libuuid1 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,libuuid1 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"libuuid1 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,login 1:4.16.0-2+really2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,login 1:4.16.0-2+really2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"login 1:4.16.0-2+really2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,login.defs 1:4.17.4-2ubuntu3: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,mount 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,mount 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"mount 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-13757,p11-kit 0.26.2-2: p11-kit: Stack exhaustion via unbounded recursion in RPC attribute parsing,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-13757,p11-kit-modules 0.26.2-2: p11-kit: Stack exhaustion via unbounded recursion in RPC attribute parsing,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,passwd 1:4.17.4-2ubuntu3: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-48962,perl-base 5.40.1-7ubuntu0.3: perl-IO-Compress: perl-IO-Compress: Arbitrary code execution via attacker-controlled output glob,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-82560,perl-base 5.40.1-7ubuntu0.3: Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...,microservice-users (ubuntu 26.04),fixed: 5.40.1-7ubuntu0.4
+Trivy,Container scan,MEDIUM,CVE-2026-9538,perl-base 5.40.1-7ubuntu0.3: perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35370,rust-coreutils 0.10.0-1ubuntu2~26.04.1: The id utility in uutils coreutils miscalculates the groups= section o ...,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35371,rust-coreutils 0.10.0-1ubuntu2~26.04.1: The id utility in uutils coreutils exhibits incorrect behavior in its  ...,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18477,tar 1.35+dfsg-4ubuntu0.4: tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18508,tar 1.35+dfsg-4ubuntu0.4: tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-76642,util-linux 2.41.3-3ubuntu2.2: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78408,util-linux 2.41.3-3ubuntu2.2: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-78410,"util-linux 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2021-31879,wget 1.25.0-2ubuntu4.4: wget: authorization header disclosure on redirect,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,LOW,CVE-2026-16599,wget 1.25.0-2ubuntu4.4: wget: wget: Denial of Service via crafted FTP OPIE/S-KEY authentication challenge,microservice-users (ubuntu 26.04),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-49844,org.apache.logging.log4j:log4j-api 2.24.3: org.apache.logging.log4j/log4j-api: Apache Log4j API: Malformed JSON output due to improper encoding of floating-poin,Java,"fixed: 2.25.5, 2.26.1"
+Trivy,Container scan,HIGH,CVE-2026-54291,org.postgresql:postgresql 42.7.11: org.postgresql/postgresql: com.ongres.scram/scram-client: pgjdbc: Man-in-the-middle protection bypass via SCRAM-SHA-256-PLUS ,Java,fixed: 42.7.12
+Trivy,Container scan,CRITICAL,CVE-2026-47884,org.springframework:spring-webmvc 6.2.19: org.springframework/spring-webmvc: Spring Framework: Remote Code Execution via improper path limitation in XsltView,Java,fixed: 7.0.9
+Trivy,Container scan,CRITICAL,CVE-2026-47890,org.springframework:spring-webmvc 6.2.19: org.springframework/spring-webmvc: org.springframework/spring-webflux: Spring Framework: Stream corruption in Server-S,Java,fixed: 7.0.9
+Trivy,Container scan,MEDIUM,CVE-2026-97054,stdlib v1.27.3: net/http: golang: net/http: Denial of Service via race condition when handling oversized HTTP/1 requests,usr/bin/pebble,"fixed: 1.26.11, 1.27.4"
+Trivy,Container scan,LOW,CVE-2011-3374,"apt 3.0.4: It was found that apt-key in apt, all versions, do not correctly valid ...",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0841856-B18BAF,bash 5.2.37-2+b10: [Privilege escalation possible to other user than root],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,bsdutils 1:2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,bsdutils 1:2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2017-18018,coreutils 9.7-3: coreutils: race condition vulnerability in chown and chgrp,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-5278,coreutils 9.7-3: coreutils: Heap Buffer Under-Read in GNU Coreutils sort via Key Specification,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-56391,coreutils 9.7-3: coreutils: GNU coreutils uniq: Denial of Service and information disclosure via out-of-bounds read with multibyte input,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-56392,coreutils 9.7-3: coreutils: GNU coreutils unexpand: Denial of Service via crafted tab stop values,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-102473,dash 0.5.12-12: dash: dash: Super-polynomial backtracking in pmatch when libc fnmatch is disabled,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-102474,dash 0.5.12-12: dash: dash: Heap out-of-bounds write in conv_escape via undersized Unicode escape reservation,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-53910,diffutils 1:3.10-4: diffutils: heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-91094,dpkg 1.22.22: A directory traversal bug was discovered when unpacking 3.0 (quilt) so ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,gcc-14-base 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,gcc-14-base 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,gcc-14-base 14.2.0-19: gcc: Integer wrap in `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,gcc-14-base 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,gcc-14-base 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,gcc-14-base 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,gcc-14-base 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-54369,libacl1 2.3.2-2+b1: acl: Symlink traversal privilege escalation via libacl functions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54370,libacl1 2.3.2-2+b1: acl: TOCTOU Symlink Traversal via getfacl/setfacl,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2011-3374,"libapt-pkg7.0 3.0.4: It was found that apt-key in apt, all versions, do not correctly valid ...",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54371,libattr1 1:2.5.2-3: attr: attr: Symlink Traversal Privilege Escalation via getfattr and setfattr,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libblkid1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libblkid1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-42250,libbz2-1.0 1.0.8-6: bzip2: bzip2: Denial of Service in bzip2recover via a specially crafted file,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115819,libc-bin 2.41-12+deb13u4: glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18374,libc-bin 2.41-12+deb13u4: glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19499,libc-bin 2.41-12+deb13u4: glibc: Buffer Overflow in strfmon right-justification padding,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19542,libc-bin 2.41-12+deb13u4: glibc: Fix out-of-bounds array write in tdelete,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-5435,libc-bin 2.41-12+deb13u4: glibc: glibc: Out-of-bounds write via TSIG record processing,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6238,libc-bin 2.41-12+deb13u4: glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6368,libc-bin 2.41-12+deb13u4: glibc: glibc: Process abort due to invalid memory in wordexp,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6791,libc-bin 2.41-12+deb13u4: glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-77117,libc-bin 2.41-12+deb13u4: glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-80489,libc-bin 2.41-12+deb13u4: glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-84243,libc-bin 2.41-12+deb13u4: glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-8674,libc-bin 2.41-12+deb13u4: glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-86805,libc-bin 2.41-12+deb13u4: glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-89092,libc-bin 2.41-12+deb13u4: glibc: nscd stack overflow leads to degraded DNS resolution,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-95818,libc-bin 2.41-12+deb13u4: glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,LOW,CVE-2010-4756,libc-bin 2.41-12+deb13u4: glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2018-20796,libc-bin 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010022,libc-bin 2.41-12+deb13u4: glibc: stack guard protection bypass,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010023,libc-bin 2.41-12+deb13u4: glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010024,libc-bin 2.41-12+deb13u4: glibc: ASLR bypass using cache of thread stack and heap,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010025,libc-bin 2.41-12+deb13u4: glibc: information disclosure of heap addresses of pthread_created thread,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-9192,libc-bin 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-100290,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-126765,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via double free in glob functions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-97399,libc-bin 2.41-12+deb13u4: glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,INFO,CVE-2026-121757,libc-bin 2.41-12+deb13u4: Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-121758,"libc-bin 2.41-12+deb13u4: Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-124024,libc-bin 2.41-12+deb13u4: Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115819,libc6 2.41-12+deb13u4: glibc: glibc: Memory corruption via out-of-bounds write in wide scanf functions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18374,libc6 2.41-12+deb13u4: glibc: glibc: Heap buffer overflow via attacker-controlled fopen mode string,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19499,libc6 2.41-12+deb13u4: glibc: Buffer Overflow in strfmon right-justification padding,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-19542,libc6 2.41-12+deb13u4: glibc: Fix out-of-bounds array write in tdelete,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-5435,libc6 2.41-12+deb13u4: glibc: glibc: Out-of-bounds write via TSIG record processing,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6238,libc6 2.41-12+deb13u4: glibc: glibc: Application crash or uninitialized memory read via crafted DNS response,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6368,libc6 2.41-12+deb13u4: glibc: glibc: Process abort due to invalid memory in wordexp,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-6791,libc6 2.41-12+deb13u4: glibc: Glibc: Denial of Service via stack exhaustion during tilde expansion,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-77117,libc6 2.41-12+deb13u4: glibc: Non-progress DoS in SHIFT_JISX0213 -&gt,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-80489,libc6 2.41-12+deb13u4: glibc: Non-progress DoS in EUC_JISX0213 -> UCS-4 conversion state,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-84243,libc6 2.41-12+deb13u4: glibc: glibc: Arbitrary code execution via directory traversal in LANGUAGE environment variable,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-8674,libc6 2.41-12+deb13u4: glibc: glibc DNS stub resolver: Denial of Service via long search domain in configuration,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-86805,libc6 2.41-12+deb13u4: glibc: glibc: Privilege escalation and arbitrary code execution via TOCTOU race condition in dynamic loader,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-89092,libc6 2.41-12+deb13u4: glibc: nscd stack overflow leads to degraded DNS resolution,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,MEDIUM,CVE-2026-95818,libc6 2.41-12+deb13u4: glibc: glibc: Local attacker can cause denial of service and information disclosure via stack-based buffer overflow.,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,LOW,CVE-2010-4756,libc6 2.41-12+deb13u4: glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2018-20796,libc6 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010022,libc6 2.41-12+deb13u4: glibc: stack guard protection bypass,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010023,libc6 2.41-12+deb13u4: glibc: running ldd on malicious ELF leads to code execution because of wrong size computation,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010024,libc6 2.41-12+deb13u4: glibc: ASLR bypass using cache of thread stack and heap,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-1010025,libc6 2.41-12+deb13u4: glibc: information disclosure of heap addresses of pthread_created thread,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2019-9192,libc6 2.41-12+deb13u4: glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-100290,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via memory allocation failure during regular expression processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-126765,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via double free in glob functions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-97399,libc6 2.41-12+deb13u4: glibc: glibc: Denial of Service via out-of-bounds read in strncasecmp,orchestrator (debian 13.7),fixed: 2.41-12+deb13u5
+Trivy,Container scan,INFO,CVE-2026-121757,libc6 2.41-12+deb13u4: Converting crafted CP949 input to UTF-8 character encoding and ignorin ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-121758,"libc6 2.41-12+deb13u4: Converting crafted ISO-2022-CN-EXT input to UTF-8 character encoding,  ...",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,CVE-2026-124024,libc6 2.41-12+deb13u4: Converting crafted input from UCS-4 to IBM1390 or IBM1399 character en ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,libgcc-s1 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,libgcc-s1 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,libgcc-s1 14.2.0-19: gcc: Integer wrap in `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,libgcc-s1 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,libgcc-s1 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,libgcc-s1 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,libgcc-s1 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,liblastlog2-2 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,liblastlog2-2 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libmount1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libmount1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libmount1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,libncursesw6 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,libncursesw6 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules-bin 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-runtime 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam0g 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libsmartcols1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119373,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of service via heap-based buffer overflow in FTS5,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119374,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Arbitrary code execution via corrupted FTS5 index,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-119379,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Arbitrary code execution via crafted session changesets,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119371,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion from deeply nested Common Table Expressions,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119372,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via use-after-free in full-text search,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119375,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Information disclosure via undersized WAL page size,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119376,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion from chained COLLATE operators,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119378,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via use-after-free in R-Tree extension,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-119591,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Denial of Service via stack exhaustion in countOfViewOptimization(),orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-50812,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Denial of Service via malformed changeset in Session Extension,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-50813,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Information disclosure via Session Extension changeset merge path,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2021-45346,libsqlite3-0 3.46.1-7+deb13u2: sqlite: crafted SQL query allows a malicious user to obtain sensitive information,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-70873,libsqlite3-0 3.46.1-7+deb13u2: sqlite: SQLite: Information Disclosure via Crafted ZIP File,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-119377,libsqlite3-0 3.46.1-7+deb13u2: sqlite: sqlite: Authorization bypass via USING clause in JOIN queries,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,libssl3t64 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,libssl3t64 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-102010,libstdc++6 14.2.0-19: gcc-toolset-15-gcc: gcc: gcc-toolset-16: gcc: Denial of Service via use-after-free in binary heap erase_if,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114690,libstdc++6 14.2.0-19: gcc: Confirmed out-of-bounds read/write in libstdc++ parallel `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-114691,libstdc++6 14.2.0-19: gcc: Integer wrap in `std,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-115455,libstdc++6 14.2.0-19: gcc: Stack overflow in std::bitset on libstdc++,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-125709,libstdc++6 14.2.0-19: libstdc++: overflow leaves streambuf in inconsistent state on I/O error.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95619,libstdc++6 14.2.0-19: gcc: libstdc++ integer overflow in `new` operator,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-115456,libstdc++6 14.2.0-19: gcc: Out-of-bounds read in std::from_chars,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-16742,libsystemd0 257.13-1~deb13u1: systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15059,libsystemd0 257.13-1~deb13u1: systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2013-4392,libsystemd0 257.13-1~deb13u1: systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31437,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify a seale ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31438,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can truncate a sea ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31439,libsystemd0 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify the con ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libsystemd0 257.13-1~deb13u1: systemd: systemd-journald: Unintended output to user terminals via logger command,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,libtinfo6 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,libtinfo6 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-16742,libudev1 257.13-1~deb13u1: systemd: systemd-homed: Local privilege escalation via missing home-record signature verification,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15059,libudev1 257.13-1~deb13u1: systemd: systemd-oomd: Unprivileged users can terminate arbitrary processes via IPC API,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2013-4392,libudev1 257.13-1~deb13u1: systemd: TOCTOU race condition when updating file permissions and SELinux security contexts,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31437,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify a seale ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31438,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can truncate a sea ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2023-31439,libudev1 257.13-1~deb13u1: An issue was discovered in systemd 253. An attacker can modify the con ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-40228,libudev1 257.13-1~deb13u1: systemd: systemd-journald: Unintended output to user terminals via logger command,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,libuuid1 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,libuuid1 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,login 1:4.16.0-2+really2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2007-5686,login.defs 1:4.17.4-2: initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,login.defs 1:4.17.4-2: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0628843-DBAD28,login.defs 1:4.17.4-2: [more related to CVE-2005-4890],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,mount 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,mount 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,mount 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"mount 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,mount 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,mount 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,ncurses-base 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,ncurses-base 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2025-69720,ncurses-bin 6.5+20250216-2: ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2025-6141,ncurses-bin 6.5+20250216-2: gnu-ncurses: ncurses Stack Buffer Overflow,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,openssl 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,openssl 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,openssl 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,openssl 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-124709,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via memory leak in QUIC stream handling,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-107496,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted EC certificate in CMS encryption,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-121482,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via crafted CMS or PKCS#7 SignedData message,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-35190,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via out-of-bounds read during TLS key-share processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-84786,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via NULL pointer dereference during DANE TLSA record processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95690,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of service via crafted out-of-sequence DTLS handshake fragments,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95691,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via overlapping QUIC CRYPTO frame processing,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-95692,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Denial of Service via out-of-bounds read in AES-GCM-SIV,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-107493,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Denial of Service via malformed PEM data in PEM_X509_INFO_read_bio_ex,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-121481,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Out-of-bounds write via integer overflow in EVP_EncodeBlock(),orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88822,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: openssl: Information disclosure via uninitialized memory in QUIC peer detection,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2026-88823,openssl-provider-legacy 3.5.7-1~deb13u3: openssl: OpenSSL: Message authentication bypass via zero-length AAD update,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2007-5686,passwd 1:4.17.4-2: initscripts in rPath Linux 1 sets insecure permissions for the /var/lo ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2024-56433,passwd 1:4.17.4-2: shadow-utils: Default subordinate ID configuration in /etc/login.defs could lead to compromise,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0628843-DBAD28,passwd 1:4.17.4-2: [more related to CVE-2005-4890],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-9538,perl-base 5.40.1-6+deb13u1: perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-15534,perl-base 5.40.1-6+deb13u1: perl: Perl: Arbitrary code execution via out-of-bounds memory access in regular expression engine.,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-82560,perl-base 5.40.1-6+deb13u1: Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhausti ...,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2011-4116,perl-base 5.40.1-6+deb13u1: perl: File:: Temp insecure temporary file handling,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0517018-A83CE6,sysvinit-utils 3.14-4: [sysvinit: no-root option in expert installer exposes locally exploitable security flaw],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18477,tar 1.35+dfsg-3.1: tar: tar: TOCTOU in incremental dumpdir 'X' rename handling allows restore path escape,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-18508,tar 1.35+dfsg-3.1: tar: tar: --one-top-level hardlink targets not confined to top-level directory enabling arbitrary file overwrite,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-5704,tar 1.35+dfsg-3.1: tar: tar: Hidden file injection via crafted archives,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2005-2541,tar 1.35+dfsg-3.1: tar: does not properly warn the user when extracting setuid or setgid files,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,TEMP-0290435-0B57B5,tar 1.35+dfsg-3.1: [tar's rmt command may have undesired side effects],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-76642,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78408,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78409,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-78410,"util-linux 2.41.5-0+deb13u1: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,MEDIUM,CVE-2026-3184,util-linux 2.41.5-0+deb13u1: util-linux: util-linux: Access control bypass due to improper hostname canonicalization,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,LOW,CVE-2022-0563,util-linux 2.41.5-0+deb13u1: util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,HIGH,CVE-2026-85091,zlib1g 1:1.3.dfsg+really1.3.1-1+b1: zlib: zlib: Heap buffer overflow in gz_vacate() allows arbitrary code execution,orchestrator (debian 13.7),fixed: 1:1.3.dfsg+really1.3.1-1+deb13u1
+Trivy,Container scan,MEDIUM,CVE-2026-27171,zlib1g 1:1.3.dfsg+really1.3.1-1+b1: zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions,orchestrator (debian 13.7),fixed: 1:1.3.dfsg+really1.3.1-1+deb13u1
+Trivy,Container scan,HIGH,CVE-2026-23949,jaraco.context 5.3.0: jaraco.context: jaraco.context: Path traversal via malicious tar archives,Python,fixed: 6.1.0
+Trivy,Container scan,MEDIUM,CVE-2025-8869,pip 24.0: pip: pip missing checks on symbolic link extraction,Python,fixed: 25.3
+Trivy,Container scan,MEDIUM,CVE-2026-13346,pip 24.0: pip: pip: Arbitrary file installation via malicious package indexes,Python,fixed: 26.2.0
+Trivy,Container scan,MEDIUM,CVE-2026-3219,pip 24.0: pip: pip: Incorrect file installation due to improper archive handling,Python,fixed: 26.1
+Trivy,Container scan,MEDIUM,CVE-2026-6357,pip 24.0: pip: pip: Arbitrary code execution or information disclosure via malicious wheel package installation,Python,fixed: 26.1
+Trivy,Container scan,MEDIUM,CVE-2026-8643,pip 24.0: python-pip: Path traversal via malicious entry point name in pip wheel installation allows arbitrary file overwrite,Python,fixed: 26.1.2
+Trivy,Container scan,LOW,CVE-2026-1703,pip 24.0: pip: pip: Information disclosure via path traversal when installing crafted wheel archives,Python,fixed: 26.0
+Trivy,Container scan,MEDIUM,CVE-2026-59890,setuptools 79.0.1: setuptools: setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD),Python,fixed: 83.0.0
+Trivy,Container scan,LOW,GHSA-xmj3-9gf7-h52w,setuptools 79.0.1: setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description,Python,fixed: 84.1.0
+Trivy,Container scan,HIGH,CVE-2026-24049,wheel 0.45.1: wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking,Python,fixed: 0.46.2
+OWASP ZAP,DAST,LOW,100000,A Server Error response code was returned by the server,http://localhost:8000,16 instancias
+OWASP ZAP,DAST,LOW,90022,Application Error Disclosure,http://localhost:8000,8 instancias
+OWASP ZAP,DAST,LOW,90004,Cross-Origin-Resource-Policy Header Missing or Invalid,http://localhost:8000,3 instancias
+OWASP ZAP,DAST,LOW,10021,X-Content-Type-Options Header Missing,http://localhost:8000,3 instancias
+OWASP ZAP,DAST,INFO,100000,A Client Error response code was returned by the server,http://localhost:8000,126 instancias
+OWASP ZAP,DAST,INFO,10111,Authentication Request Identified,http://localhost:8000,1 instancias
+OWASP ZAP,DAST,INFO,10049,Non-Storable Content,http://localhost:8000,5 instancias
+OWASP ZAP,DAST,MEDIUM,10055,CSP: script-src unsafe-inline,http://localhost:5174,3 instancias
+OWASP ZAP,DAST,MEDIUM,10055,CSP: style-src unsafe-inline,http://localhost:5174,3 instancias
+OWASP ZAP,DAST,MEDIUM,90003,Sub Resource Integrity Attribute Missing,http://localhost:5174,3 instancias
+OWASP ZAP,DAST,LOW,90004,Cross-Origin-Embedder-Policy Header Missing or Invalid,http://localhost:5174,1 instancias
+OWASP ZAP,DAST,LOW,90004,Cross-Origin-Resource-Policy Header Missing or Invalid,http://localhost:5174,5 instancias
+OWASP ZAP,DAST,INFO,10109,Modern Web Application,http://localhost:5174,3 instancias
+OWASP ZAP,DAST,INFO,10049,Non-Storable Content,http://localhost:5174,1 instancias
+OWASP ZAP,DAST,INFO,10049,Storable and Cacheable Content,http://localhost:5174,5 instancias
+OWASP ZAP,DAST,INFO,10049,Storable but Non-Cacheable Content,http://localhost:5174,1 instancias

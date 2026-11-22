@@ -1,27 +1,35 @@
 {
-  "run_id": 45060902475,
+  "run": 45067822680,
   "suites": [
     {
-      "file": "TEST-com.example.hackathon.Auth.domain.AuthServiceSecurityTest.xml",
-      "tests": "10",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0"
+      "suite": "com.example.hackathon.BootMigrationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     },
     {
-      "file": "junit-orchestrator.xml",
-      "tests": "31",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0"
+      "suite": "com.example.hackathon.Auth.domain.AuthServiceSecurityTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     },
     {
-      "file": "junit-quiz.xml",
-      "tests": "6",
-      "failures": "0",
-      "errors": "0",
-      "skipped": "0"
+      "suite": "pytest",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "pytest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
     }
   ],
-  "report_validation_tests": 3
+  "services_total": 50,
+  "validators_total": 3
 }

@@ -1,12 +1,16 @@
 {
-  "conclusion": "failure",
-  "createdAt": "2026-11-22T19:28:01Z",
-  "headSha": "5543e31e88fc93043c80edd36ec626e6f3159b5a",
+  "conclusion": "success",
+  "createdAt": "2026-11-22T20:41:09Z",
+  "headSha": "41aaa6190b044a079add02ff058e5e2bda3dfd6c",
   "status": "completed",
-  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45060902475",
+  "url": "https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45067822680",
   "jobs": [
     {
-      "name": "security-secret \u00b7 Gitleaks",
+      "name": "security-dependency \u00b7 Trivy fs + pip-audit",
+      "conclusion": "success"
+    },
+    {
+      "name": "security-iac \u00b7 Trivy config + Checkov",
       "conclusion": "success"
     },
     {
@@ -18,7 +22,7 @@
       "conclusion": "success"
     },
     {
-      "name": "security-iac \u00b7 Trivy config + Checkov",
+      "name": "security-sast \u00b7 Semgrep + Bandit",
       "conclusion": "success"
     },
     {
@@ -26,11 +30,7 @@
       "conclusion": "success"
     },
     {
-      "name": "security-dependency \u00b7 Trivy fs + pip-audit",
-      "conclusion": "success"
-    },
-    {
-      "name": "security-sast \u00b7 Semgrep + Bandit",
+      "name": "security-secret \u00b7 Gitleaks",
       "conclusion": "success"
     },
     {
@@ -42,12 +42,12 @@
       "conclusion": "success"
     },
     {
-      "name": "security \u00b7 DefectDojo import",
+      "name": "security \u00b7 summary + gate",
       "conclusion": "success"
     },
     {
-      "name": "security \u00b7 summary + gate",
-      "conclusion": "failure"
+      "name": "security \u00b7 DefectDojo import",
+      "conclusion": "success"
     },
     {
       "name": "deploy \u00b7 publicar im\u00e1genes en GHCR",

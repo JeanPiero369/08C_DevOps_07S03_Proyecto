@@ -5,5 +5,6 @@
   "login_after_rotation_status": 200,
   "new_token_profile_status": 200,
   "other_team_computers": "pendiente de confirmación individual",
-  "secret_or_tokens_included": false
+  "secret_or_tokens_included": false,
+  "team_runtime_scope": "solo computadoras del equipo, confirmado por el usuario"
 }

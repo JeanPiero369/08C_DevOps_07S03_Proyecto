@@ -17,12 +17,14 @@ un reparto tentativo para el ensayo que el equipo debe confirmar.
 
 ## Estado de seguridad
 
-Código verificado: commit `5543e31`, run
-[45060902475](https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45060902475).
-Resultado: 663 detecciones, de ellas 2 CRITICAL de Spring. El gate bloquea por
-esas dos detecciones. Pruebas, build, análisis, staging, monitoreo y DAST pasan.
-La aceptación de riesgos no está automatizada ni cambia el resultado del gate.
+Código verificado: commit `41aaa61`, [run 45067822680](https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45067822680).
+Resultado: 672 detecciones, **0 CRITICAL**. El gate aprueba; pruebas,
+build, análisis, staging, monitoreo y DAST pasan. El release se omite fuera
+de main. SonarCloud y la importación remota a DefectDojo siguen sin configurar;
+la instancia propia se actualizó localmente.
 
-La versión se presenta para revisión del equipo. Falta confirmar rotación de
-JWT_SECRET en los entornos existentes y decidir el tratamiento de riesgos y
-la integración de los PR. La infraestructura productiva no se ha validado.
+La clave JWT_SECRET local fue rotada con invalidación comprobada del token
+anterior. Falta la confirmación de las demás computadoras, revisar riesgos
+residuales y acordar los merges. No se acredita operación productiva.
+Las cifras del informe fijan el corte de código indicado; otros runs pueden
+variar por cambios de imágenes y bases de vulnerabilidades.

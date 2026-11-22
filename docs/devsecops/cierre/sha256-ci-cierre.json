@@ -1,0 +1,35 @@
+{
+  "run": 45067822680,
+  "artifacts": [
+    {
+      "name": "report-container",
+      "digest": "sha256:ac91efe1b9c75fa386307c6eaf7c8557f909dfa66f11f7843389c7d6311111ba",
+      "verified": true
+    },
+    {
+      "name": "report-secret-scan",
+      "digest": "sha256:11f04ff74a330ef46671f4960ab222399c5a3b432eb0cd78c6a37cf434ff46fa",
+      "verified": true
+    },
+    {
+      "name": "report-iac",
+      "digest": "sha256:bc3f384132dd4791250073be73e8017a3ffa3140ac34e21793300ae1a255e971",
+      "verified": true
+    },
+    {
+      "name": "report-sca",
+      "digest": "sha256:5eefc916e350272f979cc9dbd0c73c213ac456935487d1f4fa14e81ad5bc7f79",
+      "verified": true
+    },
+    {
+      "name": "report-dast",
+      "digest": "sha256:9581dd390d83378cc71fcccbf298ce2a6507ac01bdeddc02f92a0b206a32dc95",
+      "verified": true
+    },
+    {
+      "name": "report-sast",
+      "digest": "sha256:3ecd7c8ef869d53cf743f1bc1c15c96113f457f91fcea446d2018d31496bab62",
+      "verified": true
+    }
+  ]
+}
