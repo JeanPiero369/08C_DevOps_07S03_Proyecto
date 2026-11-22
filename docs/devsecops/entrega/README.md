@@ -5,6 +5,7 @@ las figuras, la tabla de mitigaciones, las fuentes y el YAML completo.
 
 - `Kiwi_Informe_Final.docx`: informe editable.
 - `Kiwi_Informe_Final.pdf`: versión para lectura y entrega.
+- `latex/main.tex`: fuente completa del PDF, con portada e índice basados en la referencia académica proporcionada. El contenido corresponde a Kiwi.
 - `../stride/kiwi_stride.xlsx`: STRIDE, mitigaciones y cifras conciliadas.
 - `../stride/kiwi_stride.drawio`: modelo de amenazas editable.
 - `../cierre/pipeline.mmd`, `pipeline.svg` y `pipeline.png`: grafo del pipeline.
@@ -14,6 +15,10 @@ las figuras, la tabla de mitigaciones, las fuentes y el YAML completo.
 La exposición de 12 diapositivas se entrega en el visor de la conversación de
 Codex y puede exportarse desde allí a PowerPoint. Sus notas incluyen fuentes y
 un reparto tentativo para el ensayo que el equipo debe confirmar.
+
+El PDF se compila en LaTeX; Word conserva su cuerpo editable y su propia
+paginación. Ambos índices incluyen los apartados a–m, el anexo y las referencias.
+Para recompilar el PDF, seguir `latex/README.md`.
 
 ## Estado de seguridad
 
