@@ -1,0 +1,84 @@
+{
+  "checks": [
+    {
+      "name": "TEACHER sin invitación rechazado",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "TEACHER con invitación",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "Registro STUDENT",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "Solicitud ADMIN sin privilegio",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "teacher perfil sin password",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "student perfil sin password",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "admin_attempt perfil sin password",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "PATCH teacher actualiza perfil sin elevar rol ni monedas",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "PATCH student actualiza perfil sin elevar rol ni monedas",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "name": "/student/me sin token",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "/teacher/me sin token",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "name": "IDOR compra ajena",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "STUDENT no accede a resultados globales",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "STUDENT no crea personajes",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "name": "Cabeceras frontend",
+      "passed": true
+    },
+    {
+      "name": "CORS origen externo bloqueado",
+      "passed": true
+    }
+  ],
+  "passed": 16,
+  "total": 16
+}

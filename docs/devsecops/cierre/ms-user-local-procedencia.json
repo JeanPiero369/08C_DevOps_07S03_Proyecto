@@ -1,0 +1,12 @@
+{
+  "scope": "Solo imagen ms-user local, no CI completo",
+  "tomcat": "10.1.62",
+  "scanner": "Trivy 0.70.0",
+  "architecture": "arm64",
+  "by_severity": {
+    "MEDIUM": 84,
+    "LOW": 12,
+    "HIGH": 1,
+    "CRITICAL": 2
+  }
+}

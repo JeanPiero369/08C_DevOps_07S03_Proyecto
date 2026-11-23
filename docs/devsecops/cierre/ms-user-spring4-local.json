@@ -1,0 +1,22 @@
+{
+  "scope": "solo imagen local microservice-users; no es el total de CI",
+  "scanner": "Trivy 0.70.0",
+  "architecture": "arm64",
+  "created_at": "2026-11-22T20:45:13.434193+00:00",
+  "total": 95,
+  "by_severity": {
+    "MEDIUM": 83,
+    "LOW": 12,
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "UNKNOWN": 0
+  },
+  "versions": {
+    "spring_boot": "4.0.10",
+    "spring_webmvc": "7.0.11",
+    "tomcat_embed_core": "11.0.27",
+    "postgresql_jdbc": "42.7.14",
+    "jackson_databind": "3.1.8"
+  },
+  "target_cves_present": []
+}

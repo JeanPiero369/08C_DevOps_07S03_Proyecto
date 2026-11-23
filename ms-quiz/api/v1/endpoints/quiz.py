@@ -10,6 +10,7 @@ from core.quiz.quiz_generator import QuizGenerator
 import json
 import logging
 from config.settings import get_settings
+from core.pdf.pdf_extractor import PDFTooLargeError, read_upload_limited, validate_pdf
 
 
 router = APIRouter()
@@ -69,7 +70,9 @@ async def generate_quiz_from_pdf_endpoint(
         if pdf_file.content_type != "application/pdf":
             raise ValueError("El archivo debe ser un PDF.")
         
-        pdf_content = await pdf_file.read()
+        settings = get_settings()
+        pdf_content = await read_upload_limited(pdf_file, settings.MAX_PDF_SIZE_MB * 1024 * 1024)
+        validate_pdf(pdf_content, settings.MAX_PDF_PAGES)
 
         # El servicio maneja toda la lógica de procesamiento y validación
         result = await QuizGenerator.create_quiz_from_pdf(
@@ -79,10 +82,13 @@ async def generate_quiz_from_pdf_endpoint(
         return result
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="El 'input_data_json' no es un JSON válido.")
+    except PDFTooLargeError as e:
+        raise HTTPException(status_code=413, detail=str(e))
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error interno del servidor: {str(e)}")
+    except Exception:
+        logger.exception("Error generando quiz desde PDF")
+        raise HTTPException(status_code=500, detail="Error interno del servidor.")
     
 @router.post("/generate-from-text", response_model=QuizGenerationOutput, status_code=status.HTTP_200_OK)
 async def generate_quiz_from_text_endpoint(

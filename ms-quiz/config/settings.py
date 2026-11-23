@@ -19,6 +19,10 @@ class Settings(BaseSettings):
     GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 
     DEFAULT_NUM_QUESTIONS: int = 5
+
+    # D-01: límites de los PDF subidos (configurables por variable de entorno)
+    MAX_PDF_SIZE_MB: int = int(os.getenv("MAX_PDF_SIZE_MB", "5"))
+    MAX_PDF_PAGES: int = int(os.getenv("MAX_PDF_PAGES", "30"))
     MAX_NUM_QUESTIONS: int = 15
     MIN_NUM_QUESTIONS: int = 2
     

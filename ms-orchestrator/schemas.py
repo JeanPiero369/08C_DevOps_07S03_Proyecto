@@ -22,6 +22,7 @@ class DtoUserRegister(BaseModel):
     email: EmailStr = Field(..., example="juan.perez@example.com")
     password: str = Field(..., min_length=3, max_length=16, example="MiClave123")
     role: Optional[Role] = Field(None, example="STUDENT")
+    invite_code: Optional[str] = Field(None, max_length=128, description="Código de invitación docente (solo para registrarse como TEACHER)")
 
 class DtoUserLogin(BaseModel):
     email: EmailStr = Field(..., example="juan.perez@example.com")
@@ -42,7 +43,6 @@ class User(BaseModel):
     name: Optional[str] = Field(None, example="Juan", description="Nombre del usuario")
     last_name: Optional[str] = Field(None, example="Pérez", description="Apellido del usuario")
     email: Optional[str] = Field(None, example="juan.perez@example.com", description="Correo electrónico")
-    password: Optional[str] = Field(None, example="securePass123", description="Contraseña del usuario")
     cel_phone: Optional[str] = Field(None, example="+56912345678", description="Número de teléfono celular")
     registration_date: Optional[datetime] = Field(None, example="2024-07-01")
     role: Optional[Role] = Field(..., example="STUDENT")

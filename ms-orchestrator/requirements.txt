@@ -1,7 +1,7 @@
-fastapi[standard]
-pydantic
-uvicorn[standard]
-httpx
-email-validator
-python-dotenv
-
+# Versiones fijadas (T-02): actualizar de forma explícita y probada, nunca con rangos abiertos.
+fastapi[standard]==0.165.0
+pydantic==2.14.4
+uvicorn[standard]==0.54.0
+httpx==0.28.1
+email-validator==2.4.0
+python-dotenv==1.2.4

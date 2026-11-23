@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request, Depends, HTTPException, status
 from schemas import *
-from utils.auth import verify_token_role_student
+from utils.auth import verify_token_role_student, get_current_user, ensure_same_user
 import httpx
 import os
 import json
@@ -27,14 +27,20 @@ async def getStudent(request:Request):
 async def patchStudent(request:Request):
     async with httpx.AsyncClient() as client:
         try:
-            response = await client.patch(f"{users_url}/student/me",headers=dict(request.headers))
+            response = await client.patch(
+                f"{users_url}/student/me",
+                headers={"Authorization": request.headers.get("authorization", "")},
+                json=await request.json(),
+            )
             response.raise_for_status()
             return response.json()
         except httpx.HTTPStatusError as e:
             raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
         
 @router.post("/classroom/{classroom_id}/quiz-submit", status_code=status.HTTP_201_CREATED)
-async def submmitted_answer(classroom_id: int, quiz_submit: QuizSubmission,request: Request):
+async def submmitted_answer(classroom_id: int, quiz_submit: QuizSubmission,request: Request, current_user: dict = Depends(get_current_user)):
+    # T-01: el student_id del body debe ser el del token (antes se podían enviar intentos y sumar monedas a otros)
+    ensure_same_user(current_user, quiz_submit.student_id)
     async with httpx.AsyncClient() as client:
         try:
             quiz_submit_dict = quiz_submit.model_dump()
@@ -49,7 +55,8 @@ async def submmitted_answer(classroom_id: int, quiz_submit: QuizSubmission,reque
             raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
 
 @router.get("/classroom/{classroom_id}/student/{student_id}/quiz-list", response_model=List[QuizWithAttemptStatusOutput])
-async def get_quiz_list(classroom_id: int,student_id:int, request:Request):
+async def get_quiz_list(classroom_id: int,student_id:int, request:Request, current_user: dict = Depends(get_current_user)):
+    ensure_same_user(current_user, student_id)
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(f"{quices_url}/quiz/classroom/{classroom_id}/student/{student_id}",headers=dict(request.headers))

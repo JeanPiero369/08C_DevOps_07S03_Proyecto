@@ -1,0 +1,8 @@
+{
+  "source_run": 44972251652,
+  "threshold": "CRITICAL",
+  "exit_code": 1,
+  "blocking_critical": 6,
+  "stderr": "[GATE] 6 hallazgos con severidad >= CRITICAL",
+  "scope": "Ejecuci\u00f3n local del script real; no demuestra variable de repositorio activa"
+}

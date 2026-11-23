@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Request, Depends, HTTPException, UploadFile, File, Form
-from utils.auth import verify_token
+from utils.auth import verify_token, get_current_user, ensure_same_user, ensure_role
 import httpx
 import os
 from schemas import *
@@ -25,7 +25,9 @@ async def get_quiz(quiz_id: int,request: Request):
             raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
 
 @router.get("/{quiz_id}/student/{student_id}/result", response_model=QuizResultDetail)
-async def get_quiz(quiz_id: int,student_id: int, request: Request):
+async def get_quiz(quiz_id: int,student_id: int, request: Request, current_user: dict = Depends(get_current_user)):
+    if str(current_user.get("role", "")).upper() != "TEACHER":
+        ensure_same_user(current_user, student_id)
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(f"{quices_url}/quiz/{quiz_id}/student/{student_id}/result")
@@ -35,7 +37,8 @@ async def get_quiz(quiz_id: int,student_id: int, request: Request):
             raise HTTPException(status_code=e.response.status_code, detail=e.response.text)
 
 @router.get("/{quiz_id}/results", response_model=List[StudentDetailOutput])
-async def get_quiz(quiz_id: int, request: Request):
+async def get_quiz(quiz_id: int, request: Request, current_user: dict = Depends(get_current_user)):
+    ensure_role(current_user, "TEACHER")
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(f"{quices_url}/quiz/{quiz_id}/results")

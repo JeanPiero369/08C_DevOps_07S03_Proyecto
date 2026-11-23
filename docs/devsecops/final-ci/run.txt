@@ -1,0 +1,2 @@
+run 45067822680 · rama fix/project-closure · commit 41aaa6190b044a079add02ff058e5e2bda3dfd6c · 2026-11-22
+Gate CRITICAL aprobado: cero CRITICAL. Pruebas, build, escaneos, DAST y monitoreo correctos. Release omitido porque la rama no es main.
