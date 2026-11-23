@@ -5,6 +5,7 @@ GET /auth/claims de ms-user, nunca de ids enviados por el cliente.
 """
 import httpx
 import respx
+import pytest
 
 USERS = "http://localhost:8001"
 QUICES = "http://localhost:8002/api/v1"
@@ -14,6 +15,18 @@ AUTH = {"Authorization": "Bearer token-de-prueba"}
 
 STUDENT_7 = {"id": 7, "email": "ana@kiwi.com", "role": "STUDENT"}
 TEACHER_3 = {"id": 3, "email": "profe@kiwi.com", "role": "TEACHER"}
+
+
+@pytest.mark.parametrize("role,user", [("student", STUDENT_7), ("teacher", TEACHER_3)])
+@respx.mock
+def test_actualizacion_perfil_reenvia_cuerpo_y_autorizacion(client, role, user):
+    _as(user)
+    route = respx.patch(f"{USERS}/{role}/me").mock(return_value=httpx.Response(
+        200, json={**user, "name": "Nuevo", "last_name": "Q"}))
+    res = client.patch(f"/{role}/me", headers=AUTH, json={"name": "Nuevo"})
+    assert res.status_code == 200
+    assert route.calls.last.request.content == b'{"name":"Nuevo"}'
+    assert route.calls.last.request.headers["authorization"] == AUTH["Authorization"]
 
 
 def _as(user, student_route_ok=True):

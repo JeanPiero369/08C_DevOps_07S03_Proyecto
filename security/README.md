@@ -22,8 +22,10 @@ sast (Semgrep + Bandit) · sonarcloud (opcional) · sca (Trivy fs + pip-audit) �
 | Contenedores | Trivy image (5 imágenes) | `trivy-image-*.json` | Trivy Scan |
 | DAST | OWASP ZAP API scan (OpenAPI del orchestrator, autenticado) + baseline (frontend) | `zap-*.xml/json/html` | ZAP Scan |
 
-Los escáneres **no fallan el job**: el único punto de bloqueo es `security-gate`, que consolida todo con
-`security/scripts/security_summary.py` y publica la tabla en el resumen del run.
+Los hallazgos de los escáneres no fallan sus jobs por severidad: ese umbral lo aplica
+`security-gate`, que consolida con `security/scripts/security_summary.py`. La ausencia de reportes y el fallo de autenticación de ZAP sí bloquean
+la validación. `verify_reports.py` exige los 15 JSON previstos antes de consolidar.
+El valor predeterminado del gate es CRITICAL y el release espera pruebas y escaneos.
 
 ## Configuración en GitHub (Settings → Secrets and variables → Actions)
 
@@ -33,7 +35,7 @@ Los escáneres **no fallan el job**: el único punto de bloqueo es `security-gat
 | `DEFECTDOJO_TOKEN` | Secret | API v2 key del usuario de DefectDojo (opcional) |
 | `SONAR_TOKEN` | Secret | Token de SonarCloud (opcional) |
 | `SONAR_ORGANIZATION`, `SONAR_PROJECT_KEY` | Variables | Proyecto en SonarCloud (opcional) |
-| `SECURITY_GATE_SEVERITY` | Variable | Vacío = modo línea base (no bloquea). `CRITICAL` o `HIGH` = bloquea el release |
+| `SECURITY_GATE_SEVERITY` | Variable | Sin definir = CRITICAL. Puede fijarse a HIGH para endurecer el umbral. |
 
 ## DefectDojo local
 
@@ -84,11 +86,19 @@ Las colecciones Bruno tenían 24 JWT reales (46 ocurrencias) versionados en
   siguen permitiendo un ataque de fuerza bruta offline contra la clave HMAC.
 - **Acción obligatoria — rotar `JWT_SECRET`** en cada entorno:
   ```bash
-  # genera un secreto nuevo de 256 bits y reemplázalo en .env
-  openssl rand -hex 32
+  # Desde la raíz del repositorio, en cada computadora del equipo:
+  python3 security/scripts/rotate_jwt_secret.py --apply
+  docker compose up -d --no-deps users
   ```
+  La herramienta genera 256 bits aleatorios sin mostrar el secreto, conserva
+  las demás variables y restringe `.env` al propietario. No crea copias con
+  la clave anterior. Cada integrante debe ejecutarla en su propia computadora;
+  no se comparte una clave común por chat. Antes debe traer la versión de
+  código acordada y construirla con `docker compose build users`.
   Tras la rotación, todos los tokens firmados con la clave anterior dejan de
-  validar (los usuarios vuelven a iniciar sesión).
+  validar después de recrear el servicio. Cerrar la sesión del navegador e
+  iniciar sesión otra vez. Confirmar al equipo únicamente computadora,
+  fecha y resultado, sin enviar el secreto ni tokens.
 - **Historial:** Gitleaks seguirá reportando los commits antiguos mientras no se
   purgue el historial (`git filter-repo`), algo que reescribe `main` y requiere
   la aprobación del equipo. La alternativa sin reescritura es un

@@ -1,0 +1,37 @@
+# Entrega final de Kiwi
+
+La rúbrica original exige los puntos a–m. El informe contiene esos apartados,
+las figuras, la tabla de mitigaciones, las fuentes y el YAML completo.
+
+- `Kiwi_Informe_Final.docx`: informe editable.
+- `Kiwi_Informe_Final.pdf`: versión para lectura y entrega.
+- `Kiwi_Presentacion_Final.pdf`: presentación final para exponer, proporcionada por el equipo.
+- `Kiwi_Presentacion_Final.pptx`: versión editable de 12 diapositivas.
+- `latex/main.tex`: fuente completa del PDF, con portada e índice basados en la referencia académica proporcionada. El contenido corresponde a Kiwi.
+- `../stride/kiwi_stride.xlsx`: STRIDE, mitigaciones y cifras conciliadas.
+- `../stride/kiwi_stride.drawio`: modelo de amenazas editable.
+- `../cierre/pipeline.mmd`, `pipeline.svg` y `pipeline.png`: grafo del pipeline.
+- `../cierre/VALIDACION.md`: verificaciones, alcance y decisiones pendientes.
+- `../cierre/RESIDUALES.md` y `triage-propuesto.csv`: clasificación de lo que queda.
+
+La presentación para exponer es `Kiwi_Presentacion_Final.pdf`. También se
+conserva la versión PowerPoint editable de 12 diapositivas. Sus notas incluyen fuentes; el equipo debe confirmar el reparto
+para el ensayo. Conserva el corte de código del informe y sus límites.
+
+El PDF del informe se compila en LaTeX; Word conserva su cuerpo editable y su propia
+paginación. Ambos índices incluyen los apartados a–m, el anexo y las referencias.
+Para recompilar el PDF, seguir `latex/README.md`.
+
+## Estado de seguridad
+
+Código verificado: commit `41aaa61`, [run 45067822680](https://github.com/JeanPiero369/08C_DevOps_07S03_Proyecto/actions/runs/45067822680).
+Resultado: 672 detecciones, **0 CRITICAL**. El gate aprueba; pruebas,
+build, análisis, staging, monitoreo y DAST pasan. El release se omite fuera
+de main. SonarCloud y la importación remota a DefectDojo siguen sin configurar;
+la instancia propia se actualizó localmente.
+
+La clave JWT_SECRET local fue rotada con invalidación comprobada del token
+anterior. Falta la confirmación de las demás computadoras, revisar riesgos
+residuales y acordar los merges. No se acredita operación productiva.
+Las cifras del informe fijan el corte de código indicado; otros runs pueden
+variar por cambios de imágenes y bases de vulnerabilidades.

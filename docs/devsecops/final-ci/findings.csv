@@ -11,51 +11,51 @@ Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed w
 Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:280,confidence HIGH
 Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:459,confidence HIGH
 Bandit,SAST,LOW,B101,Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.,ms-quiz/scripts/test_endpoints.py:477,confidence HIGH
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/02-student-modify.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/01-student-me.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/04-student-quiz-list.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/05-teacher-competence.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:17,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/06-teacher-competence.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/06-classroom-competence-ranking.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:17,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/05-classroom-competences.bru:15,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/05-classroom-competences.bru:17,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/06-classroom-ranking.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/02-quiz-student-result.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/03-student-submit-quiz.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/01-student-me.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/05-teacher-competence.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:19,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:21,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/10-teacher-generate-quiz-from-text.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/09-teacher-generate-quiz-from-pdf.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/04-classroom-by-id.bru:17,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/03-classroom-by-user-id.bru:15,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/03-classroom-by-user-id.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/06-classroom-competence-ranking.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/01-quiz-by-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/02-quiz-student-result.bru:14,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/03-quiz-list.bru:14,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/20-quiz-create-full.bru:14,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/Create New Quiz.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/04-student-quiz-list.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/02-teacher-modify.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/01-teacher-me.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/03-student-submit-quiz.bru:14,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/01-teacher-me.bru:15,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/01-teacher-me.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/04-teacher-classroom-add-users.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/02-teacher-by-id.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:19,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/03-teacher-create-classroom.bru:21,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/02-teacher-modify.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/02-Student/02-student-modify.bru:14,commit 7327962
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/07-teacher-classroom-competence-associate.bru:14,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/08-teacher-classroom-quiz-create.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:15,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/01-classroom-all-student.bru:17,commit 7327962
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/05-Quiz/01-quiz-by-id.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:15,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/04-Classroom/02-classroom-all-teacher.bru:17,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-orchestrator/ms-orquestrator/03-Teacher/10-teacher-generate-quiz-from-text.bru:14,commit 7327962
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/01-Auth/03-auth-validate-token.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/01-Auth/04-auth-validate-token-role.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/01-student-me.bru:14,commit f279c23
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/01-Auth/03-auth-validate-token.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/02-student-by-id.bru:14,commit f279c23
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/05-student-buy-character.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/04-student-add-coins.bru:14,commit f279c23
-Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/01-teacher-me.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/03-student-ids-by-email.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/02-teacher-by-id.bru:14,commit f279c23
+Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/02-Student/05-student-buy-character.bru:14,commit f279c23
 Gitleaks,Secret scanning,HIGH,jwt,"Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",ms-user/api-endpoints/03-Teacher/03-teacher-ids-by-email.bru:14,commit f279c23
 Semgrep,SAST,INFO,express-check-csurf-middleware-usage,A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are p,ms-classroom/src/app.js:5,
 Trivy,SCA,MEDIUM,CVE-2026-118773,glob 10.5.0: glob: glob: Denial of Service (DoS) via incomplete traversal cancellation,frontend/package-lock.json,fixed: 14.0.2
@@ -64,7 +64,6 @@ Trivy,SCA,HIGH,CVE-2026-45623,postcss 8.4.31: postcss: PostCSS: Information disc
 Trivy,SCA,HIGH,CVE-2026-73646,postcss 8.4.31: postcss: PostCSS: Information disclosure via path traversal in source map auto-loading,frontend/package-lock.json,fixed: 8.5.18
 Trivy,SCA,MEDIUM,CVE-2026-41305,postcss 8.4.31: postcss: PostCSS: Cross-Site Scripting (XSS) via improper escaping of style closing tags,frontend/package-lock.json,fixed: 8.5.10
 Trivy,SCA,MEDIUM,CVE-2026-69153,postcss 8.4.31: postcss: PostCSS: Information disclosure via crafted sourceMappingURL,frontend/package-lock.json,fixed: 8.5.23
-Trivy,SCA,HIGH,CVE-2026-54291,org.postgresql:postgresql 42.7.11: org.postgresql/postgresql: com.ongres.scram/scram-client: pgjdbc: Man-in-the-middle protection bypass via SCRAM-SHA-256-PLUS ,ms-user/pom.xml,fixed: 42.7.12
 Trivy,Container scan,MEDIUM,CVE-2026-118773,glob 10.5.0: glob: glob: Denial of Service (DoS) via incomplete traversal cancellation,Node.js,fixed: 14.0.2
 Trivy,Container scan,MEDIUM,CVE-2026-118764,minimatch 9.0.9: minimatch: minimatch: Denial of Service via crafted glob pattern expansion,Node.js,fixed: 11.0.1
 Trivy,Container scan,HIGH,CVE-2026-45623,postcss 8.4.31: postcss: PostCSS: Information disclosure and denial of service via crafted CSS input,Node.js,fixed: 8.5.12
@@ -186,6 +185,13 @@ Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules 1.7.0-5: linux-pam: Pl
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules-bin 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-runtime 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam0g 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-402D17,libseccomp2 2.6.0-2: [GHSA-4q85-33p6-j5g6: Incorrect 64-bit comparison merge in libseccomp can weaken seccomp filters],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-414660,libseccomp2 2.6.0-2: [GHSA-35x7-vh54-jvqf: Incorrect accumulator reloads when comparing arguments can lead to erroneous actions],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-43231F,libseccomp2 2.6.0-2: [GHSA-2hqh-5c36-grrm: Oversized seccomp filters can trigger libseccomp heap corruption],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-AE2C66,libseccomp2 2.6.0-2: [GHSA-84vx-jqqr-h4f2: Unmatched seccomp transaction rejections can result in a segmentation fault],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-ED49F3,libseccomp2 2.6.0-2: [GHSA-q75f-27j4-2h7j: Missing syscall-number load in BPF filter can bypass seccomp restrictions],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-F88C7E,libseccomp2 2.6.0-2: [GHSA-qxh5-4cq9-6mjx: Crafted seccomp rules can trigger an infinite loop in libseccomp],microservice-quiz (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-FCA4C0,libseccomp2 2.6.0-2: [GHSA-46fr-jh49-xvhx: Oversized seccomp filters can trigger libseccomp double free],microservice-quiz (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-76642,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,microservice-quiz (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-78408,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,microservice-quiz (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-78409,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,microservice-quiz (debian 13.7),fixed: -
@@ -391,14 +397,6 @@ Trivy,Container scan,MEDIUM,CVE-2026-78408,util-linux 2.41.3-3ubuntu2.2: util-li
 Trivy,Container scan,MEDIUM,CVE-2026-78410,"util-linux 2.41.3-3ubuntu2.2: util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",microservice-users (ubuntu 26.04),fixed: -
 Trivy,Container scan,MEDIUM,CVE-2021-31879,wget 1.25.0-2ubuntu4.4: wget: authorization header disclosure on redirect,microservice-users (ubuntu 26.04),fixed: -
 Trivy,Container scan,LOW,CVE-2026-16599,wget 1.25.0-2ubuntu4.4: wget: wget: Denial of Service via crafted FTP OPIE/S-KEY authentication challenge,microservice-users (ubuntu 26.04),fixed: -
-Trivy,Container scan,MEDIUM,CVE-2026-49844,org.apache.logging.log4j:log4j-api 2.24.3: org.apache.logging.log4j/log4j-api: Apache Log4j API: Malformed JSON output due to improper encoding of floating-poin,Java,"fixed: 2.25.5, 2.26.1"
-Trivy,Container scan,CRITICAL,CVE-2026-65182,org.apache.tomcat.embed:tomcat-embed-core 10.1.56: tomcat: Apache Tomcat: Security constraint bypass due to improper access control,Java,"fixed: 11.0.25, 10.1.58, 9.0.121"
-Trivy,Container scan,CRITICAL,CVE-2026-65637,org.apache.tomcat.embed:tomcat-embed-core 10.1.56: tomcat: Apache Tomcat: Improper Input Validation allows HTTP/2 no-authority bypass of strict SNI validation,Java,"fixed: 11.0.25, 10.1.59, 9.0.121"
-Trivy,Container scan,CRITICAL,CVE-2026-65905,org.apache.tomcat.embed:tomcat-embed-core 10.1.56: tomcat: Apache Tomcat: Authentication bypass via limited replay attack in DIGEST authenticator,Java,"fixed: 11.0.25, 10.1.58, 9.0.121"
-Trivy,Container scan,CRITICAL,CVE-2026-68525,org.apache.tomcat.embed:tomcat-embed-core 10.1.56: tomcat: Apache Tomcat: Unauthorized resource access via FORM authentication bypass,Java,"fixed: 11.0.25, 10.1.58, 9.0.121"
-Trivy,Container scan,HIGH,CVE-2026-54291,org.postgresql:postgresql 42.7.11: org.postgresql/postgresql: com.ongres.scram/scram-client: pgjdbc: Man-in-the-middle protection bypass via SCRAM-SHA-256-PLUS ,Java,fixed: 42.7.12
-Trivy,Container scan,CRITICAL,CVE-2026-47884,org.springframework:spring-webmvc 6.2.19: org.springframework/spring-webmvc: Spring Framework: Remote Code Execution via improper path limitation in XsltView,Java,fixed: 7.0.9
-Trivy,Container scan,CRITICAL,CVE-2026-47890,org.springframework:spring-webmvc 6.2.19: org.springframework/spring-webmvc: org.springframework/spring-webflux: Spring Framework: Stream corruption in Server-S,Java,fixed: 7.0.9
 Trivy,Container scan,MEDIUM,CVE-2026-97054,stdlib v1.27.3: net/http: golang: net/http: Denial of Service via race condition when handling oversized HTTP/1 requests,usr/bin/pebble,"fixed: 1.26.11, 1.27.4"
 Trivy,Container scan,LOW,CVE-2011-3374,"apt 3.0.4: It was found that apt-key in apt, all versions, do not correctly valid ...",orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,LOW,TEMP-0841856-B18BAF,bash 5.2.37-2+b10: [Privilege escalation possible to other user than root],orchestrator (debian 13.7),fixed: -
@@ -515,6 +513,13 @@ Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules 1.7.0-5: linux-pam: Pl
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-modules-bin 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam-runtime 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,MEDIUM,CVE-2026-54411,libpam0g 1.7.0-5: linux-pam: Plaintext password recovery via timing discrepancy in pam_userdb module,orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-402D17,libseccomp2 2.6.0-2: [GHSA-4q85-33p6-j5g6: Incorrect 64-bit comparison merge in libseccomp can weaken seccomp filters],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-414660,libseccomp2 2.6.0-2: [GHSA-35x7-vh54-jvqf: Incorrect accumulator reloads when comparing arguments can lead to erroneous actions],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-43231F,libseccomp2 2.6.0-2: [GHSA-2hqh-5c36-grrm: Oversized seccomp filters can trigger libseccomp heap corruption],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-AE2C66,libseccomp2 2.6.0-2: [GHSA-84vx-jqqr-h4f2: Unmatched seccomp transaction rejections can result in a segmentation fault],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-ED49F3,libseccomp2 2.6.0-2: [GHSA-q75f-27j4-2h7j: Missing syscall-number load in BPF filter can bypass seccomp restrictions],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-F88C7E,libseccomp2 2.6.0-2: [GHSA-qxh5-4cq9-6mjx: Crafted seccomp rules can trigger an infinite loop in libseccomp],orchestrator (debian 13.7),fixed: -
+Trivy,Container scan,INFO,TEMP-0000000-FCA4C0,libseccomp2 2.6.0-2: [GHSA-46fr-jh49-xvhx: Oversized seccomp filters can trigger libseccomp double free],orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-76642,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks,orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-78408,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority,orchestrator (debian 13.7),fixed: -
 Trivy,Container scan,HIGH,CVE-2026-78409,libsmartcols1 2.41.5-0+deb13u1: util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks,orchestrator (debian 13.7),fixed: -
@@ -650,19 +655,19 @@ Trivy,Container scan,LOW,CVE-2026-1703,pip 24.0: pip: pip: Information disclosur
 Trivy,Container scan,MEDIUM,CVE-2026-59890,setuptools 79.0.1: setuptools: setuptools: MANIFEST.in exclusion bypass in sdist via Unicode normalization collision (NFC/NFD),Python,fixed: 83.0.0
 Trivy,Container scan,LOW,GHSA-xmj3-9gf7-h52w,setuptools 79.0.1: setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description,Python,fixed: 84.1.0
 Trivy,Container scan,HIGH,CVE-2026-24049,wheel 0.45.1: wheel: wheel: Privilege Escalation or Arbitrary Code Execution via malicious wheel file unpacking,Python,fixed: 0.46.2
-OWASP ZAP,DAST,LOW,100000,A Server Error response code was returned by the server,http://localhost:8000,14 instancias
-OWASP ZAP,DAST,LOW,90022,Application Error Disclosure,http://localhost:8000,7 instancias
+OWASP ZAP,DAST,LOW,100000,A Server Error response code was returned by the server,http://localhost:8000,16 instancias
+OWASP ZAP,DAST,LOW,90022,Application Error Disclosure,http://localhost:8000,8 instancias
 OWASP ZAP,DAST,LOW,90004,Cross-Origin-Resource-Policy Header Missing or Invalid,http://localhost:8000,3 instancias
 OWASP ZAP,DAST,LOW,10021,X-Content-Type-Options Header Missing,http://localhost:8000,3 instancias
-OWASP ZAP,DAST,INFO,100000,A Client Error response code was returned by the server,http://localhost:8000,128 instancias
+OWASP ZAP,DAST,INFO,100000,A Client Error response code was returned by the server,http://localhost:8000,126 instancias
 OWASP ZAP,DAST,INFO,10111,Authentication Request Identified,http://localhost:8000,1 instancias
 OWASP ZAP,DAST,INFO,10049,Non-Storable Content,http://localhost:8000,5 instancias
-OWASP ZAP,DAST,MEDIUM,10055,CSP: script-src unsafe-inline,http://localhost:5174,2 instancias
-OWASP ZAP,DAST,MEDIUM,10055,CSP: style-src unsafe-inline,http://localhost:5174,2 instancias
+OWASP ZAP,DAST,MEDIUM,10055,CSP: script-src unsafe-inline,http://localhost:5174,3 instancias
+OWASP ZAP,DAST,MEDIUM,10055,CSP: style-src unsafe-inline,http://localhost:5174,3 instancias
 OWASP ZAP,DAST,MEDIUM,90003,Sub Resource Integrity Attribute Missing,http://localhost:5174,3 instancias
 OWASP ZAP,DAST,LOW,90004,Cross-Origin-Embedder-Policy Header Missing or Invalid,http://localhost:5174,1 instancias
 OWASP ZAP,DAST,LOW,90004,Cross-Origin-Resource-Policy Header Missing or Invalid,http://localhost:5174,5 instancias
 OWASP ZAP,DAST,INFO,10109,Modern Web Application,http://localhost:5174,3 instancias
-OWASP ZAP,DAST,INFO,10049,Non-Storable Content,http://localhost:5174,2 instancias
+OWASP ZAP,DAST,INFO,10049,Non-Storable Content,http://localhost:5174,1 instancias
 OWASP ZAP,DAST,INFO,10049,Storable and Cacheable Content,http://localhost:5174,5 instancias
 OWASP ZAP,DAST,INFO,10049,Storable but Non-Cacheable Content,http://localhost:5174,1 instancias

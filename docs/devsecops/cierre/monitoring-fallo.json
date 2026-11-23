@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "probe_success",
+          "instance": "http://frontend:3000/",
+          "job": "kiwi-http"
+        },
+        "value": [
+          1795374427.653,
+          "0"
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "probe_success",
+          "instance": "http://orchestrator:8000/openapi.json",
+          "job": "kiwi-http"
+        },
+        "value": [
+          1795374427.653,
+          "1"
+        ]
+      }
+    ]
+  }
+}

@@ -29,7 +29,11 @@ async def geTeacher(request: Request):
 async def updateTeacher(request: Request):
     async with httpx.AsyncClient() as client:
         try:
-            response = await client.patch(f"{users_url}/teacher/me",headers=dict(request.headers))
+            response = await client.patch(
+                f"{users_url}/teacher/me",
+                headers={"Authorization": request.headers.get("authorization", "")},
+                json=await request.json(),
+            )
             response.raise_for_status()
             return response.json()
         except httpx.HTTPStatusError as e:
