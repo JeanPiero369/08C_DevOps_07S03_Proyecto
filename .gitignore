@@ -2,6 +2,11 @@
 .env
 .env.example
 secrets/
+.venv/
+images/
+!entrega/images/
+diagramas/
+temp/
 
 # Entorno local y resultados de compilación
 __pycache__/

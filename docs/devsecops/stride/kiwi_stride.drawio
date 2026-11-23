@@ -1,1 +1,1322 @@
-<mxfile host="app.diagrams.net"><diagram id="kiwi-stride" name="DFD STRIDE"><mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1430" pageHeight="980" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="c2" value="&lt;b&gt;KIWI · Diagrama de flujo de datos (DFD) y modelado de amenazas STRIDE&lt;/b&gt;" style="text;html=1;fontSize=18;align=left;fillColor=none;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="20" y="10" width="1100" height="30" as="geometry"/></mxCell><mxCell id="c3" value="Leyenda: &lt;b&gt;Rect. gris&lt;/b&gt; = entidad externa · &lt;b&gt;Rect. redondeado azul&lt;/b&gt; = proceso · &lt;b&gt;Líneas naranjas&lt;/b&gt; = almacén de datos · &lt;b&gt;Recuadro punteado&lt;/b&gt; = frontera de confianza · &lt;b&gt;Círculo rojo&lt;/b&gt; = amenaza STRIDE (ver plantilla Excel)" style="text;html=1;fillColor=none;strokeColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=11;" vertex="1" parent="1"><mxGeometry x="20" y="40" width="1500" height="22" as="geometry"/></mxCell><mxCell id="c4" value="TB-1 · Internet / cliente (no confiable)" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#FAFAFA;strokeColor=#B71C1C;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#B71C1C;html=1;" vertex="1" parent="1"><mxGeometry x="20" y="80" width="300" height="560" as="geometry"/></mxCell><mxCell id="c5" value="TB-2 · Red «web» (puertos publicados 5174 / 8000)" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#F1F8E9;strokeColor=#33691E;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#33691E;html=1;" vertex="1" parent="1"><mxGeometry x="360" y="80" width="330" height="560" as="geometry"/></mxCell><mxCell id="c6" value="TB-3 · Red «backend» (interna, con salida a internet)" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#E8EAF6;strokeColor=#283593;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#283593;html=1;" vertex="1" parent="1"><mxGeometry x="730" y="80" width="360" height="560" as="geometry"/></mxCell><mxCell id="c7" value="TB-4 · Red «data» (internal: true)" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#FFFDE7;strokeColor=#E65100;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#E65100;html=1;" vertex="1" parent="1"><mxGeometry x="1130" y="250" width="260" height="220" as="geometry"/></mxCell><mxCell id="c8" value="TB-5 · Servicios de terceros" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#FCE4EC;strokeColor=#880E4F;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#880E4F;html=1;" vertex="1" parent="1"><mxGeometry x="1130" y="500" width="260" height="240" as="geometry"/></mxCell><mxCell id="c9" value="TB-6 · Cadena de suministro CI/CD (GitHub)" style="rounded=1;arcSize=2;dashed=1;dashPattern=8 4;strokeWidth=2;fillColor=#F3E5F5;strokeColor=#4A148C;verticalAlign=top;align=left;spacingLeft=10;spacingTop=4;fontStyle=1;fontSize=13;fontColor=#4A148C;html=1;" vertex="1" parent="1"><mxGeometry x="20" y="680" width="1070" height="240" as="geometry"/></mxCell><mxCell id="c10" value="Estudiante&lt;br&gt;(navegador / celular)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="60" y="130" width="200" height="60" as="geometry"/></mxCell><mxCell id="c11" value="Docente&lt;br&gt;(navegador)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="60" y="260" width="200" height="60" as="geometry"/></mxCell><mxCell id="c12" value="localStorage del navegador&lt;br&gt;&lt;i&gt;JWT (24 h)&lt;/i&gt;" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="60" y="420" width="200" height="60" as="geometry"/></mxCell><mxCell id="c13" value="&lt;b&gt;frontend&lt;/b&gt;&lt;br&gt;Next.js 15.3.3 · :5174" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="400" y="150" width="250" height="70" as="geometry"/></mxCell><mxCell id="c14" value="&lt;b&gt;ms-orchestrator&lt;/b&gt;&lt;br&gt;API Gateway FastAPI · :8000&lt;br&gt;&lt;i&gt;CORS *, valida JWT vía ms-user&lt;/i&gt;" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="430" y="330" width="240" height="90" as="geometry"/></mxCell><mxCell id="c15" value="&lt;b&gt;ms-user&lt;/b&gt;&lt;br&gt;Spring Boot 3.3 · :8080&lt;br&gt;&lt;i&gt;registro, login, JWT HS256, monedas&lt;/i&gt;" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="770" y="125" width="280" height="80" as="geometry"/></mxCell><mxCell id="c16" value="&lt;b&gt;ms-classroom&lt;/b&gt;&lt;br&gt;Express 5 + Prisma · :3000&lt;br&gt;&lt;i&gt;aulas, competencias, ranking&lt;/i&gt;" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="770" y="335" width="280" height="80" as="geometry"/></mxCell><mxCell id="c17" value="&lt;b&gt;ms-quiz&lt;/b&gt;&lt;br&gt;FastAPI + PyPDF2 · :8001&lt;br&gt;&lt;i&gt;quizzes, intentos, generación IA&lt;/i&gt;" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="770" y="520" width="280" height="80" as="geometry"/></mxCell><mxCell id="c18" value="&lt;b&gt;PostgreSQL 13&lt;/b&gt;&lt;br&gt;usuarios, aulas, quizzes,&lt;br&gt;intentos y monedas" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1160" y="320" width="200" height="80" as="geometry"/></mxCell><mxCell id="c19" value="Google Gemini API&lt;br&gt;&lt;i&gt;GOOGLE_API_KEY&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1160" y="552" width="200" height="55" as="geometry"/></mxCell><mxCell id="c20" value="Gmail SMTP&lt;br&gt;&lt;i&gt;MAIL_PASSWORD&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="1160" y="650" width="200" height="55" as="geometry"/></mxCell><mxCell id="c21" value="Desarrollador&lt;br&gt;(3 integrantes)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="50" y="740" width="170" height="55" as="geometry"/></mxCell><mxCell id="c22" value="&lt;b&gt;Repositorio GitHub&lt;/b&gt;&lt;br&gt;código, Dockerfiles,&lt;br&gt;colecciones Bruno" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="270" y="730" width="190" height="75" as="geometry"/></mxCell><mxCell id="c23" value="&lt;b&gt;GitHub Actions&lt;/b&gt;&lt;br&gt;pipeline DevSecOps&lt;br&gt;&lt;i&gt;secrets del repo&lt;/i&gt;" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontColor=#0D47A1;" vertex="1" parent="1"><mxGeometry x="510" y="730" width="190" height="75" as="geometry"/></mxCell><mxCell id="c24" value="Registros públicos&lt;br&gt;npm · PyPI · Maven · Docker Hub" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#455A64;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="50" y="840" width="230" height="55" as="geometry"/></mxCell><mxCell id="c25" value="GHCR&lt;br&gt;imágenes publicadas" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="730" width="150" height="55" as="geometry"/></mxCell><mxCell id="c26" value="DefectDojo&lt;br&gt;hallazgos centralizados" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="830" width="150" height="55" as="geometry"/></mxCell><mxCell id="c27" value=".env / secrets/db_password.txt&lt;br&gt;&lt;i&gt;fuera del repo, inyectados&lt;br&gt;por docker compose&lt;/i&gt;" style="shape=partialRectangle;left=0;right=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#F57F17;strokeWidth=2;fontSize=12;" vertex="1" parent="1"><mxGeometry x="925" y="750" width="155" height="80" as="geometry"/></mxCell><mxCell id="c28" value="1. HTTPS: login, quizzes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.15;entryDx=0;entryDy=0;" edge="1" parent="1" source="c10" target="c13"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c29" value="2. HTTPS: aulas, PDF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c11" target="c13"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="340" y="290"/><mxPoint x="340" y="185"/></Array></mxGeometry></mxCell><mxCell id="c30" value="3. guarda / lee JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=0;exitY=0.85;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="c13" target="c12"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="385" y="210"/><mxPoint x="385" y="450"/></Array></mxGeometry></mxCell><mxCell id="c31" value="4. REST + Bearer JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.396;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c13" target="c14"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c32" value="5. /auth, validate-token" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c14" target="c15"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="720" y="343"/><mxPoint x="720" y="165"/></Array></mxGeometry></mxCell><mxCell id="c33" value="6. aulas / ranking" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c14" target="c16"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c34" value="7. quiz, PDF multipart" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c14" target="c17"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="720" y="406"/><mxPoint x="720" y="560"/></Array></mxGeometry></mxCell><mxCell id="c35" value="8. JDBC" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="c15" target="c18"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100" y="193"/><mxPoint x="1100" y="340"/></Array></mxGeometry></mxCell><mxCell id="c36" value="9. Prisma" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6875;entryDx=0;entryDy=0;" edge="1" parent="1" source="c16" target="c18"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c37" value="10. asyncpg" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.3125;exitDx=0;exitDy=0;entryX=0;entryY=0.875;entryDx=0;entryDy=0;" edge="1" parent="1" source="c17" target="c18"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1110" y="545"/><mxPoint x="1110" y="390"/></Array></mxGeometry></mxCell><mxCell id="c38" value="11. prompt + texto PDF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.7375;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c17" target="c19"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c39" value="12. correos" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c15" target="c20"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1405" y="165"/><mxPoint x="1405" y="677"/></Array></mxGeometry></mxCell><mxCell id="c40" value="13. git push / PR" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;" edge="1" parent="1" source="c21" target="c22"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c41" value="14. trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;" edge="1" parent="1" source="c22" target="c23"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c42" value="15. dependencias" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="c24" target="c23"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="605" y="867"/></Array></mxGeometry></mxCell><mxCell id="c43" value="16. imágenes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c23" target="c25"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell><mxCell id="c44" value="17. reportes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#263238;exitX=0.79;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="c23" target="c26"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="660" y="857"/></Array></mxGeometry></mxCell><mxCell id="c45" value="E-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="625" y="132" width="40" height="40" as="geometry"/></mxCell><mxCell id="c46" value="E-02" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1025" y="107" width="40" height="40" as="geometry"/></mxCell><mxCell id="c47" value="E-03" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="645" y="312" width="40" height="40" as="geometry"/></mxCell><mxCell id="c48" value="T-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="645" y="400" width="40" height="40" as="geometry"/></mxCell><mxCell id="c49" value="T-02" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="255" y="822" width="40" height="40" as="geometry"/></mxCell><mxCell id="c50" value="S-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="435" y="712" width="40" height="40" as="geometry"/></mxCell><mxCell id="c51" value="S-02" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="235" y="402" width="40" height="40" as="geometry"/></mxCell><mxCell id="c52" value="R-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1025" y="317" width="40" height="40" as="geometry"/></mxCell><mxCell id="c53" value="D-02" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1025" y="398" width="40" height="40" as="geometry"/></mxCell><mxCell id="c54" value="I-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="405" y="400" width="40" height="40" as="geometry"/></mxCell><mxCell id="c55" value="I-02" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="752" y="187" width="40" height="40" as="geometry"/></mxCell><mxCell id="c56" value="D-01" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1025" y="502" width="40" height="40" as="geometry"/></mxCell><mxCell id="c57" value="&lt;b&gt;Top 5 por riesgo&lt;/b&gt;: E-01 RCE en Next.js · E-02 auto-registro con rol TEACHER · T-01 IDOR en monedas/quizzes · S-01 JWT versionados en el repositorio · D-01 PDF malicioso / abuso de Gemini" style="text;html=1;fillColor=none;strokeColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=11;" vertex="1" parent="1"><mxGeometry x="20" y="930" width="1370" height="24" as="geometry"/></mxCell><mxCell id="c58" value="I-03" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="752" y="107" width="40" height="40" as="geometry"/></mxCell><mxCell id="c59" value="E-04" style="ellipse;shape=ellipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#B71C1C;fontColor=#FFFFFF;fontStyle=1;fontSize=10;" vertex="1" parent="1"><mxGeometry x="880" y="187" width="40" height="40" as="geometry"/></mxCell><mxCell id="c60" value="&lt;b&gt;Agregadas con la línea base de CI&lt;/b&gt;: I-03 hash BCrypt expuesto en /me (ZAP autenticado) · E-04 Spring Boot 3.3.0 con Tomcat/Spring Security/Thymeleaf vulnerables (Trivy image)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#37474F;" vertex="1" parent="1"><mxGeometry x="20" y="952" width="1370" height="22" as="geometry"/></mxCell></root></mxGraphModel></diagram></mxfile>
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" pages="3">
+  <diagram name="1. ¿Qué estamos construyendo?" id="kiwi-arq">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1350" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="kiwi-arq-0" />
+        <mxCell id="kiwi-arq-1" parent="kiwi-arq-0" />
+        <mxCell id="kiwi-arq-v1" value="1) ¿Qué estamos construyendo? — Arquitectura de Kiwi" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="10" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v2" value="Plataforma educativa gamificada: docentes crean quizzes (manuales o generados con IA desde PDF/texto) y estudiantes los resuelven ganando monedas y personajes. Fuente: compose.yml, README.md y código de los microservicios." style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#3e4c59;whiteSpace=wrap;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="48" width="1500" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v3" value="GitHub" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="170" y="120" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v4" value="AWS Amplify" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="560" y="110" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v5" value="Dispositivo del usuario" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="170" y="400" width="230" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v6" value="AWS EC2 · Docker Compose" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="620" y="320" width="1010" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v7" value="Red &lt;i&gt;backend&lt;/i&gt; · con salida a Internet" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#eef4fb;strokeColor=#6c8ebf;fontColor=#1f4e79;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="890" y="350" width="340" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v8" value="Red &lt;i&gt;data&lt;/i&gt; (internal: true)" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#fbeeee;strokeColor=#b85450;fontColor=#b85450;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1300" y="520" width="300" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v9" value="Google · Gmail" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1700" y="360" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v10" value="Google · Gemini" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;fontStyle=1;fillColor=#f5f7fa;strokeColor=#9aa5b1;fontColor=#3e4c59;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1700" y="790" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v11" value="Desarrollador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="60" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v12" value="Estudiante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="60" y="470" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v13" value="Docente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="60" y="610" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v14" value="Repositorio GitHub&lt;br&gt;(código + Pull Requests)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="205" y="155" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v15" value="Frontend Next.js&lt;br&gt;(hosting AWS Amplify)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="600" y="145" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v16" value="Navegador web&lt;br&gt;(app Next.js)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="195" y="440" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v17" value="localStorage&lt;br&gt;(JWT · 24 h)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="220" y="610" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v18" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="440" y="495" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v19" value="&lt;b&gt;Orchestrator&lt;/b&gt; · API Gateway&lt;br&gt;FastAPI :8000 (público)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="650" y="495" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v20" value="&lt;b&gt;Archivo .env (host)&lt;/b&gt;&lt;br&gt;JWT_SECRET · GOOGLE_API_KEY&lt;br&gt;MAIL_PASSWORD · DB_PASSWORD" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=left;spacingLeft=6;verticalAlign=middle;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="650" y="830" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v21" value="&lt;b&gt;ms-user&lt;/b&gt;&lt;br&gt;Spring Boot · Auth / JWT" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="975" y="385" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v22" value="&lt;b&gt;ms-classroom&lt;/b&gt;&lt;br&gt;Express + Prisma" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="975" y="595" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v23" value="&lt;b&gt;ms-quiz&lt;/b&gt;&lt;br&gt;FastAPI · generación IA" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="975" y="815" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v24" value="&lt;b&gt;PostgreSQL 13&lt;/b&gt;&lt;br&gt;volumen shared_db_data" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1375" y="590" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v25" value="Docker secret: db_password" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1385" y="705" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v26" value="Gmail SMTP&lt;br&gt;(correos a usuarios)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006633;fontColor=#ffffff;strokeColor=#003d1f;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1745" y="400" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v27" value="Google Gemini API&lt;br&gt;(gemini-2.0-flash)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006633;fontColor=#ffffff;strokeColor=#003d1f;fontSize=11;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="1745" y="830" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e28" value="git push / PR" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v11" target="kiwi-arq-v14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e29" value="CI/CD: build y deploy" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v14" target="kiwi-arq-v15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e30" value="git pull + docker compose up (kiwi.sh)" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.4356;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v14" target="kiwi-arq-v6">
+          <mxGeometry relative="1" as="geometry" x="0.3">
+            <Array as="points">
+              <mxPoint x="285" y="290" />
+              <mxPoint x="1060" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-arq-e31" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v12" target="kiwi-arq-v16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e32" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v13" target="kiwi-arq-v16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e33" value="guarda / lee JWT" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v16" target="kiwi-arq-v17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e34" value="HTTPS" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v16" target="kiwi-arq-v18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e35" value="HTML / JS" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=0.55;exitY=0.05;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v18" target="kiwi-arq-v15">
+          <mxGeometry relative="1" as="geometry" x="-0.5">
+            <Array as="points">
+              <mxPoint x="506" y="268" />
+              <mxPoint x="690" y="268" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-arq-e36" value="REST + JWT&lt;br&gt;HTTP :8000" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=0.96;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v18" target="kiwi-arq-v19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-arq-e37" value="login · validate-token" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v19" target="kiwi-arq-v21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e38" value="HTTP sin auth" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v19" target="kiwi-arq-v22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e39" value="PDF / texto" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v19" target="kiwi-arq-v23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e40" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v21" target="kiwi-arq-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e41" value="SQL · mismo usuario BD" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v22" target="kiwi-arq-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e42" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v23" target="kiwi-arq-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e43" value="SMTP + MAIL_PASSWORD" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v21" target="kiwi-arq-v26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e44" value="HTTPS + GOOGLE_API_KEY (contenido del PDF)" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v23" target="kiwi-arq-v27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-e45" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#666666;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8983;entryDx=0;entryDy=0;" edge="1" parent="kiwi-arq-1" source="kiwi-arq-v20" target="kiwi-arq-v7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v46" value="Componentes" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1000" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v47" value="&lt;b&gt;Componente&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1035" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v48" value="&lt;b&gt;Tecnología / puerto&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1035" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v49" value="&lt;b&gt;Expuesto a Internet&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1035" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v50" value="&lt;b&gt;Responsabilidad&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1035" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v51" value="Frontend" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1065" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v52" value="Next.js · AWS Amplify (5174 en local)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1065" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v53" value="Sí" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1065" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v54" value="UI de docentes y estudiantes. Guarda el JWT en localStorage y llama al orchestrator." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1065" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v55" value="Orchestrator" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1091" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v56" value="FastAPI · API Gateway · :8000" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1091" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v57" value="Sí" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1091" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v58" value="Punto único de entrada. Valida el JWT llamando a ms-user y enruta a los microservicios." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1091" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v59" value="ms-user" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1117" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v60" value="Spring Boot + Spring Security · :8080" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1117" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v61" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1117" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v62" value="Registro, login, emisión/validación de JWT (HS256, 24 h) y correos vía Gmail SMTP." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1117" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v63" value="ms-classroom" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1143" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v64" value="Express + Prisma · :3000" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1143" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v65" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1143" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v66" value="Aulas, competencias y rankings (sin autenticación propia)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1143" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v67" value="ms-quiz" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1169" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v68" value="FastAPI + Google Gemini · :8001" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1169" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v69" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1169" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v70" value="Quizzes manuales o generados con IA a partir de texto o PDF." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1169" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v71" value="PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1195" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v72" value="PostgreSQL 13 · :5432" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1195" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v73" value="No (red data internal)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1195" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v74" value="Datos de todos los servicios. Contraseña vía Docker secret; volumen shared_db_data." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1195" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v75" value="GitHub" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1221" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v76" value="SaaS" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1221" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v77" value="Externo" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1221" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v78" value="Código fuente, Pull Requests y origen de los despliegues." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1221" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v79" value="Google Gemini API" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1247" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v80" value="SaaS" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1247" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v81" value="Externo" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1247" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v82" value="Generación de preguntas a partir del contenido enviado." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1247" width="700" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v83" value="Gmail SMTP" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="40" y="1273" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v84" value="SaaS" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="210" y="1273" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v85" value="Externo" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="500" y="1273" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-arq-v86" value="Envío de correos a los usuarios." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-arq-1">
+          <mxGeometry x="670" y="1273" width="700" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2. STRIDE – ¿Qué puede salir mal?" id="kiwi-stride">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1750" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="kiwi-stride-0" />
+        <mxCell id="kiwi-stride-1" parent="kiwi-stride-0" />
+        <mxCell id="kiwi-stride-v1" value="2) ¿Qué puede salir mal? — Modelo de amenazas STRIDE de Kiwi" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="10" width="1300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v2" value="17 amenazas identificadas sobre el diagrama de flujo de datos · 6 priorizadas en amarillo (T1–T6), con evaluación y mitigaciones en la hoja «3. Plantilla de amenazas». Pase el cursor sobre un marcador para ver la amenaza." style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#3e4c59;whiteSpace=wrap;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="48" width="1550" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v3" value="Trust Boundary – GitHub" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="170" y="120" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v4" value="Trust Boundary – AWS Amplify" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="560" y="110" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v5" value="Trust Boundary – Dispositivo del usuario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="170" y="400" width="230" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v6" value="Trust Boundary – AWS EC2 · Docker Compose" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="620" y="320" width="1010" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v7" value="Red &lt;i&gt;backend&lt;/i&gt; · con salida a Internet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=3 3;strokeColor=#6c8ebf;fontColor=#1f4e79;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="890" y="350" width="340" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v8" value="Trust Boundary – Red &lt;i&gt;data&lt;/i&gt; (internal: true)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#b85450;strokeWidth=2;fontColor=#b85450;fontStyle=1;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1300" y="520" width="300" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v9" value="Trust Boundary – Google · Gmail" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1700" y="360" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v10" value="Trust Boundary – Google · Gemini" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1700" y="790" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v11" value="Desarrollador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="60" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v12" value="Estudiante" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="60" y="470" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v13" value="Docente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="60" y="610" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v14" value="Repositorio GitHub&lt;br&gt;(código + Pull Requests)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="205" y="155" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v15" value="Frontend Next.js&lt;br&gt;(hosting AWS Amplify)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="600" y="145" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v16" value="Navegador web&lt;br&gt;(app Next.js)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="195" y="440" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v17" value="localStorage&lt;br&gt;(JWT · 24 h)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="220" y="610" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v18" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="440" y="495" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v19" value="&lt;b&gt;Orchestrator&lt;/b&gt; · API Gateway&lt;br&gt;FastAPI :8000 (público)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="650" y="495" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v20" value="&lt;b&gt;Archivo .env (host)&lt;/b&gt;&lt;br&gt;JWT_SECRET · GOOGLE_API_KEY&lt;br&gt;MAIL_PASSWORD · DB_PASSWORD" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;align=left;spacingLeft=6;verticalAlign=middle;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="650" y="830" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v21" value="&lt;b&gt;ms-user&lt;/b&gt;&lt;br&gt;Spring Boot · Auth / JWT" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="975" y="385" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v22" value="&lt;b&gt;ms-classroom&lt;/b&gt;&lt;br&gt;Express + Prisma" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="975" y="595" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v23" value="&lt;b&gt;ms-quiz&lt;/b&gt;&lt;br&gt;FastAPI · generación IA" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="975" y="815" width="180" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v24" value="&lt;b&gt;PostgreSQL 13&lt;/b&gt;&lt;br&gt;volumen shared_db_data" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1375" y="590" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v25" value="Docker secret: db_password" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1385" y="705" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v26" value="Gmail SMTP&lt;br&gt;(correos a usuarios)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006633;fontColor=#ffffff;strokeColor=#003d1f;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1745" y="400" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v27" value="Google Gemini API&lt;br&gt;(gemini-2.0-flash)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006633;fontColor=#ffffff;strokeColor=#003d1f;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1745" y="830" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e28" value="git push / PR" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v11" target="kiwi-stride-v14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e29" value="CI/CD: build y deploy" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v14" target="kiwi-stride-v15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e30" value="git pull + docker compose up (kiwi.sh)" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.4356;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v14" target="kiwi-stride-v6">
+          <mxGeometry relative="1" as="geometry" x="0.3">
+            <Array as="points">
+              <mxPoint x="285" y="290" />
+              <mxPoint x="1060" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-stride-e31" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v12" target="kiwi-stride-v16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e32" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v13" target="kiwi-stride-v16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e33" value="guarda / lee JWT" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v16" target="kiwi-stride-v17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e34" value="HTTPS" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v16" target="kiwi-stride-v18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e35" value="HTML / JS" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=0.55;exitY=0.05;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v18" target="kiwi-stride-v15">
+          <mxGeometry relative="1" as="geometry" x="-0.5">
+            <Array as="points">
+              <mxPoint x="506" y="268" />
+              <mxPoint x="690" y="268" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-stride-e36" value="REST + JWT&lt;br&gt;HTTP :8000" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;startArrow=classic;startFill=1;exitX=0.96;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v18" target="kiwi-stride-v19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="32" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kiwi-stride-e37" value="login · validate-token" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v19" target="kiwi-stride-v21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e38" value="HTTP sin auth" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v19" target="kiwi-stride-v22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e39" value="PDF / texto" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v19" target="kiwi-stride-v23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e40" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v21" target="kiwi-stride-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e41" value="SQL · mismo usuario BD" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v22" target="kiwi-stride-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e42" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v23" target="kiwi-stride-v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e43" value="SMTP + MAIL_PASSWORD" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v21" target="kiwi-stride-v26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e44" value="HTTPS + GOOGLE_API_KEY (contenido del PDF)" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v23" target="kiwi-stride-v27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-e45" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;fontSize=10;labelBackgroundColor=#ffffff;dashed=1;strokeColor=#666666;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8983;entryDx=0;entryDy=0;" edge="1" parent="kiwi-stride-1" source="kiwi-stride-v20" target="kiwi-stride-v7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v46" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="355" y="615" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="S" tooltip="T1 · 1- Spoofing · Navegador · sesión JWT&#10;Robo del JWT guardado en localStorage (vía XSS o equipo compartido) y reutilización para suplantar a un docente o estudiante; el token dura 24 h y no se puede revocar." id="kiwi-stride-v47">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v46">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;1&lt;/sub&gt;" tooltip="T1 · 1- Spoofing · Navegador · sesión JWT&#10;Robo del JWT guardado en localStorage (vía XSS o equipo compartido) y reutilización para suplantar a un docente o estudiante; el token dura 24 h y no se puede revocar." id="kiwi-stride-v48">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v46">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v49" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="575" y="440" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="T" tooltip="T2 · 2- Tampering · Flujo navegador ↔ orchestrator&#10;El orchestrator se publica con uvicorn en HTTP (:8000) y el compose no incluye terminación TLS: un atacante en la red (MITM) puede alterar respuestas, notas o envíos de quiz." id="kiwi-stride-v50">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v49">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;2&lt;/sub&gt;" tooltip="T2 · 2- Tampering · Flujo navegador ↔ orchestrator&#10;El orchestrator se publica con uvicorn en HTTP (:8000) y el compose no incluye terminación TLS: un atacante en la red (MITM) puede alterar respuestas, notas o envíos de quiz." id="kiwi-stride-v51">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v49">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v52" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="105" y="95" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="R" tooltip="T3 · 3- Repudation · Desarrollador → GitHub&#10;Un desarrollador introduce código malicioso y niega su autoría: los commits locales no están firmados y no hay revisión obligatoria verificable antes del despliegue." id="kiwi-stride-v53">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v52">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;3&lt;/sub&gt;" tooltip="T3 · 3- Repudation · Desarrollador → GitHub&#10;Un desarrollador introduce código malicioso y niega su autoría: los commits locales no están firmados y no hay revisión obligatoria verificable antes del despliegue." id="kiwi-stride-v54">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v52">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v55" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="655" y="755" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="I" tooltip="T4 · 4 - Information Disclosure · Secretos (.env en el host EC2)&#10;JWT_SECRET, GOOGLE_API_KEY, MAIL_PASSWORD y DB_PASSWORD se inyectan como variables de entorno en texto plano (solo PostgreSQL usa Docker secrets). Con JWT_SECRET se pueden forjar tokens de cualquier usuario." id="kiwi-stride-v56">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v55">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;4&lt;/sub&gt;" tooltip="T4 · 4 - Information Disclosure · Secretos (.env en el host EC2)&#10;JWT_SECRET, GOOGLE_API_KEY, MAIL_PASSWORD y DB_PASSWORD se inyectan como variables de entorno en texto plano (solo PostgreSQL usa Docker secrets). Con JWT_SECRET se pueden forjar tokens de cualquier usuario." id="kiwi-stride-v57">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v55">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v58" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="770" y="650" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="D" tooltip="T5 · 5- Denial of Service · Orchestrator → ms-quiz (PDF)&#10;/teacher/quiz/generate-from-pdf no limita tamaño ni frecuencia: el PDF se lee completo en memoria y cada petición consume cuota de Gemini. Una ráfaga de PDFs grandes tumba el EC2 compartido." id="kiwi-stride-v59">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v58">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;5&lt;/sub&gt;" tooltip="T5 · 5- Denial of Service · Orchestrator → ms-quiz (PDF)&#10;/teacher/quiz/generate-from-pdf no limita tamaño ni frecuencia: el PDF se lee completo en memoria y cada petición consume cuota de Gemini. Una ráfaga de PDFs grandes tumba el EC2 compartido." id="kiwi-stride-v60">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v58">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v61" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="905" y="355" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="E" tooltip="T6 · 6 - Elevation of privilege · ms-user · /auth/register&#10;El rol (STUDENT / TEACHER) lo envía el propio cliente al registrarse: cualquiera puede crearse una cuenta TEACHER y crear aulas, quizzes y ver resultados de alumnos." id="kiwi-stride-v62">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-v61">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;6&lt;/sub&gt;" tooltip="T6 · 6 - Elevation of privilege · ms-user · /auth/register&#10;El rol (STUDENT / TEACHER) lo envía el propio cliente al registrarse: cualquiera puede crearse una cuenta TEACHER y crear aulas, quizzes y ver resultados de alumnos." id="kiwi-stride-v63">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v61">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v64" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="105" y="400" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="S" tooltip="T7 · 1- Spoofing · Estudiante / Docente&#10;Phishing o fuerza bruta de credenciales: el login no tiene MFA, bloqueo por intentos ni rate limiting." id="kiwi-stride-v65">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v64">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;7&lt;/sub&gt;" tooltip="T7 · 1- Spoofing · Estudiante / Docente&#10;Phishing o fuerza bruta de credenciales: el login no tiene MFA, bloqueo por intentos ni rate limiting." id="kiwi-stride-v66">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v64">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v67" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="450" y="110" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="T" tooltip="T8 · 2- Tampering · Pipeline GitHub → Amplify&#10;Una dependencia npm comprometida o un cambio no revisado alteran el bundle que Amplify publica a todos los usuarios (cadena de suministro)." id="kiwi-stride-v68">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v67">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;8&lt;/sub&gt;" tooltip="T8 · 2- Tampering · Pipeline GitHub → Amplify&#10;Una dependencia npm comprometida o un cambio no revisado alteran el bundle que Amplify publica a todos los usuarios (cadena de suministro)." id="kiwi-stride-v69">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v67">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v70" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="690" y="420" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="I" tooltip="T9 · 4 - Information Disclosure · Orchestrator&#10;Swagger (/docs) público y CORS allow_origins=&quot;*&quot; exponen la superficie completa de la API y permiten invocarla desde cualquier sitio." id="kiwi-stride-v71">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v70">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;9&lt;/sub&gt;" tooltip="T9 · 4 - Information Disclosure · Orchestrator&#10;Swagger (/docs) público y CORS allow_origins=&quot;*&quot; exponen la superficie completa de la API y permiten invocarla desde cualquier sitio." id="kiwi-stride-v72">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v70">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v73" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1165" y="540" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="R" tooltip="T10 · 3- Repudation · Orchestrator / ms-classroom&#10;No hay logs de auditoría con la identidad del usuario: un estudiante puede negar un envío de quiz o un docente un cambio de notas." id="kiwi-stride-v74">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v73">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;10&lt;/sub&gt;" tooltip="T10 · 3- Repudation · Orchestrator / ms-classroom&#10;No hay logs de auditoría con la identidad del usuario: un estudiante puede negar un envío de quiz o un docente un cambio de notas." id="kiwi-stride-v75">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v73">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v76" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1040" y="690" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="S" tooltip="T11 · 1- Spoofing · ms-classroom&#10;No autentica a quien lo llama: un contenedor comprometido en la red backend puede invocarlo haciéndose pasar por el orchestrator." id="kiwi-stride-v77">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v76">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;11&lt;/sub&gt;" tooltip="T11 · 1- Spoofing · ms-classroom&#10;No autentica a quien lo llama: un contenedor comprometido en la red backend puede invocarlo haciéndose pasar por el orchestrator." id="kiwi-stride-v78">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v76">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v79" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1260" y="880" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="T" tooltip="T12 · 2- Tampering · ms-quiz → Gemini&#10;Prompt injection dentro del PDF o texto subido manipula las preguntas o las respuestas correctas que genera la IA." id="kiwi-stride-v80">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v79">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;12&lt;/sub&gt;" tooltip="T12 · 2- Tampering · ms-quiz → Gemini&#10;Prompt injection dentro del PDF o texto subido manipula las preguntas o las respuestas correctas que genera la IA." id="kiwi-stride-v81">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v79">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v82" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1640" y="880" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="I" tooltip="T13 · 4 - Information Disclosure · ms-quiz → Gemini&#10;El contenido de los PDFs (posibles datos de alumnos) se envía a un tercero (Google) sin anonimizar." id="kiwi-stride-v83">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v82">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;13&lt;/sub&gt;" tooltip="T13 · 4 - Information Disclosure · ms-quiz → Gemini&#10;El contenido de los PDFs (posibles datos de alumnos) se envía a un tercero (Google) sin anonimizar." id="kiwi-stride-v84">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v82">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v85" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1640" y="450" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="S" tooltip="T14 · 1- Spoofing · ms-user → Gmail SMTP&#10;Los correos salen de una cuenta Gmail genérica, sin dominio propio con SPF/DKIM/DMARC: es fácil imitar correos de Kiwi para phishing." id="kiwi-stride-v86">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v85">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;14&lt;/sub&gt;" tooltip="T14 · 1- Spoofing · ms-user → Gmail SMTP&#10;Los correos salen de una cuenta Gmail genérica, sin dominio propio con SPF/DKIM/DMARC: es fácil imitar correos de Kiwi para phishing." id="kiwi-stride-v87">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v85">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v88" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1530" y="545" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="I" tooltip="T15 · 4 - Information Disclosure · PostgreSQL&#10;Los tres microservicios usan el mismo usuario de BD y el volumen no tiene cifrado configurado: comprometer un servicio expone los datos de todos." id="kiwi-stride-v89">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v88">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;15&lt;/sub&gt;" tooltip="T15 · 4 - Information Disclosure · PostgreSQL&#10;Los tres microservicios usan el mismo usuario de BD y el volumen no tiene cifrado configurado: comprometer un servicio expone los datos de todos." id="kiwi-stride-v90">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v88">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v91" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="1535" y="700" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="T" tooltip="T16 · 2- Tampering · PostgreSQL&#10;Con el usuario de BD compartido, un servicio comprometido puede modificar tablas de otros esquemas (usuarios, notas, monedas)." id="kiwi-stride-v92">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v91">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;16&lt;/sub&gt;" tooltip="T16 · 2- Tampering · PostgreSQL&#10;Con el usuario de BD compartido, un servicio comprometido puede modificar tablas de otros esquemas (usuarios, notas, monedas)." id="kiwi-stride-v93">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v91">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v94" value="" style="group" vertex="1" parent="kiwi-stride-1" connectable="0">
+          <mxGeometry x="665" y="610" width="56" height="56" as="geometry" />
+        </mxCell>
+        <UserObject label="E" tooltip="T17 · 6 - Elevation of privilege · Orchestrator (IDOR)&#10;Solo se valida el rol del token, no que teacher_id / userId de la URL o del body sean del usuario: p. ej. comprar personajes con monedas de otro en /characters/buy." id="kiwi-stride-v95">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=26;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-v94">
+            <mxGeometry x="0" y="0" width="50" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="T&lt;sub&gt;17&lt;/sub&gt;" tooltip="T17 · 6 - Elevation of privilege · Orchestrator (IDOR)&#10;Solo se valida el rol del token, no que teacher_id / userId de la URL o del body sean del usuario: p. ej. comprar personajes con monedas de otro en /characters/buy." id="kiwi-stride-v96">
+          <mxCell style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=9;fontStyle=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;spacing=0;" vertex="1" parent="kiwi-stride-v94">
+            <mxGeometry x="32" y="32" width="24" height="24" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="kiwi-stride-v97" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9aa5b1;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1660" y="90" width="300" height="222" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v98" value="&lt;b&gt;Notación&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1672" y="96" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v99" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1674" y="127" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v100" value="Proceso" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="126" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v101" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006633;fontColor=#ffffff;strokeColor=#003d1f;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1674" y="154" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v102" value="Entidad / servicio externo" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="152" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v103" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=4;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1678" y="178" width="26" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v104" value="Almacén de datos" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="178" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v105" value="" style="shape=umlActor;verticalAlign=top;html=1;outlineConnect=0;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1685" y="204" width="12" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v106" value="Actor humano" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="204" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v107" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;verticalAlign=bottom;labelPosition=center;align=left;spacingLeft=2;fontSize=11;dashed=1;dashPattern=8 8;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1674" y="232" width="34" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v108" value="Trust boundary (frontera de confianza)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="230" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v109" value="S" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1680" y="256" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v110" value="Amenaza priorizada (T1–T6, hoja 3)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="256" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v111" value="S" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=11;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1680" y="282" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v112" value="Amenaza identificada (T7–T17)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1720" y="282" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v113" value="&lt;b&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;verticalAlign=middle;fillColor=#ffffff;fontColor=#000000;fontSize=13;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1010" width="44" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v114" value="&lt;b&gt;Amenaza&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;verticalAlign=middle;fillColor=#ffffff;fontColor=#000000;fontSize=13;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1010" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v115" value="&lt;b&gt;Propiedad afectada&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;verticalAlign=middle;fillColor=#ffffff;fontColor=#000000;fontSize=13;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1010" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v116" value="&lt;b&gt;Definición de amenaza&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;verticalAlign=middle;fillColor=#ffffff;fontColor=#000000;fontSize=13;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1010" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v117" value="S" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1040" width="44" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v118" value="Spoofing / Suplantación de identidad" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1040" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v119" value="Autenticación" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1040" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v120" value="Fingir ser algo o alguien que no eres tú" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1040" width="400" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v121" value="T" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1066" width="44" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v122" value="Tampering / Manipulación de datos" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1066" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v123" value="Integridad" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1066" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v124" value="Modificar algo en el disco, la red, la memoria o en cualquier otro lugar" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1066" width="400" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v125" value="R" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1108" width="44" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v126" value="Repudiation / Repudio" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1108" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v127" value="No repudio" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1108" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v128" value="Afirmar que usted no hizo algo o que no fue responsable; puede ser honesto o falso" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1108" width="400" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v129" value="I" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1150" width="44" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v130" value="Information Disclosure / Divulgación de información" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1150" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v131" value="Confidencialidad" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1150" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v132" value="Proporcionar información a alguien no autorizado para acceder a ella" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1150" width="400" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v133" value="D" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1192" width="44" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v134" value="Denial of Service / Denegación de servicio" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1192" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v135" value="Disponibilidad" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1192" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v136" value="Agotamiento de los recursos necesarios para prestar el servicio" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1192" width="400" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v137" value="E" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;fontColor=#00B0F0;fontStyle=1;fontSize=14;align=center;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="40" y="1234" width="44" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v138" value="Elevation of Privilege / Escalamiento de privilegios" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="84" y="1234" width="300" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v139" value="Autorización" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="384" y="1234" width="160" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v140" value="Permitir que alguien haga algo para lo que no está autorizado" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=12;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="544" y="1234" width="400" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v141" value="Catálogo de amenazas identificadas" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="975" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v142" value="&lt;b&gt;ID&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1010" width="52" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v143" value="&lt;b&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1010" width="44" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v144" value="&lt;b&gt;Componente / flujo&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1010" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v145" value="&lt;b&gt;Amenaza&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1010" width="684" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v146" value="&lt;b&gt;T1&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1040" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v147" value="S" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1040" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v148" value="Navegador · sesión JWT" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1040" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v149" value="Robo del JWT guardado en &lt;i&gt;localStorage&lt;/i&gt; (vía XSS o equipo compartido) y reutilización para suplantar a un docente o estudiante; el token dura 24 h y no se puede revocar." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1040" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v150" value="&lt;b&gt;T2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1080" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v151" value="T" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1080" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v152" value="Flujo navegador ↔ orchestrator" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1080" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v153" value="El orchestrator se publica con uvicorn en HTTP (:8000) y el compose no incluye terminación TLS: un atacante en la red (MITM) puede alterar respuestas, notas o envíos de quiz." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1080" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v154" value="&lt;b&gt;T3&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1120" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v155" value="R" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1120" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v156" value="Desarrollador → GitHub" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1120" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v157" value="Un desarrollador introduce código malicioso y niega su autoría: los commits locales no están firmados y no hay revisión obligatoria verificable antes del despliegue." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1120" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v158" value="&lt;b&gt;T4&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1160" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v159" value="I" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1160" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v160" value="Secretos (.env en el host EC2)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1160" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v161" value="JWT_SECRET, GOOGLE_API_KEY, MAIL_PASSWORD y DB_PASSWORD se inyectan como variables de entorno en texto plano (solo PostgreSQL usa Docker secrets). Con JWT_SECRET se pueden forjar tokens de cualquier usuario." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1160" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v162" value="&lt;b&gt;T5&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1200" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v163" value="D" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1200" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v164" value="Orchestrator → ms-quiz (PDF)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1200" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v165" value="/teacher/quiz/generate-from-pdf no limita tamaño ni frecuencia: el PDF se lee completo en memoria y cada petición consume cuota de Gemini. Una ráfaga de PDFs grandes tumba el EC2 compartido." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1200" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v166" value="&lt;b&gt;T6&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1240" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v167" value="E" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1240" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v168" value="ms-user · /auth/register" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1240" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v169" value="El rol (STUDENT / TEACHER) lo envía el propio cliente al registrarse: cualquiera puede crearse una cuenta TEACHER y crear aulas, quizzes y ver resultados de alumnos." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#fff2cc;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1240" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v170" value="&lt;b&gt;T7&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1280" width="52" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v171" value="S" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1280" width="44" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v172" value="Estudiante / Docente" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1280" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v173" value="Phishing o fuerza bruta de credenciales: el login no tiene MFA, bloqueo por intentos ni rate limiting." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1280" width="684" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v174" value="&lt;b&gt;T8&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1306" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v175" value="T" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1306" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v176" value="Pipeline GitHub → Amplify" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1306" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v177" value="Una dependencia npm comprometida o un cambio no revisado alteran el bundle que Amplify publica a todos los usuarios (cadena de suministro)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1306" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v178" value="&lt;b&gt;T9&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1346" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v179" value="I" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1346" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v180" value="Orchestrator" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1346" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v181" value="Swagger (/docs) público y CORS allow_origins=&quot;*&quot; exponen la superficie completa de la API y permiten invocarla desde cualquier sitio." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1346" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v182" value="&lt;b&gt;T10&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1386" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v183" value="R" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1386" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v184" value="Orchestrator / ms-classroom" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1386" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v185" value="No hay logs de auditoría con la identidad del usuario: un estudiante puede negar un envío de quiz o un docente un cambio de notas." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1386" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v186" value="&lt;b&gt;T11&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1426" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v187" value="S" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1426" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v188" value="ms-classroom" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1426" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v189" value="No autentica a quien lo llama: un contenedor comprometido en la red backend puede invocarlo haciéndose pasar por el orchestrator." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1426" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v190" value="&lt;b&gt;T12&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1466" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v191" value="T" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1466" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v192" value="ms-quiz → Gemini" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1466" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v193" value="Prompt injection dentro del PDF o texto subido manipula las preguntas o las respuestas correctas que genera la IA." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1466" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v194" value="&lt;b&gt;T13&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1506" width="52" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v195" value="I" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1506" width="44" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v196" value="ms-quiz → Gemini" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1506" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v197" value="El contenido de los PDFs (posibles datos de alumnos) se envía a un tercero (Google) sin anonimizar." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1506" width="684" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v198" value="&lt;b&gt;T14&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1532" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v199" value="S" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1532" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v200" value="ms-user → Gmail SMTP" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1532" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v201" value="Los correos salen de una cuenta Gmail genérica, sin dominio propio con SPF/DKIM/DMARC: es fácil imitar correos de Kiwi para phishing." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1532" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v202" value="&lt;b&gt;T15&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1572" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v203" value="I" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1572" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v204" value="PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1572" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v205" value="Los tres microservicios usan el mismo usuario de BD y el volumen no tiene cifrado configurado: comprometer un servicio expone los datos de todos." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1572" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v206" value="&lt;b&gt;T16&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1612" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v207" value="T" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1612" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v208" value="PostgreSQL" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1612" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v209" value="Con el usuario de BD compartido, un servicio comprometido puede modificar tablas de otros esquemas (usuarios, notas, monedas)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1612" width="684" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v210" value="&lt;b&gt;T17&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="980" y="1652" width="52" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v211" value="E" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;align=center;fontStyle=1;fontColor=#00B0F0;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1032" y="1652" width="44" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v212" value="Orchestrator (IDOR)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1076" y="1652" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-stride-v213" value="Solo se valida el rol del token, no que teacher_id / userId de la URL o del body sean del usuario: p. ej. comprar personajes con monedas de otro en /characters/buy." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-stride-1">
+          <mxGeometry x="1276" y="1652" width="684" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3. Plantilla de amenazas" id="kiwi-plantilla">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1000" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="kiwi-plantilla-0" />
+        <mxCell id="kiwi-plantilla-1" parent="kiwi-plantilla-0" />
+        <mxCell id="kiwi-plantilla-v1" value="3) Plantilla de amenazas priorizadas (formato STRIDE_Plantilla.xlsx)" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;whiteSpace=wrap;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="10" width="1400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v2" value="Riesgo inherente según la hoja «2) Evaluación de Riesgos» + «Risk Scale»; riesgo residual según «Controls Scale». Apetito de riesgo (Config!A10): &lt;b&gt;3 - Moderate&lt;/b&gt; → «Is Mitigated» = Yes solo si el riesgo residual es menor que el apetito." style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#3e4c59;whiteSpace=wrap;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="48" width="1600" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v3" value="Amenazas y riesgo inherente" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="100" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v4" value="&lt;b&gt;Threat Id&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#8DB3E2;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="135" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v5" value="&lt;b&gt;Threat Type&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="135" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v6" value="&lt;b&gt;Component&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="135" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v7" value="&lt;b&gt;Description&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="135" width="470" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v8" value="&lt;b&gt;Risk Template&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="135" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v9" value="&lt;b&gt;Inherent Risk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#366092;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="135" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v10" value="&lt;b&gt;T1&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="165" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v11" value="1- Spoofing" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#E2F0D9;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="165" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v12" value="Sesión JWT en el navegador (localStorage)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="165" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v13" value="Robo del JWT guardado en &lt;i&gt;localStorage&lt;/i&gt; (vía XSS o equipo compartido) y reutilización para suplantar a un docente o estudiante; el token dura 24 h y no se puede revocar." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="165" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v14" value="1- Spoofing - Ejecución desde origen externo (fuera de la organización)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="165" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v15" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="165" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v16" value="&lt;b&gt;T2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="220" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v17" value="2- Tampering" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFF2CC;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="220" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v18" value="Flujo navegador ↔ orchestrator (HTTP :8000)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="220" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v19" value="El orchestrator se publica con uvicorn en HTTP (:8000) y el compose no incluye terminación TLS: un atacante en la red (MITM) puede alterar respuestas, notas o envíos de quiz." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="220" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v20" value="2- Tampering - Manipulación de flujos de datos desde/hacia el entorno" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="220" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v21" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="220" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v22" value="&lt;b&gt;T3&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="275" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v23" value="3- Repudation" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FCE4E4;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="275" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v24" value="Desarrollador → repositorio GitHub" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="275" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v25" value="Un desarrollador introduce código malicioso y niega su autoría: los commits locales no están firmados y no hay revisión obligatoria verificable antes del despliegue." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="275" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v26" value="3- Repudation - Desarrollador inserta código malicioso en servicio externo sin trazabilidad" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="275" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v27" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="275" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v28" value="&lt;b&gt;T4&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="330" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v29" value="4 - Information Disclosure" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#EDE7F6;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="330" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v30" value="Secretos del stack (.env en el host EC2)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="330" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v31" value="JWT_SECRET, GOOGLE_API_KEY, MAIL_PASSWORD y DB_PASSWORD se inyectan como variables de entorno en texto plano (solo PostgreSQL usa Docker secrets). Con JWT_SECRET se pueden forjar tokens de cualquier usuario." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="330" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v32" value="4 - Information Disclosure - Exposición de secretos en repositorio" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="330" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v33" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="330" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v34" value="&lt;b&gt;T5&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="385" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v35" value="5- Denial of Service" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#D9D2E9;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="385" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v36" value="Orchestrator → ms-quiz (generate-from-pdf) y cuota de Gemini" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="385" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v37" value="/teacher/quiz/generate-from-pdf no limita tamaño ni frecuencia: el PDF se lee completo en memoria y cada petición consume cuota de Gemini. Una ráfaga de PDFs grandes tumba el EC2 compartido." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="385" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v38" value="5- Denial of Service - Ataque DDoS a servicios expuestos a Internet" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="385" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v39" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="385" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v40" value="&lt;b&gt;T6&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="440" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v41" value="6 - Elevation of privilege" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#DEEBF7;fontSize=13;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="440" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v42" value="ms-user /auth/register (rol elegido por el cliente)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="330" y="440" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v43" value="El rol (STUDENT / TEACHER) lo envía el propio cliente al registrarse: cualquiera puede crearse una cuenta TEACHER y crear aulas, quizzes y ver resultados de alumnos." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="560" y="440" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v44" value="6 - Elevation of privilege - Escalamiento de privilegios en servidor o función" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1030" y="440" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v45" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1370" y="440" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v46" value="Mitigaciones y riesgo residual" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="525" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v47" value="&lt;b&gt;Threat Id&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#8DB3E2;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="560" width="70" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v48" value="&lt;b&gt;Current Mitigations&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="560" width="340" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v49" value="&lt;b&gt;Potential Mitigations&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#DBE5F1;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="560" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v50" value="&lt;b&gt;Control Effectiveness&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#000000;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="560" width="170" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v51" value="&lt;b&gt;Proposed Mitigations&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#8DB3E2;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="560" width="470" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v52" value="&lt;b&gt;Residual Risk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#366092;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="560" width="110" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v53" value="&lt;b&gt;Is Mitigated&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#366092;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="560" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v54" value="&lt;b&gt;Residual objetivo (con mitigación propuesta)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;verticalAlign=middle;fillColor=#366092;fontColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="560" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v55" value="&lt;b&gt;T1&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#E2F0D9;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="604" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v56" value="1- Spoofing -  Flujo de datos entrante al entorno - Use of JWT Token (HS256, expira en 24 h)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="604" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v57" value="Access Control&lt;br&gt;MFA&lt;br&gt;mTLS" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="604" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v58" value="2 - Reasonably Strong (75%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="604" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v59" value="Cookie HttpOnly + Secure + SameSite=Strict en lugar de localStorage; access token de 15 min con refresh token revocable; CSP estricta; MFA para docentes." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="604" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v60" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="604" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v61" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="604" width="90" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v62" value="2 - Low&lt;br&gt;(Username and Password and MFA · 1 - Strong)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#92D050;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="604" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v63" value="&lt;b&gt;T2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFF2CC;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="659" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v64" value="2- Tampering -  Flujo de datos de entrada y salida al entorno - None" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="659" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v65" value="Integrity checks (hash)&lt;br&gt;Encryption in Transit&lt;br&gt;Digital Signatures" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="659" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v66" value="5 - Weak or non-existent (0%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="659" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v67" value="Proxy inverso (Nginx o ALB) con TLS 1.2+ (ACM / Let's Encrypt) y HSTS; cerrar el puerto 8000 en el Security Group para que solo lo alcance el proxy." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="659" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v68" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="659" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v69" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="659" width="90" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v70" value="2 - Low&lt;br&gt;(Use of TLS · 3 - Adequate)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#92D050;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="659" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v71" value="&lt;b&gt;T3&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FCE4E4;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="714" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v72" value="3- Repudation -  Flujo de datos entrante al entorno - Logs de auditoría y control de cambios verificados (parcial: PRs, pero commits sin firmar)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="714" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v73" value="Logs de auditoría&lt;br&gt;Firma de commits&lt;br&gt;Retention Policy" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="714" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v74" value="3 - Adequate (50%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="714" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v75" value="Commits firmados obligatorios (GPG/SSH); branch protection en main con al menos 1 revisión aprobada; CODEOWNERS; conservar el audit log de GitHub." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="714" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v76" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="714" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v77" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="714" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v78" value="3 - Moderate&lt;br&gt;(Logs + control de cambios verificados · 2 - Reasonably Strong)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="714" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v79" value="&lt;b&gt;T4&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#EDE7F6;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="784" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v80" value="4 - Information Disclosure -  Máquina Virtual - Secrets stored in Code (.env fuera de Git por .gitignore; Docker secret solo para PostgreSQL)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="784" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v81" value="Vault / Secrets Manager&lt;br&gt;Execution Role&lt;br&gt;Secret scanning" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="784" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v82" value="4 - Marginally Adequate (25%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="784" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v83" value="AWS Secrets Manager o SSM Parameter Store leídos con el rol IAM del EC2; Docker secrets para todos los servicios; secret scanning + push protection en GitHub; rotar JWT_SECRET." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="784" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v84" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="784" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v85" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="784" width="90" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v86" value="2 - Low&lt;br&gt;(Use of Vault for secret protection · 1 - Strong)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#92D050;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="784" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v87" value="&lt;b&gt;T5&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#D9D2E9;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="839" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v88" value="5- Denial of Service -  API Gateway - None" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="839" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v89" value="Anti-DDoS solutions&lt;br&gt;WAF&lt;br&gt;Rate limiting" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="839" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v90" value="5 - Weak or non-existent (0%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="839" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v91" value="Límite de tamaño y páginas del PDF (p. ej. 10 MB); rate limiting por usuario en el orchestrator; AWS WAF con reglas rate-based; límites de CPU/memoria por contenedor; presupuesto/cuota en Gemini." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="839" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v92" value="3 - Moderate" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="839" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v93" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="839" width="90" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v94" value="2 - Low&lt;br&gt;(Use of WAF · 2 - Reasonably Strong)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#92D050;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="839" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v95" value="&lt;b&gt;T6&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#DEEBF7;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="40" y="894" width="70" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v96" value="Ninguno: el rol STUDENT/TEACHER llega en el body del registro (añadir este control en la hoja «5) Controls»)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="110" y="894" width="340" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v97" value="Least privileges&lt;br&gt;Access Control" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="450" y="894" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v98" value="5 - Weak or non-existent (0%)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="630" y="894" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v99" value="Registro público solo como STUDENT; alta de docentes por invitación o aprobación de un administrador; en el orchestrator, verificar que teacher_id / userId = sub del JWT (cierra también T17)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="800" y="894" width="470" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v100" value="4 - High" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC000;fontColor=#000000;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1270" y="894" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v101" value="No" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFC7CE;fontColor=#9C0006;fontStyle=1;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1380" y="894" width="90" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="kiwi-plantilla-v102" value="3 - Moderate&lt;br&gt;(Access Control · 3 - Adequate)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=3;spacingRight=4;fontSize=11;strokeColor=#000000;fontSize=11;fillColor=#ffffff;fillColor=#FFFF00;fontColor=#000000;" vertex="1" parent="kiwi-plantilla-1">
+          <mxGeometry x="1470" y="894" width="200" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
