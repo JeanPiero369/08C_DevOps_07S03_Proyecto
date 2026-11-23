@@ -6,3 +6,9 @@ secrets/
 images/
 diagramas/
 temp/
+
+# Entorno local y resultados de compilación
+__pycache__/
+*.py[cod]
+.venv/
+ms-user/target/

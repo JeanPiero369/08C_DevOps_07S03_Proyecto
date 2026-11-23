@@ -1,0 +1,466 @@
+{
+    "check_type": "dockerfile",
+    "results": {
+        "failed_checks": [
+            {
+                "check_id": "CKV_DOCKER_2",
+                "bc_check_id": null,
+                "check_name": "Ensure that HEALTHCHECK instructions have been added to container images",
+                "check_result": {
+                    "result": "FAILED",
+                    "results_configuration": null
+                },
+                "code_block": [
+                    [
+                        1,
+                        "# Etapa 1: instalar dependencias y compilar\n"
+                    ],
+                    [
+                        2,
+                        "FROM node:18-alpine AS builder\n"
+                    ],
+                    [
+                        3,
+                        "WORKDIR /app\n"
+                    ],
+                    [
+                        4,
+                        "\n"
+                    ],
+                    [
+                        5,
+                        "# URL del orchestrator visible desde el navegador (se hornea en el build de Next.js)\n"
+                    ],
+                    [
+                        6,
+                        "ARG NEXT_PUBLIC_API_URL=http://localhost:8000\n"
+                    ],
+                    [
+                        7,
+                        "ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL\n"
+                    ],
+                    [
+                        8,
+                        "ENV NEXT_TELEMETRY_DISABLED=1\n"
+                    ],
+                    [
+                        9,
+                        "\n"
+                    ],
+                    [
+                        10,
+                        "# Dependencias primero para aprovechar la cach\u00e9 de capas\n"
+                    ],
+                    [
+                        11,
+                        "COPY package.json package-lock.json ./\n"
+                    ],
+                    [
+                        12,
+                        "RUN npm ci\n"
+                    ],
+                    [
+                        13,
+                        "\n"
+                    ],
+                    [
+                        14,
+                        "COPY next.config.ts tsconfig.json tailwind.config.ts postcss.config.mjs components.json ./\n"
+                    ],
+                    [
+                        15,
+                        "COPY src ./src\n"
+                    ],
+                    [
+                        16,
+                        "\n"
+                    ],
+                    [
+                        17,
+                        "RUN npm run build && npm prune --omit=dev\n"
+                    ],
+                    [
+                        18,
+                        "\n"
+                    ],
+                    [
+                        19,
+                        "# Etapa 2: ejecutar en producci\u00f3n\n"
+                    ],
+                    [
+                        20,
+                        "FROM node:18-alpine AS runner\n"
+                    ],
+                    [
+                        21,
+                        "WORKDIR /app\n"
+                    ],
+                    [
+                        22,
+                        "\n"
+                    ],
+                    [
+                        23,
+                        "ENV NODE_ENV=production \\\n"
+                    ],
+                    [
+                        24,
+                        "    NEXT_TELEMETRY_DISABLED=1\n"
+                    ],
+                    [
+                        25,
+                        "\n"
+                    ],
+                    [
+                        26,
+                        "RUN addgroup -S nextjs && adduser -S nextjs -G nextjs\n"
+                    ],
+                    [
+                        27,
+                        "USER nextjs\n"
+                    ],
+                    [
+                        28,
+                        "\n"
+                    ],
+                    [
+                        29,
+                        "COPY --from=builder --chown=nextjs:nextjs /app/.next ./.next\n"
+                    ],
+                    [
+                        30,
+                        "COPY --from=builder --chown=nextjs:nextjs /app/node_modules ./node_modules\n"
+                    ],
+                    [
+                        31,
+                        "COPY --from=builder --chown=nextjs:nextjs /app/package.json /app/next.config.ts ./\n"
+                    ],
+                    [
+                        32,
+                        "\n"
+                    ],
+                    [
+                        33,
+                        "EXPOSE 3000\n"
+                    ],
+                    [
+                        34,
+                        "\n"
+                    ],
+                    [
+                        35,
+                        "CMD [\"npm\", \"run\", \"start\"]"
+                    ]
+                ],
+                "file_path": "/frontend/Dockerfile",
+                "file_abs_path": "/home/claude/proyecto/frontend/Dockerfile",
+                "repo_file_path": "/frontend/Dockerfile",
+                "file_line_range": [
+                    1,
+                    35
+                ],
+                "resource": "/frontend/Dockerfile.",
+                "evaluations": null,
+                "check_class": "checkov.dockerfile.checks.HealthcheckExists",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            },
+            {
+                "check_id": "CKV_DOCKER_2",
+                "bc_check_id": null,
+                "check_name": "Ensure that HEALTHCHECK instructions have been added to container images",
+                "check_result": {
+                    "result": "FAILED",
+                    "results_configuration": null
+                },
+                "code_block": [
+                    [
+                        1,
+                        "FROM node:18-alpine\n"
+                    ],
+                    [
+                        2,
+                        "\n"
+                    ],
+                    [
+                        3,
+                        "ENV NODE_ENV=production\n"
+                    ],
+                    [
+                        4,
+                        "\n"
+                    ],
+                    [
+                        5,
+                        "# Prisma necesita OpenSSL en Alpine\n"
+                    ],
+                    [
+                        6,
+                        "RUN apk add --no-cache openssl\n"
+                    ],
+                    [
+                        7,
+                        "\n"
+                    ],
+                    [
+                        8,
+                        "WORKDIR /app\n"
+                    ],
+                    [
+                        9,
+                        "\n"
+                    ],
+                    [
+                        10,
+                        "# Dependencias primero para aprovechar la cach\u00e9 de capas\n"
+                    ],
+                    [
+                        11,
+                        "COPY --chown=node:node package.json package-lock.json ./\n"
+                    ],
+                    [
+                        12,
+                        "RUN npm ci --omit=dev\n"
+                    ],
+                    [
+                        13,
+                        "\n"
+                    ],
+                    [
+                        14,
+                        "COPY --chown=node:node prisma ./prisma\n"
+                    ],
+                    [
+                        15,
+                        "RUN npx prisma generate\n"
+                    ],
+                    [
+                        16,
+                        "\n"
+                    ],
+                    [
+                        17,
+                        "COPY --chown=node:node index.js ./\n"
+                    ],
+                    [
+                        18,
+                        "COPY --chown=node:node src ./src\n"
+                    ],
+                    [
+                        19,
+                        "\n"
+                    ],
+                    [
+                        20,
+                        "RUN chown -R node:node /app\n"
+                    ],
+                    [
+                        21,
+                        "# Usuario sin privilegios que ya trae la imagen oficial de Node\n"
+                    ],
+                    [
+                        22,
+                        "USER node\n"
+                    ],
+                    [
+                        23,
+                        "\n"
+                    ],
+                    [
+                        24,
+                        "EXPOSE 3000\n"
+                    ],
+                    [
+                        25,
+                        "\n"
+                    ],
+                    [
+                        26,
+                        "CMD [\"node\", \"index.js\"]"
+                    ]
+                ],
+                "file_path": "/ms-classroom/Dockerfile",
+                "file_abs_path": "/home/claude/proyecto/ms-classroom/Dockerfile",
+                "repo_file_path": "/ms-classroom/Dockerfile",
+                "file_line_range": [
+                    1,
+                    26
+                ],
+                "resource": "/ms-classroom/Dockerfile.",
+                "evaluations": null,
+                "check_class": "checkov.dockerfile.checks.HealthcheckExists",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            },
+            {
+                "check_id": "CKV_DOCKER_2",
+                "bc_check_id": null,
+                "check_name": "Ensure that HEALTHCHECK instructions have been added to container images",
+                "check_result": {
+                    "result": "FAILED",
+                    "results_configuration": null
+                },
+                "code_block": [
+                    [
+                        1,
+                        "# Etapa 1: construir con Maven\n"
+                    ],
+                    [
+                        2,
+                        "FROM maven:3.9.4-eclipse-temurin-17 AS builder\n"
+                    ],
+                    [
+                        3,
+                        "WORKDIR /app\n"
+                    ],
+                    [
+                        4,
+                        "\n"
+                    ],
+                    [
+                        5,
+                        "# pom.xml primero: las dependencias se cachean y no se vuelven a descargar\n"
+                    ],
+                    [
+                        6,
+                        "# cada vez que cambia el c\u00f3digo fuente\n"
+                    ],
+                    [
+                        7,
+                        "COPY pom.xml ./\n"
+                    ],
+                    [
+                        8,
+                        "RUN mvn -B dependency:go-offline\n"
+                    ],
+                    [
+                        9,
+                        "\n"
+                    ],
+                    [
+                        10,
+                        "COPY src ./src\n"
+                    ],
+                    [
+                        11,
+                        "RUN mvn -B clean package -DskipTests\n"
+                    ],
+                    [
+                        12,
+                        "\n"
+                    ],
+                    [
+                        13,
+                        "# Etapa 2: solo el JRE para ejecutar el .jar\n"
+                    ],
+                    [
+                        14,
+                        "FROM eclipse-temurin:17-jre\n"
+                    ],
+                    [
+                        15,
+                        "WORKDIR /app\n"
+                    ],
+                    [
+                        16,
+                        "\n"
+                    ],
+                    [
+                        17,
+                        "RUN groupadd -r spring && useradd -r -g spring spring\n"
+                    ],
+                    [
+                        18,
+                        "USER spring:spring\n"
+                    ],
+                    [
+                        19,
+                        "\n"
+                    ],
+                    [
+                        20,
+                        "COPY --from=builder --chown=spring:spring /app/target/*.jar app.jar\n"
+                    ],
+                    [
+                        21,
+                        "\n"
+                    ],
+                    [
+                        22,
+                        "EXPOSE 8080\n"
+                    ],
+                    [
+                        23,
+                        "\n"
+                    ],
+                    [
+                        24,
+                        "ENTRYPOINT [\"java\", \"-XX:MaxRAMPercentage=75\", \"-jar\", \"app.jar\"]"
+                    ]
+                ],
+                "file_path": "/ms-user/Dockerfile",
+                "file_abs_path": "/home/claude/proyecto/ms-user/Dockerfile",
+                "repo_file_path": "/ms-user/Dockerfile",
+                "file_line_range": [
+                    1,
+                    24
+                ],
+                "resource": "/ms-user/Dockerfile.",
+                "evaluations": null,
+                "check_class": "checkov.dockerfile.checks.HealthcheckExists",
+                "fixed_definition": null,
+                "entity_tags": null,
+                "caller_file_path": null,
+                "caller_file_line_range": null,
+                "resource_address": null,
+                "severity": null,
+                "bc_category": null,
+                "benchmarks": null,
+                "description": null,
+                "short_description": null,
+                "vulnerability_details": null,
+                "connected_node": null,
+                "guideline": null,
+                "details": [],
+                "check_len": null,
+                "definition_context_file_path": null
+            }
+        ]
+    },
+    "summary": {
+        "passed": 349,
+        "failed": 3,
+        "skipped": 0,
+        "parsing_errors": 0,
+        "resource_count": 5,
+        "checkov_version": "3.4.5"
+    }
+}

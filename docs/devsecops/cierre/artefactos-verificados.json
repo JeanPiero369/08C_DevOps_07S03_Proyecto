@@ -1,0 +1,86 @@
+[
+  {
+    "group": "final",
+    "name": "report-sast",
+    "id": 14734690040,
+    "sha256": "sha256:757ed05a6fa57adb9bb6534e0446ddda60a1c8b3102fe84837546ec17839f58b",
+    "files": 2
+  },
+  {
+    "group": "final",
+    "name": "report-iac",
+    "id": 14734326471,
+    "sha256": "sha256:f8f1de15ea15ac1a7fe270138bc9eb6ff78d677a3115cafc7954a8b5f4534f7c",
+    "files": 2
+  },
+  {
+    "group": "final",
+    "name": "report-dast",
+    "id": 14734216852,
+    "sha256": "sha256:75dc8494691dcffb38abacce51d2ce72d89007f67c151494b06482cab995ae6c",
+    "files": 8
+  },
+  {
+    "group": "final",
+    "name": "report-sca",
+    "id": 14733679291,
+    "sha256": "sha256:a3bf4d73593b43033855c06abc3aac257bc061d4d3e4c7b17376222cba9d7ff4",
+    "files": 3
+  },
+  {
+    "group": "final",
+    "name": "report-secret-scan",
+    "id": 14733614539,
+    "sha256": "sha256:bb7c01cf01bf3003a6242957932d50c966164de0dde78162c831f52dfa2b4130",
+    "files": 1
+  },
+  {
+    "group": "baseline",
+    "name": "report-container",
+    "id": 14731845783,
+    "sha256": "sha256:0b9f38b2bfe5309cefc32eafa05a241803eb2d7848756f99290784ff7700b4c0",
+    "files": 5
+  },
+  {
+    "group": "baseline",
+    "name": "report-iac",
+    "id": 14731705749,
+    "sha256": "sha256:887f0c960a23113ffec905acd41af3d10a5f883aa2edeb12dc9285339b3721b8",
+    "files": 2
+  },
+  {
+    "group": "baseline",
+    "name": "report-secret-scan",
+    "id": 14731620847,
+    "sha256": "sha256:2a10ec0731cb9aceabd3ec53916ce68ede12137dbf97a5f226fc5bc46fb1d3ed",
+    "files": 1
+  },
+  {
+    "group": "baseline",
+    "name": "report-sca",
+    "id": 14731217303,
+    "sha256": "sha256:4d0b19a1638cc666ead6ddf0726f6090fd19c788f28e5744d7fc9d5369d51e9b",
+    "files": 3
+  },
+  {
+    "group": "baseline",
+    "name": "report-dast",
+    "id": 14731059051,
+    "sha256": "sha256:d6b91f01fe78fd9be99711c98253d24560ca6b8ee020f9d3dfbf3e0c9b4af544",
+    "files": 8
+  },
+  {
+    "group": "baseline",
+    "name": "report-sast",
+    "id": 14730926943,
+    "sha256": "sha256:a990aa15b1c003cd44c5101e2816008030e10fa7f8ffdfb0ea48b307eb1b34e7",
+    "files": 2
+  },
+  {
+    "group": "auth-baseline",
+    "name": "report-dast",
+    "id": 14732535901,
+    "sha256": "sha256:a83d06dd82c5dd3df52ac2a3dddcb28482b09a026e657b0ff91f213636acafe2",
+    "files": 8
+  }
+]

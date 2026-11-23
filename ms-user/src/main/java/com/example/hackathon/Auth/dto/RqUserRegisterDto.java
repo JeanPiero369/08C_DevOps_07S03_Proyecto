@@ -22,5 +22,7 @@ public class RqUserRegisterDto {
     private Role role;
     private Date registration_date;
     private String cel_phone;
+    /** Código de invitación docente; sin él el registro siempre crea STUDENT. */
+    private String invite_code;
 
 }

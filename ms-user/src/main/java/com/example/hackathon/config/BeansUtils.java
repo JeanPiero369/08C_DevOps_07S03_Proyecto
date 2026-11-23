@@ -45,19 +45,15 @@ public class BeansUtils {
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(usuarioService);
         authProvider.setPasswordEncoder(passwordEncoder());
-        authProvider.setUserDetailsService(usuarioService);
 
         return authProvider;
     }
 
     @Bean
     static RoleHierarchy roleHierarchy() {
-        RoleHierarchyImpl hierarchy = new RoleHierarchyImpl();
-        hierarchy.setHierarchy("ADMIN > TEACHER > STUDENT");
-
-        return hierarchy;
+        return RoleHierarchyImpl.fromHierarchy("ADMIN > TEACHER > STUDENT");
     }
     @Bean
     static MethodSecurityExpressionHandler methodSecurityExpressionHandler(RoleHierarchy roleHierarchy) {

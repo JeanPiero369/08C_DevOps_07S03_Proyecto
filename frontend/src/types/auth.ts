@@ -22,6 +22,8 @@ export interface LoginCredentials {
 
 export interface RegisterPayload extends Omit<User, 'id' | 'registration_date' | 'emotion' | 'coin_earned' | 'coin_available'> {
   password: string;
+  /** Código de invitación docente (E-02); solo se envía al registrarse como TEACHER. */
+  invite_code?: string;
 }
 
 export interface AuthResponse {

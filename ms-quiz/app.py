@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import os
 import uvicorn
 
 from api.v1.router import api_router
@@ -13,12 +14,14 @@ app = FastAPI(
 )
 
 # CORS
+# I-01: lista blanca de orígenes (antes "*" con credenciales). ms-quiz solo recibe
+# tráfico del gateway, por lo que en compose no necesita orígenes de navegador.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[o.strip() for o in os.getenv("ALLOWED_ORIGINS", "http://localhost:5174").split(",") if o.strip()],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
 )
 
 # API v1 (Las versiones se iran cambiando en base a los cambios que se hagan en la API)

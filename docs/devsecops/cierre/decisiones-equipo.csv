@@ -1,0 +1,5 @@
+ID,Alcance,Estado,Condicion revisada,Responsable propuesto,Revision propuesta
+R-01,Spring CVE-2026-47884,Corregido,Actualizado a Spring 7.0.11; aviso ausente en CI 45067822680,Aaron backend,Verificado 2026-11-22
+R-02,Spring CVE-2026-47890,Corregido,Actualizado a Spring 7.0.11; aviso ausente en CI 45067822680,Aaron backend,Verificado 2026-11-22
+R-03,Bandit B104,Aceptacion propuesta,Bind requerido dentro de contenedores con puertos restringidos,Jean Piero DevOps,2026-12-22
+R-04,JWT historicos,Pendiente,Rotacion local verificada; faltan las otras computadoras del equipo,Equipo completo,Antes de despliegue

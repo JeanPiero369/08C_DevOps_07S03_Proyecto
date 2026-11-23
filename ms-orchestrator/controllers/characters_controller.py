@@ -3,7 +3,7 @@ import httpx
 from fastapi import APIRouter, Depends, HTTPException, Request
 from typing import Dict, List, Optional, Any
 from pydantic import BaseModel
-from utils.auth import verify_token
+from utils.auth import verify_token, get_current_user, ensure_same_user, ensure_role
 from schemas import *
 from dotenv import load_dotenv
 
@@ -51,7 +51,7 @@ async def get_user_characters(user_id: int, request: Request):
             raise HTTPException(status_code=500, detail=f"Error al conectar con los servicios: {str(e)}")
 
 @router.post("/buy")
-async def buy_character(request: Request):
+async def buy_character(request: Request, current_user: dict = Depends(get_current_user)):
     try:
         body = await request.json()
         
@@ -63,6 +63,8 @@ async def buy_character(request: Request):
         
         if not characterId or not userId:
             raise HTTPException(status_code=400, detail="characterId y userId son requeridos")
+        # T-01: solo se compra para uno mismo (antes se gastaban las monedas de otro estudiante)
+        ensure_same_user(current_user, userId)
         
         async with httpx.AsyncClient() as client:
             user_response = await client.get(
@@ -134,7 +136,7 @@ async def buy_character(request: Request):
         raise HTTPException(status_code=500, detail=f"Error al procesar la compra: {str(e)}")
 
 @router.patch("/set-principal")
-async def set_principal_character(request: Request):
+async def set_principal_character(request: Request, current_user: dict = Depends(get_current_user)):
     try:
         body = await request.json()
         
@@ -147,6 +149,7 @@ async def set_principal_character(request: Request):
         
         if not userId or not oldCharacterId or not newCharacterId:
             raise HTTPException(status_code=400, detail="userId, oldCharacterId y newCharacterId son requeridos")
+        ensure_same_user(current_user, userId)
         
         async with httpx.AsyncClient() as client:
             user_response = await client.get(
@@ -179,7 +182,9 @@ async def set_principal_character(request: Request):
         raise HTTPException(status_code=500, detail=f"Error al conectar con el servicio de personajes: {str(e)}")
 
 @router.post("")
-async def create_character(request: Request):
+async def create_character(request: Request, current_user: dict = Depends(get_current_user)):
+    # E-03: crear personajes es una operación de docentes/administración
+    ensure_role(current_user, "TEACHER", "ADMIN")
     try:
         body = await request.json()
         

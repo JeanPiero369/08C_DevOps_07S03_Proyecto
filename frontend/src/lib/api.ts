@@ -129,8 +129,11 @@ export const registerUser = async (payload: RegisterPayload): Promise<AuthRespon
       //user: newUser,
     };
   } catch (error) {
-    if (axios.isAxiosError(error) && error.response.status===409) {
+    if (axios.isAxiosError(error) && error.response?.status===409) {
        return { success: false, message: "Ya existe un usuario con este correo electrónico." };
+    }
+    if (axios.isAxiosError(error) && error.response?.status===403) {
+       return { success: false, message: "Código de invitación docente inválido." };
     }
     console.error('Error al obtener datos:', error);
     // Este `catch` se activará para:

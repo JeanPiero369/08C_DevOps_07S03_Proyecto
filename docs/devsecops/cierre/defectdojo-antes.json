@@ -1,0 +1,90 @@
+{
+  "stage": "antes",
+  "total_records": 1197,
+  "active_count": 1197,
+  "active_by_severity": {
+    "Medium": 485,
+    "Low": 276,
+    "Critical": 33,
+    "High": 381,
+    "Info": 22
+  },
+  "mitigated_count": 0,
+  "tests": [
+    {
+      "id": 7,
+      "title": "DAST - OWASP ZAP frontend",
+      "engagement": 1
+    },
+    {
+      "id": 9,
+      "title": "IaC - Trivy config",
+      "engagement": 1
+    },
+    {
+      "id": 6,
+      "title": "DAST - OWASP ZAP api",
+      "engagement": 1
+    },
+    {
+      "id": 11,
+      "title": "SAST - Semgrep",
+      "engagement": 1
+    },
+    {
+      "id": 2,
+      "title": "Container - Trivy image microservice-classroom",
+      "engagement": 1
+    },
+    {
+      "id": 8,
+      "title": "IaC - Checkov",
+      "engagement": 1
+    },
+    {
+      "id": 14,
+      "title": "SCA - Trivy filesystem",
+      "engagement": 1
+    },
+    {
+      "id": 3,
+      "title": "Container - Trivy image microservice-quiz",
+      "engagement": 1
+    },
+    {
+      "id": 5,
+      "title": "Container - Trivy image orchestrator",
+      "engagement": 1
+    },
+    {
+      "id": 13,
+      "title": "SCA - pip-audit ms-quiz",
+      "engagement": 1
+    },
+    {
+      "id": 12,
+      "title": "SCA - pip-audit ms-orchestrator",
+      "engagement": 1
+    },
+    {
+      "id": 1,
+      "title": "Container - Trivy image frontend",
+      "engagement": 1
+    },
+    {
+      "id": 4,
+      "title": "Container - Trivy image microservice-users",
+      "engagement": 1
+    },
+    {
+      "id": 10,
+      "title": "SAST - Bandit",
+      "engagement": 1
+    },
+    {
+      "id": 15,
+      "title": "Secret scanning - Gitleaks",
+      "engagement": 1
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+run 45059948900 · rama fix/project-closure · commit c8755dab8fb58d302b15bd082e5e09a8292d1335 · 2026-11-22
+Gate: CRITICAL; failure esperado por 2 hallazgos. Build, pruebas, DAST y monitoreo correctos.

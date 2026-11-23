@@ -1,0 +1,37 @@
+flowchart LR
+  unit_tests["unit-tests: pytest gateway y quiz"]
+  java_unit_tests["java-unit-tests: JUnit Java 17"]
+  secret_scan["secret-scan: Gitleaks"]
+  sast["sast: Semgrep y Bandit"]
+  sca["sca: Trivy fs y pip-audit"]
+  iac_scan["iac-scan: Trivy config y Checkov"]
+  build["build: 5 imágenes y Trivy image"]
+  dast["dast: staging y ZAP autenticado"]
+  defectdojo["defectdojo: reimport opcional"]
+  security_gate["security-gate: 15 reportes y umbral"]
+  release["release: GHCR solo push main"]
+  sonarcloud["sonarcloud: opcional independiente"]
+  unit_tests --> build
+  secret_scan --> build
+  build --> dast
+  secret_scan --> defectdojo
+  sast --> defectdojo
+  sca --> defectdojo
+  iac_scan --> defectdojo
+  build --> defectdojo
+  dast --> defectdojo
+  secret_scan --> security_gate
+  sast --> security_gate
+  sca --> security_gate
+  iac_scan --> security_gate
+  build --> security_gate
+  dast --> security_gate
+  security_gate --> release
+  unit_tests --> release
+  java_unit_tests --> release
+  sast --> release
+  sca --> release
+  iac_scan --> release
+  secret_scan --> release
+  build --> release
+  dast --> release

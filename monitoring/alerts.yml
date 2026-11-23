@@ -1,0 +1,17 @@
+groups:
+  - name: kiwi
+    rules:
+      - alert: KiwiEndpointDown
+        expr: probe_success{job="kiwi-http"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Kiwi no responde en {{ $labels.instance }}"
+      - alert: KiwiProbeMissing
+        expr: up{job="kiwi-http"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Prometheus no puede ejecutar la sonda {{ $labels.instance }}"
