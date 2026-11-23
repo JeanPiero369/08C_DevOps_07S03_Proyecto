@@ -75,24 +75,27 @@ La red data está marcada como internal y la base de datos no publica puertos al
 \clearpage\newgeometry{margin=1.5cm}
 \begin{landscape}
 \phantomsection\section*{b Modelo de amenazas STRIDE}\addcontentsline{toc}{section}{b Modelo de amenazas STRIDE}
-El modelo de la línea base identifica 14 amenazas sobre seis fronteras de confianza. El riesgo se calcula como probabilidad por impacto, ambos en escala de 1 a 5. Las etiquetas de versiones de la figura describen la situación inicial; los estados actuales y las mitigaciones se consultan en el Excel actualizado.\par
+El DFD de Kiwi se construyó a partir de compose.yml y del código de los microservicios. Separa siete fronteras de confianza: GitHub, AWS Amplify, dispositivo del usuario, AWS EC2 con Docker Compose, red data interna, Gmail y Gemini. Sobre él se identifican 17 amenazas (T1--T17); seis, una por categoría STRIDE, se priorizan y evalúan con la plantilla del curso: riesgo inherente, efectividad del control y riesgo residual frente a un apetito 3 - Moderate. El diagrama describe la línea base; el estado actual de cada amenaza figura en la sección c.\par
 \begin{figure}[H]\centering
 \includegraphics[width=\linewidth,height=0.72\textheight,keepaspectratio]{assets/figura-1.png}
-\caption{DFD y amenazas de la línea base. Fuente editable: kiwi\_stride.drawio. Ampliar el archivo original para revisar los flujos.}
+\caption{DFD de Kiwi con las 17 amenazas STRIDE; en amarillo, las seis priorizadas. Fuente editable: kiwi\_stride.drawio (hojas de arquitectura, amenazas y plantilla).}
 \end{figure}
 \end{landscape}
 \restoregeometry
-\phantomsection\section*{c Cinco amenazas principales}\addcontentsline{toc}{section}{c Cinco amenazas principales}
-\phantomsection\subsection*{E 01 Ejecución de código en el frontend}\addcontentsline{toc}{subsection}{E 01 Ejecución de código en el frontend}
-Riesgo inicial 20 de 25. Los escáneres identificaron Next.js 15.3.3 como afectado por avisos que incluyen ejecución de código en React Flight. El componente está expuesto al usuario. El equipo actualizó Next y reconstruyó la imagen. La ausencia de los hallazgos originales en el reporte posterior sustenta la mitigación de esos avisos, sin afirmar que todas las dependencias del frontend estén libres de riesgo.\par
-\phantomsection\subsection*{E 02 Registro con privilegios docentes}\addcontentsline{toc}{subsection}{E 02 Registro con privilegios docentes}
-Riesgo inicial 20 de 25. El registro permitía solicitar el rol TEACHER desde el cliente. El servidor ahora exige un código de invitación para docentes y evita autoasignarse ADMIN. Las pruebas negativas y la comprobación E2E muestran 403 sin código válido y registro correcto con invitación. La custodia del código y el proceso de aprobación docente siguen siendo responsabilidades operativas.\par
-\phantomsection\subsection*{T 01 Alteración de intentos y monedas}\addcontentsline{toc}{subsection}{T 01 Alteración de intentos y monedas}
-Riesgo inicial 16 de 25. El gateway recibía student\_id y userId sin compararlos con la identidad autenticada. Ahora consulta los claims validados y rechaza IDs ajenos en las rutas corregidas. Las pruebas de regresión y el E2E comprueban 403 para una compra a nombre de otro estudiante. Este control no sustituye la autorización por pertenencia a cada aula, que requiere ampliar la matriz de permisos.\par
-\phantomsection\subsection*{S 01 JWT en el historial Git}\addcontentsline{toc}{subsection}{S 01 JWT en el historial Git}
-Riesgo inicial 16 de 25. Gitleaks y Semgrep detectaron tokens en colecciones Bruno. El equipo sustituyó los valores del árbol actual por variables. Gitleaks aún encuentra 46 ocurrencias históricas. Aunque los JWT originales están expirados según el traspaso, falta confirmar la rotación de la clave en todos los entornos. El entorno nuevo de esta revisión tiene una clave aleatoria propia. No se reescribió el historial ni se ocultaron los hallazgos.\par
-\phantomsection\subsection*{D 01 Procesamiento de PDF y consumo de IA}\addcontentsline{toc}{subsection}{D 01 Procesamiento de PDF y consumo de IA}
-Riesgo inicial 16 de 25. La carga de archivos sin límites y una dependencia de lectura vulnerable permitían agotar recursos. El equipo migró a pypdf y limita tamaño y páginas antes de llamar a Gemini. Pasan seis pruebas de límites. Permanece pendiente el rate limiting por usuario y el control de cuota de IA. La mitigación de la dependencia y de los límites de archivo no demuestra el cierre completo de la amenaza de consumo abusivo.\par
+\phantomsection\section*{c Amenazas principales STRIDE}\addcontentsline{toc}{section}{c Amenazas principales STRIDE}
+Se explican las seis amenazas priorizadas del diagrama, una por categoría STRIDE. Entre paréntesis se indica el ID equivalente en el Excel del equipo. La evaluación de la plantilla corresponde a la línea base; el estado se verificó en el código del cierre.\par
+\phantomsection\subsection*{T1 Spoofing: sesión JWT en el navegador}\addcontentsline{toc}{subsection}{T1 Spoofing: sesión JWT en el navegador}
+Riesgo inherente 4 - High, residual 3 - Moderate (S-02). El frontend guarda el JWT en localStorage durante 24 horas y no puede revocarlo; un XSS o un equipo compartido permiten reutilizarlo para suplantar a un docente o estudiante. Se rotó JWT\_SECRET en la computadora revisada y el token anterior devuelve 401. Estado: pendiente; falta mover el token a una cookie HttpOnly, acortar su vigencia y añadir MFA para docentes.\par
+\phantomsection\subsection*{T2 Tampering: HTTP sin TLS hacia el gateway}\addcontentsline{toc}{subsection}{T2 Tampering: HTTP sin TLS hacia el gateway}
+Riesgo inherente y residual 3 - Moderate. El gateway se publica en el puerto 8000 por HTTP y el compose no incluye terminación TLS, por lo que un atacante en la red puede alterar respuestas, notas o envíos de quiz. Estado: pendiente; se recomienda un proxy con TLS y HSTS y cerrar el puerto 8000 al exterior.\par
+\phantomsection\subsection*{T3 Repudiation: commits sin firma}\addcontentsline{toc}{subsection}{T3 Repudiation: commits sin firma}
+Riesgo inherente 4 - High, residual 3 - Moderate. Los Pull Requests dejan trazabilidad parcial, pero los commits no están firmados y no hay revisión obligatoria verificable antes del despliegue. Estado: pendiente; requiere firma GPG o SSH, protección de main y CODEOWNERS.\par
+\phantomsection\subsection*{T4 Information Disclosure: secretos en variables de entorno}\addcontentsline{toc}{subsection}{T4 Information Disclosure: secretos en variables de entorno}
+Riesgo inherente y residual 4 - High (S-01, HIGH-001). JWT\_SECRET, GOOGLE\_API\_KEY y MAIL\_PASSWORD llegan como variables de entorno; solo la contraseña de PostgreSQL usa Docker secrets. Gitleaks conserva 46 ocurrencias históricas de JWT en colecciones Bruno. Estado: parcial; el árbol actual usa variables y la clave local se rotó, pero faltan un gestor de secretos y la rotación confirmada en todos los entornos.\par
+\phantomsection\subsection*{T5 Denial of Service: PDF y cuota de IA}\addcontentsline{toc}{subsection}{T5 Denial of Service: PDF y cuota de IA}
+Riesgo inherente y residual 3 - Moderate (D-01, MED-002). La generación desde PDF leía el archivo completo y consumía cuota de Gemini en cada petición. Ahora ms-quiz usa pypdf y limita el archivo a 5 MB y 30 páginas, con seis pruebas de límites. Estado: parcial; falta rate limiting por usuario y control de cuota de IA.\par
+\phantomsection\subsection*{T6 Elevation of Privilege: registro con rol docente}\addcontentsline{toc}{subsection}{T6 Elevation of Privilege: registro con rol docente}
+Riesgo inherente y residual de línea base 4 - High (E-02, HIGH-004). El cliente elegía el rol TEACHER al registrarse. El servidor exige ahora un código de invitación para docentes y las pruebas E2E muestran 403 sin código válido. Estado: mitigado; la custodia del código es una responsabilidad operativa. La amenaza relacionada T17, IDs ajenos en compras e intentos, está mitigada en las rutas cubiertas (HIGH-003).\par
 \phantomsection\section*{d Herramientas SAST y DAST}\addcontentsline{toc}{section}{d Herramientas SAST y DAST}
 Semgrep revisa patrones en Python, JavaScript, TypeScript, Java y Dockerfiles. Bandit complementa el análisis de los servicios Python. Ambos generan JSON y se ejecutan en jobs de GitHub Actions. SonarCloud es opcional: el run histórico registra que SONAR\_TOKEN no está configurado. Su job verde no acredita que el análisis Sonar se haya ejecutado.\par
 OWASP ZAP ejecuta un API scan contra OpenAPI del gateway y un baseline del frontend sobre staging efímero. El workflow registra un usuario docente con invitación y transmite su token al escáner. En el cierre se elimina el fallback silencioso a un análisis sin autenticación. Si no obtiene el token, el job falla.\par
@@ -232,7 +235,7 @@ Se usa OWASP SAMM 2 como referencia de madurez de seguridad dentro de DevSecOps.
 \textbf{Práctica SAMM} & \textbf{Evidencia} & \textbf{Situación alcanzada} \\
 \midrule\endhead
 \bottomrule\endfoot
-Threat Assessment & DFD, STRIDE y priorización de 14 amenazas & Actividades iniciales documentadas \\[3pt]
+Threat Assessment & DFD, STRIDE con 17 amenazas y seis priorizadas & Actividades iniciales documentadas \\[3pt]
 Secure Build & Build automatizado y análisis de dependencias & Automatización implementada, reproducibilidad parcial \\[3pt]
 Defect Management & DefectDojo con reimportación y estados & Seguimiento inicial operativo \\[3pt]
 Security Testing & SAST, DAST y pruebas negativas de controles & Objetivo del nivel 1 demostrado en el alcance revisado \\[3pt]

@@ -4,6 +4,7 @@
 secrets/
 .venv/
 images/
+!entrega/images/
 diagramas/
 temp/
 
