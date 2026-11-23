@@ -13,7 +13,7 @@ El último resultado aplicable figura en `ci-cierre.json` y `final-ci/findings.c
 | zod | No aparece en findings.csv de este run | No es un hallazgo confirmado en esta evidencia. La mención del traspaso no justifica inventar una fila activa ni afirmar mitigación sin identificar el aviso original. |
 | util-linux | 132 detecciones entre paquetes y dos imágenes Python | Pendiente, no falso positivo automático. El reporte no indica versión corregida. Reducir superficie y privilegios, seguir avisos de Debian y reconstruir cuando exista parche. |
 | SQLite | 28 detecciones en paquetes del sistema de imágenes Python | Pendiente. No hay versión corregida en esos reportes. Revisar alcance real y disponibilidad de actualizaciones, sin deducir no aplicabilidad por usar PostgreSQL. |
-| Bandit B104 | 2 detecciones MEDIUM de bind 0.0.0.0 | Aceptación propuesta para red de contenedores. Verificar puertos y redes. Definir responsable y revisión antes de aplicarla en la instancia propia. |
+| Bandit B104 | 2 detecciones MEDIUM de bind 0.0.0.0 | Riesgo aceptado por el equipo (2026-11-23): bind necesario en la red de contenedores; responsable Jean Piero, revisión 2026-12-22. |
 | Otros Bandit LOW | 10 detecciones | Pendiente de revisión individual. No aceptar por severidad baja ni por ejecutar dentro de Docker. |
 | ZAP | 16 alertas agrupadas | Pendiente de triage individual. Las cabeceras añadidas no eliminan todas las advertencias de CSP y recursos externos. |
 | Semgrep CSRF | INFO en ms-classroom/src/app.js | Pendiente de análisis del mecanismo de autenticación y exposición. No adoptar csurf solo por el mensaje genérico de una regla. |
