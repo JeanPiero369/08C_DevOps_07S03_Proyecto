@@ -41,6 +41,8 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       MAIL_USERNAME: ${MAIL_USERNAME}
       MAIL_PASSWORD: ${MAIL_PASSWORD}
+      # E-02: código para registrarse como docente (vacío = registro docente deshabilitado)
+      TEACHER_INVITE_CODE: ${TEACHER_INVITE_CODE:-}
     networks:
       - backend   # habla con el orchestrator y sale a internet (SMTP Gmail)
       - data      # habla con la DB
@@ -94,6 +96,8 @@ services:
       - "8000:8000"   # el navegador llama aquí (NEXT_PUBLIC_API_URL)
     environment:
       USERS_URL: http://users:8080
+      # I-01: orígenes permitidos por CORS (separados por coma)
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5174}
       CLASSROOMS_URL: http://classrooms:3000
       QUICES_URL: http://quices:8001/api/v1
     networks:

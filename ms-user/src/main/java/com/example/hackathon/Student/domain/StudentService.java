@@ -31,7 +31,11 @@ public class StudentService{
 
     public Student patchStudent(Principal principal,Student new_student){
         Student student=studentRepository.findByEmail(principal.getName()).orElseThrow(() -> new NotFoundException("Student not found"));
-        modelMapper.map(new_student,student);
+        // Solo datos de perfil: nunca rol, id, email, password ni monedas
+        if (new_student.getName() != null) student.setName(new_student.getName());
+        if (new_student.getLast_name() != null) student.setLast_name(new_student.getLast_name());
+        if (new_student.getCel_phone() != null) student.setCel_phone(new_student.getCel_phone());
+        if (new_student.getEmotion() != null) student.setEmotion(new_student.getEmotion());
 
         studentRepository.save(student);
         return student;

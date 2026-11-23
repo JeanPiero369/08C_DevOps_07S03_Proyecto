@@ -1,0 +1,9 @@
+# Configuración de Gitleaks: reglas por defecto + allowlist acotada.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Reportes de escaneo generados por el propio pipeline (contienen URLs prefirmadas públicas de PyPI/S3 y secretos ya redactados); los secretos reales del código se siguen detectando."
+paths = [
+  '''^docs/devsecops/baseline(-ci)?/''',
+]

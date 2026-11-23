@@ -15,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { registerUser } from '@/lib/api';
 import { useToast } from '@/hooks/use-toast';
 import type { RegisterPayload, UserRole } from '@/types/auth';
-import { User as UserIcon, Mail, Lock, Briefcase, Eye, EyeOff } from 'lucide-react';
+import { User as UserIcon, Mail, Lock, Briefcase, Eye, EyeOff, KeyRound } from 'lucide-react';
 
 
 const registerSchema = z.object({
@@ -24,6 +24,11 @@ const registerSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
   password: z.string().min(6, { message: "Password must be at least 6 characters." }),
   role: z.enum(['TEACHER', 'STUDENT'], { message: "Role is required." }),
+  // E-02: el rol docente solo se concede en el servidor con un código de invitación válido
+  invite_code: z.string().optional(),
+}).refine((d) => d.role !== 'TEACHER' || (d.invite_code ?? '').trim().length > 0, {
+  message: "El código de invitación docente es obligatorio.",
+  path: ["invite_code"],
 });
 
 type RegisterFormValues = z.infer<typeof registerSchema>;
@@ -42,13 +47,16 @@ export default function RegisterForm() {
       email: "",
       password: "",
       role: undefined, // Or a default role if desired e.g. 'STUDENT'
+      invite_code: "",
     },
   });
+  const selectedRole = form.watch('role');
 
   async function onSubmit(data: RegisterFormValues) {
     setIsLoading(true);
     try {
-      const response = await registerUser(data as RegisterPayload);
+      const payload = { ...data, invite_code: data.role === 'TEACHER' ? data.invite_code?.trim() : undefined };
+      const response = await registerUser(payload as RegisterPayload);
       if (response.success) {
         toast({
           title: "Registration Successful",
@@ -181,6 +189,24 @@ export default function RegisterForm() {
                 </FormItem>
               )}
             />
+            {selectedRole === 'TEACHER' && (
+              <FormField
+                control={form.control}
+                name="invite_code"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-foreground/80">Código de invitación docente</FormLabel>
+                    <div className="relative">
+                      <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <FormControl>
+                        <Input type="password" autoComplete="off" placeholder="Código entregado por la institución" {...field} className="pl-10" />
+                      </FormControl>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" disabled={isLoading}>
               {isLoading ? "Creando Cuenta..." : "Crear Cuenta"}
             </Button>

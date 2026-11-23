@@ -1,0 +1,39 @@
+{
+  "probes": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "probe_success",
+            "instance": "http://frontend:3000/",
+            "job": "kiwi-http"
+          },
+          "value": [
+            1795374577.694,
+            "1"
+          ]
+        },
+        {
+          "metric": {
+            "__name__": "probe_success",
+            "instance": "http://orchestrator:8000/openapi.json",
+            "job": "kiwi-http"
+          },
+          "value": [
+            1795374577.694,
+            "1"
+          ]
+        }
+      ]
+    }
+  },
+  "alerts": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": []
+    }
+  }
+}
