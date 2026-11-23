@@ -2,3 +2,7 @@
 .env
 .env.example
 secrets/
+.venv/
+images/
+diagramas/
+temp/
